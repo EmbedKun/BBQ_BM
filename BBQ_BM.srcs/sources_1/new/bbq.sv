@@ -367,7 +367,7 @@ assign pb_data = int_pb_data;
 reg [16:0] counter;//debug
 
 // Output assignments
-assign ready = !rst & (counter > 17'b01111111111111111);
+assign ready = !rst & (state== FSM_STATE_READY);
 assign out_valid = reg_valid_s[NUM_PIPELINE_STAGES-1];
 assign out_op_type = reg_op_type_s[NUM_PIPELINE_STAGES-1];
 assign out_he_data = reg_he_data_s[NUM_PIPELINE_STAGES-1];

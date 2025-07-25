@@ -1,0 +1,53 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Jul 25 13:26:37 2025
+# Process ID: 503406
+# Current directory: /home/pnic/mkxue/BBQ_BM
+# Command line: vivado BBQ_BM.xpr
+# Log file: /home/pnic/mkxue/BBQ_BM/vivado.log
+# Journal file: /home/pnic/mkxue/BBQ_BM/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project BBQ_BM.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wiz_0
+set_property -dict [list CONFIG.PRIM_SOURCE {Differential_clock_capable_pin} CONFIG.CLK_OUT1_PORT {bbq_clk}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+generate_target all [get_files  /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+launch_runs clk_wiz_0_synth_1 -jobs 16
+wait_on_run clk_wiz_0_synth_1
+export_simulation -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/sim_scripts -ip_user_files_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files -ipstatic_source_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/modelsim} {questa=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/questa} {ies=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/ies} {xcelium=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/xcelium} {vcs=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/vcs} {riviera=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {5}] [get_ips ila_0]
+generate_target all [get_files  /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci]
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci]
+launch_runs ila_0_synth_1 -jobs 16
+wait_on_run ila_0_synth_1
+export_simulation -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci] -directory /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/sim_scripts -ip_user_files_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files -ipstatic_source_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/modelsim} {questa=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/questa} {ies=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/ies} {xcelium=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/xcelium} {vcs=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/vcs} {riviera=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.RESET_TYPE {ACTIVE_LOW} CONFIG.RESET_PORT {resetn}] [get_ips clk_wiz_0]
+generate_target all [get_files  /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+reset_run clk_wiz_0_synth_1
+launch_runs clk_wiz_0_synth_1 -jobs 16
+wait_on_run clk_wiz_0_synth_1
+export_simulation -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/sim_scripts -ip_user_files_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files -ipstatic_source_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/modelsim} {questa=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/questa} {ies=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/ies} {xcelium=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/xcelium} {vcs=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/vcs} {riviera=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+open_run impl_1

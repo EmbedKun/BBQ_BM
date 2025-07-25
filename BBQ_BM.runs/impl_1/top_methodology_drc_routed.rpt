@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Jul 25 13:58:13 2025
-| Host         : FNIL-PNIC-1 running 64-bit Ubuntu 22.04.5 LTS
+| Date         : Fri Jul 25 15:47:27 2025
+| Host         : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
 | Device       : xcu280-fsvh2892-2L-e
@@ -84,8 +84,8 @@ Related violations: <none>
 XDCC-7#1 Warning
 Scoped Clock constraint overwritten on the same source  
 A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
-New: create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p] (Source: /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc (Line: 8))
-Previous: create_clock -period 10.000 [get_ports sys_clk_p] (Source: /home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc (Line: 56))
+New: create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p] (Source: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc (Line: 8))
+Previous: create_clock -period 10.000 [get_ports sys_clk_p] (Source: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc (Line: 56))
 Related violations: <none>
 
 

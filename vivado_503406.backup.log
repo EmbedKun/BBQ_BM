@@ -1,0 +1,128 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Jul 25 13:26:37 2025
+# Process ID: 503406
+# Current directory: /home/pnic/mkxue/BBQ_BM
+# Command line: vivado BBQ_BM.xpr
+# Log file: /home/pnic/mkxue/BBQ_BM/vivado.log
+# Journal file: /home/pnic/mkxue/BBQ_BM/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project BBQ_BM.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 7419.152 ; gain = 86.387 ; free physical = 107328 ; free virtual = 122235
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci' is already up-to-date
+[Fri Jul 25 13:30:54 2025] Launched synth_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/synth_1/runme.log
+[Fri Jul 25 13:30:54 2025] Launched impl_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/impl_1/runme.log
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wiz_0
+set_property -dict [list CONFIG.PRIM_SOURCE {Differential_clock_capable_pin} CONFIG.CLK_OUT1_PORT {bbq_clk}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+generate_target all [get_files  /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+launch_runs clk_wiz_0_synth_1 -jobs 16
+[Fri Jul 25 13:33:39 2025] Launched clk_wiz_0_synth_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/clk_wiz_0_synth_1/runme.log
+export_simulation -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/sim_scripts -ip_user_files_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files -ipstatic_source_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/modelsim} {questa=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/questa} {ies=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/ies} {xcelium=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/xcelium} {vcs=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/vcs} {riviera=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {5}] [get_ips ila_0]
+generate_target all [get_files  /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci]
+launch_runs ila_0_synth_1 -jobs 16
+[Fri Jul 25 13:34:36 2025] Launched ila_0_synth_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci] -directory /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/sim_scripts -ip_user_files_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files -ipstatic_source_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/modelsim} {questa=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/questa} {ies=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/ies} {xcelium=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/xcelium} {vcs=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/vcs} {riviera=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.RESET_TYPE {ACTIVE_LOW} CONFIG.RESET_PORT {resetn}] [get_ips clk_wiz_0]
+generate_target all [get_files  /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+reset_run clk_wiz_0_synth_1
+launch_runs clk_wiz_0_synth_1 -jobs 16
+[Fri Jul 25 13:35:27 2025] Launched clk_wiz_0_synth_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/clk_wiz_0_synth_1/runme.log
+export_simulation -of_objects [get_files /home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/sim_scripts -ip_user_files_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files -ipstatic_source_dir /home/pnic/mkxue/BBQ_BM/BBQ_BM.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/modelsim} {questa=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/questa} {ies=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/ies} {xcelium=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/xcelium} {vcs=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/vcs} {riviera=/home/pnic/mkxue/BBQ_BM/BBQ_BM.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci' is already up-to-date
+[Fri Jul 25 13:44:19 2025] Launched synth_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/synth_1/runme.log
+[Fri Jul 25 13:44:19 2025] Launched impl_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci' is already up-to-date
+[Fri Jul 25 13:45:23 2025] Launched synth_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/synth_1/runme.log
+[Fri Jul 25 13:45:23 2025] Launched impl_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/pnic/mkxue/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci' is already up-to-date
+[Fri Jul 25 13:50:05 2025] Launched synth_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/synth_1/runme.log
+[Fri Jul 25 13:50:06 2025] Launched impl_1...
+Run output will be captured here: /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/impl_1/runme.log
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+open_run impl_1
+INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
+Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 9077.070 ; gain = 0.000 ; free physical = 106240 ; free virtual = 121857
+INFO: [Netlist 29-17] Analyzing 824 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Restored from archive | CPU: 0.490000 secs | Memory: 16.790665 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.47 ; elapsed = 00:00:00.47 . Memory (MB): peak = 9687.305 ; gain = 0.000 ; free physical = 105762 ; free virtual = 121379
+open_run: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 9687.305 ; gain = 730.156 ; free physical = 105978 ; free virtual = 121595
+INFO: [Common 17-344] 'open_run' was cancelled
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 25 15:16:42 2025...

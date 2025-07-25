@@ -1,8 +1,8 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Fri Jul 25 13:58:21 2025
-| Host             : FNIL-PNIC-1 running 64-bit Ubuntu 22.04.5 LTS
+| Date             : Fri Jul 25 15:47:33 2025
+| Host             : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xcu280-fsvh2892-2L-e
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.452        |
+| Total On-Chip Power (W)  | 3.453        |
 |   FPGA Power (W)         | 3.212        |
 |   HBM Power (W)          | 0.241        |
 | Design Power Budget (W)  | Unspecified* |
@@ -55,20 +55,20 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.034 |        5 |       --- |             --- |
-| CLB Logic                |     0.027 |    16777 |       --- |             --- |
-|   LUT as Logic           |     0.023 |     5600 |   1303680 |            0.43 |
+| CLB Logic                |     0.027 |    16789 |       --- |             --- |
+|   LUT as Logic           |     0.023 |     5594 |   1303680 |            0.43 |
 |   LUT as Shift Register  |     0.002 |      342 |    600960 |            0.06 |
 |   Register               |     0.002 |     7974 |   2607360 |            0.31 |
 |   LUT as Distributed RAM |    <0.001 |       32 |    600960 |           <0.01 |
 |   CARRY8                 |    <0.001 |      100 |    162960 |            0.06 |
 |   Others                 |     0.000 |     1070 |       --- |             --- |
-|   F7/F8 Muxes            |     0.000 |      533 |   1303680 |            0.04 |
-| Signals                  |     0.063 |    14603 |       --- |             --- |
-| Block RAM                |     0.089 |    261.5 |      2016 |           12.97 |
+|   F7/F8 Muxes            |     0.000 |      556 |   1303680 |            0.04 |
+| Signals                  |     0.063 |    14568 |       --- |             --- |
+| Block RAM                |     0.090 |    261.5 |      2016 |           12.97 |
 | MMCM                     |     0.097 |        0 |       --- |             --- |
 | I/O                      |     0.005 |        4 |       624 |            0.64 |
 | Static Power             |     3.136 |          |           |                 |
-| Total                    |     3.452 |          |           |                 |
+| Total                    |     3.453 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -161,8 +161,8 @@ Table of Contents
 |       U0                 |     0.001 |
 |     free_list            |     0.021 |
 |       U0                 |     0.021 |
-|     heap_entries         |     0.027 |
-|       U0                 |     0.027 |
+|     heap_entries         |     0.026 |
+|       U0                 |     0.026 |
 |     ila_2                |     0.008 |
 |       inst               |     0.008 |
 |     next_pointers        |     0.026 |
