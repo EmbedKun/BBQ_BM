@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../hardware.gen/sources_1/ip/blk_mem_gen_2/sim/blk_mem_gen_2.v" \
+"../../../../hardware.gen/sources_1/ip/blk_mem_gen_1/sim/blk_mem_gen_1.v" \
+"../../../../hardware.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
+"../../../../hardware.gen/sources_1/ip/fifo_generator_0/sim/fifo_generator_0.v" \
+
+sv xil_defaultlib  \
+"../../../../hardware.srcs/sources_1/new/heap_ops.sv" \
+"../../../../hardware.srcs/sources_1/new/bbq.sv" \
+"../../../../hardware.srcs/sources_1/new/ffs.sv" \
+"../../../../hardware.srcs/sim_1/new/tb_bbq.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

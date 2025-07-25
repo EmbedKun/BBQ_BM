@@ -1,0 +1,48 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab -wto 445a34cfabd24911bf3c5c1bb1f41b89 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L secureip --snapshot tb_bbq_func_synth xil_defaultlib.tb_bbq xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3815] value of parameter 'P' cannot contain a hierarchical identifier [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sim_1/new/tb_bbq.sv:36]
+WARNING: [VRFC 10-3815] value of parameter 'HEAP_NUM_LEVELS' cannot contain a hierarchical identifier [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sim_1/new/tb_bbq.sv:37]
+WARNING: [VRFC 10-8278] $error : FAIL: No test case specified [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sim_1/new/tb_bbq.sv:101]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 64 for port 'din' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1501]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 64 for port 'dout' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1506]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 64 for port 'dina' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1526]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 64 for port 'doutb' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1530]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 64 for port 'dina' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1538]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 64 for port 'doutb' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1542]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 64 for port 'dina' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1550]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 7 for port 'addrb' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1552]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 7 for port 'addra' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1553]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 64 for port 'doutb' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1554]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 64 for port 'dina' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1562]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 7 for port 'addrb' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1564]
+WARNING: [VRFC 10-3091] actual bit length 10 differs from formal bit length 7 for port 'addra' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1565]
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 64 for port 'doutb' [/home/pnic/mkxue/Clone/BBQ/hardware/bbq-xilinx/hardware/hardware.srcs/sources_1/new/bbq.sv:1566]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.heap_ops
+Compiling module unisims_ver.GND
+Compiling module unisims_ver.x_lut2_mux4
+Compiling module unisims_ver.LUT2
+Compiling module unisims_ver.FDRE_default
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.LUT4
+Compiling module unisims_ver.LUT5
+Compiling module unisims_ver.LUT6
+Compiling module unisims_ver.RAMB36E2(CLOCK_DOMAINS="COMMON",...
+Compiling module xil_defaultlib.fifo_generator_0
+Compiling module unisims_ver.RAMB36E2(CLOCK_DOMAINS="COMMON",...
+Compiling module xil_defaultlib.blk_mem_gen_0
+Compiling module xil_defaultlib.ffs(WIDTH_LOG=5)
+Compiling module xil_defaultlib.bbq(HEAP_BITMAP_WIDTH=32,HEAP_EN...
+Compiling module xil_defaultlib.tb_bbq
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_bbq_func_synth

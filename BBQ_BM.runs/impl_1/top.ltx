@@ -1,0 +1,634 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "100000000"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "bbq_inst/ila_2",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "A988952E82DC5975930B225B5341B198",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 16,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "bbq_inst/counter",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "bbq_inst/counter[16]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[15]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[14]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[13]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[12]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[11]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[10]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[9]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[8]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[7]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[6]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[5]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[4]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[3]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[2]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[1]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "bbq_inst/counter_l2_wraddress_counter_r",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[9]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[8]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[7]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[6]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[5]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[4]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[3]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[2]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[1]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/counter_l2_wraddress_counter_r[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "bbq_inst/state_next",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "bbq_inst/state_next[1]"
+                                            },
+                                            {
+                                                "name": "bbq_inst/state_next[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "bbq_inst/fl_init_done_r",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "bbq_inst/counter_l2_init_done_r",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "ila_1",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 1,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "F2004AACE0D55AD4BBBE5BB6F57469B9",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "init_done",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 63,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "counter",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "counter[63]"
+                                            },
+                                            {
+                                                "name": "counter[62]"
+                                            },
+                                            {
+                                                "name": "counter[61]"
+                                            },
+                                            {
+                                                "name": "counter[60]"
+                                            },
+                                            {
+                                                "name": "counter[59]"
+                                            },
+                                            {
+                                                "name": "counter[58]"
+                                            },
+                                            {
+                                                "name": "counter[57]"
+                                            },
+                                            {
+                                                "name": "counter[56]"
+                                            },
+                                            {
+                                                "name": "counter[55]"
+                                            },
+                                            {
+                                                "name": "counter[54]"
+                                            },
+                                            {
+                                                "name": "counter[53]"
+                                            },
+                                            {
+                                                "name": "counter[52]"
+                                            },
+                                            {
+                                                "name": "counter[51]"
+                                            },
+                                            {
+                                                "name": "counter[50]"
+                                            },
+                                            {
+                                                "name": "counter[49]"
+                                            },
+                                            {
+                                                "name": "counter[48]"
+                                            },
+                                            {
+                                                "name": "counter[47]"
+                                            },
+                                            {
+                                                "name": "counter[46]"
+                                            },
+                                            {
+                                                "name": "counter[45]"
+                                            },
+                                            {
+                                                "name": "counter[44]"
+                                            },
+                                            {
+                                                "name": "counter[43]"
+                                            },
+                                            {
+                                                "name": "counter[42]"
+                                            },
+                                            {
+                                                "name": "counter[41]"
+                                            },
+                                            {
+                                                "name": "counter[40]"
+                                            },
+                                            {
+                                                "name": "counter[39]"
+                                            },
+                                            {
+                                                "name": "counter[38]"
+                                            },
+                                            {
+                                                "name": "counter[37]"
+                                            },
+                                            {
+                                                "name": "counter[36]"
+                                            },
+                                            {
+                                                "name": "counter[35]"
+                                            },
+                                            {
+                                                "name": "counter[34]"
+                                            },
+                                            {
+                                                "name": "counter[33]"
+                                            },
+                                            {
+                                                "name": "counter[32]"
+                                            },
+                                            {
+                                                "name": "counter[31]"
+                                            },
+                                            {
+                                                "name": "counter[30]"
+                                            },
+                                            {
+                                                "name": "counter[29]"
+                                            },
+                                            {
+                                                "name": "counter[28]"
+                                            },
+                                            {
+                                                "name": "counter[27]"
+                                            },
+                                            {
+                                                "name": "counter[26]"
+                                            },
+                                            {
+                                                "name": "counter[25]"
+                                            },
+                                            {
+                                                "name": "counter[24]"
+                                            },
+                                            {
+                                                "name": "counter[23]"
+                                            },
+                                            {
+                                                "name": "counter[22]"
+                                            },
+                                            {
+                                                "name": "counter[21]"
+                                            },
+                                            {
+                                                "name": "counter[20]"
+                                            },
+                                            {
+                                                "name": "counter[19]"
+                                            },
+                                            {
+                                                "name": "counter[18]"
+                                            },
+                                            {
+                                                "name": "counter[17]"
+                                            },
+                                            {
+                                                "name": "counter[16]"
+                                            },
+                                            {
+                                                "name": "counter[15]"
+                                            },
+                                            {
+                                                "name": "counter[14]"
+                                            },
+                                            {
+                                                "name": "counter[13]"
+                                            },
+                                            {
+                                                "name": "counter[12]"
+                                            },
+                                            {
+                                                "name": "counter[11]"
+                                            },
+                                            {
+                                                "name": "counter[10]"
+                                            },
+                                            {
+                                                "name": "counter[9]"
+                                            },
+                                            {
+                                                "name": "counter[8]"
+                                            },
+                                            {
+                                                "name": "counter[7]"
+                                            },
+                                            {
+                                                "name": "counter[6]"
+                                            },
+                                            {
+                                                "name": "counter[5]"
+                                            },
+                                            {
+                                                "name": "counter[4]"
+                                            },
+                                            {
+                                                "name": "counter[3]"
+                                            },
+                                            {
+                                                "name": "counter[2]"
+                                            },
+                                            {
+                                                "name": "counter[1]"
+                                            },
+                                            {
+                                                "name": "counter[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "nolabel_line114",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 2,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "D180AE86A9615946A237DEC07CF58A6D",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "heap_out_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 1,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "heap_out_op_type",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "heap_out_op_type[1]"
+                                            },
+                                            {
+                                                "name": "heap_out_op_type[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 16,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "heap_out_he_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "heap_out_he_data[16]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[15]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[14]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[13]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[12]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[11]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[10]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[9]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[8]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[7]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[6]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[5]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[4]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[3]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[2]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[1]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 9,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "heap_out_he_priority",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "heap_out_he_priority[9]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[8]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[7]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[6]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[5]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[4]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[3]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[2]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[1]"
+                                            },
+                                            {
+                                                "name": "heap_out_he_priority[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "locked",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
