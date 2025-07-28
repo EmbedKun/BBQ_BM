@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Jul 25 15:47:27 2025
+| Date         : Mon Jul 28 09:44:44 2025
 | Host         : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,17 +23,30 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 7
-+-----------+----------+--------------------------------------------------------+------------+
-| Rule      | Severity | Description                                            | Violations |
-+-----------+----------+--------------------------------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert                           | 5          |
-| TIMING-18 | Warning  | Missing input or output delay                          | 1          |
-| XDCC-7    | Warning  | Scoped Clock constraint overwritten on the same source | 1          |
-+-----------+----------+--------------------------------------------------------+------------+
+             Violations found: 10
++-----------+------------------+--------------------------------------------------------+------------+
+| Rule      | Severity         | Description                                            | Violations |
++-----------+------------------+--------------------------------------------------------+------------+
+| TIMING-2  | Critical Warning | Invalid primary clock source pin                       | 1          |
+| TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree     | 1          |
+| LUTAR-1   | Warning          | LUT drives async reset alert                           | 5          |
+| TIMING-18 | Warning          | Missing input or output delay                          | 1          |
+| XDCC-7    | Warning          | Scoped Clock constraint overwritten on the same source | 1          |
+| CLKC-5    | Advisory         | BUFGCE with constant CE has BUFG driver                | 1          |
++-----------+------------------+--------------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
+TIMING-2#1 Critical Warning
+Invalid primary clock source pin  
+A primary clock hbm_0/inst/HBM_REF_CLK_0 is created on an inappropriate pin hbm_0/inst/HBM_REF_CLK_0. It is recommended to create a primary clock only on a proper clock source (input port or primitive output pin with no timing arc)
+Related violations: <none>
+
+TIMING-4#1 Critical Warning
+Invalid primary clock redefinition on a clock tree  
+Invalid clock redefinition on a clock tree. The primary clock hbm_0/inst/HBM_REF_CLK_0 is defined downstream of clock hbm_ref_clk_wiz_0_1 and overrides its insertion delay and/or waveform definition
+Related violations: <none>
+
 LUTAR-1#1 Warning
 LUT drives async reset alert  
 LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gwrrd_rst_sync_stage[2].rrst_inst/ngwrdrst.grst.g7serrst.rd_rst_reg[2]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.rd_rst_reg_reg[0]/PRE,
@@ -84,8 +97,13 @@ Related violations: <none>
 XDCC-7#1 Warning
 Scoped Clock constraint overwritten on the same source  
 A new clock constraint create_clock overrides a previous scoped clock constraint defined on the same source. It is not recommended to override a scoped (typically an IP) clock constraint and could result in unexpected behaviors.
-New: create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p] (Source: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc (Line: 8))
-Previous: create_clock -period 10.000 [get_ports sys_clk_p] (Source: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc (Line: 56))
+New: create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p] (Source: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc (Line: 8))
+Previous: create_clock -period 10.000 [get_ports sys_clk_p] (Source: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc (Line: 56))
+Related violations: <none>
+
+CLKC-5#1 Advisory
+BUFGCE with constant CE has BUFG driver  
+The BUFGCE cell hbm_0/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 hbm_0/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0/I pin (and CE pin not ACTIVE) is driven by BUFGCE clock buffer clk_wiz_inst/inst/clkout2_buf. This may be an unnecessary use of multiple clocking resources and should be reviewed. Cascaded buffers introduce skew that can lead to difficult or impossible timing closure.
 Related violations: <none>
 
 

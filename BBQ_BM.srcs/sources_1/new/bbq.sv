@@ -373,15 +373,6 @@ assign out_op_type = reg_op_type_s[NUM_PIPELINE_STAGES-1];
 assign out_he_data = reg_he_data_s[NUM_PIPELINE_STAGES-1];
 assign out_he_priority = reg_priority_s[NUM_PIPELINE_STAGES-1];
 
-ila_2 ila_2(
-    .clk(clk),
-    .probe0(counter),
-    .probe1(counter_l2_wraddress_counter_r),
-    .probe2(state_next),
-    .probe3(fl_init_done_r),
-    .probe4(counter_l2_init_done_r)
-);
-
 /**
  * State-dependent signals (data, wraddress, and wren) for the
  * FL, priority buckets and SRAM-based LX bitmaps and counters.

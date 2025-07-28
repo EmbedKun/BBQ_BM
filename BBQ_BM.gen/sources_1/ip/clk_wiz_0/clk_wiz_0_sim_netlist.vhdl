@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Fri Jul 25 13:36:33 2025
--- Host        : FNIL-PNIC-1 running 64-bit Ubuntu 22.04.5 LTS
+-- Date        : Mon Jul 28 09:11:42 2025
+-- Host        : gabber running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim
---               /home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
+--               /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_sim_netlist.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -17,6 +17,9 @@ use UNISIM.VCOMPONENTS.ALL;
 entity clk_wiz_0_clk_wiz_0_clk_wiz is
   port (
     bbq_clk : out STD_LOGIC;
+    hbm_ref : out STD_LOGIC;
+    axi_clk : out STD_LOGIC;
+    apb_clk : out STD_LOGIC;
     resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1_p : in STD_LOGIC;
@@ -27,8 +30,11 @@ entity clk_wiz_0_clk_wiz_0_clk_wiz is
 end clk_wiz_0_clk_wiz_0_clk_wiz;
 
 architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
+  signal apb_clk_clk_wiz_0 : STD_LOGIC;
+  signal axi_clk_clk_wiz_0 : STD_LOGIC;
   signal bbq_clk_clk_wiz_0 : STD_LOGIC;
   signal clk_in1_clk_wiz_0 : STD_LOGIC;
+  signal hbm_ref_clk_wiz_0 : STD_LOGIC;
   signal reset_high : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CDDCDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKFBIN_UNCONNECTED : STD_LOGIC;
@@ -37,11 +43,8 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   signal NLW_mmcme4_adv_inst_CLKFBSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKINSTOPPED_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKOUT0B_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcme4_adv_inst_CLKOUT1_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKOUT1B_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcme4_adv_inst_CLKOUT2_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKOUT2B_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcme4_adv_inst_CLKOUT3_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKOUT3B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKOUT4_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcme4_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
@@ -60,6 +63,12 @@ architecture STRUCTURE of clk_wiz_0_clk_wiz_0_clk_wiz is
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of clkout1_buf : label is "BUFG";
+  attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
+  attribute XILINX_LEGACY_PRIM of clkout2_buf : label is "BUFG";
+  attribute BOX_TYPE of clkout3_buf : label is "PRIMITIVE";
+  attribute XILINX_LEGACY_PRIM of clkout3_buf : label is "BUFG";
+  attribute BOX_TYPE of clkout4_buf : label is "PRIMITIVE";
+  attribute XILINX_LEGACY_PRIM of clkout4_buf : label is "BUFG";
   attribute BOX_TYPE of mmcme4_adv_inst : label is "PRIMITIVE";
   attribute OPT_MODIFIED : string;
   attribute OPT_MODIFIED of mmcme4_adv_inst : label is "MLO";
@@ -84,6 +93,36 @@ clkout1_buf: unisim.vcomponents.BUFGCE
       I => bbq_clk_clk_wiz_0,
       O => bbq_clk
     );
+clkout2_buf: unisim.vcomponents.BUFGCE
+    generic map(
+      CE_TYPE => "ASYNC",
+      SIM_DEVICE => "ULTRASCALE_PLUS"
+    )
+        port map (
+      CE => '1',
+      I => hbm_ref_clk_wiz_0,
+      O => hbm_ref
+    );
+clkout3_buf: unisim.vcomponents.BUFGCE
+    generic map(
+      CE_TYPE => "ASYNC",
+      SIM_DEVICE => "ULTRASCALE_PLUS"
+    )
+        port map (
+      CE => '1',
+      I => axi_clk_clk_wiz_0,
+      O => axi_clk
+    );
+clkout4_buf: unisim.vcomponents.BUFGCE
+    generic map(
+      CE_TYPE => "ASYNC",
+      SIM_DEVICE => "ULTRASCALE_PLUS"
+    )
+        port map (
+      CE => '1',
+      I => apb_clk_clk_wiz_0,
+      O => apb_clk
+    );
 mmcme4_adv_inst: unisim.vcomponents.MMCME4_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
@@ -96,15 +135,15 @@ mmcme4_adv_inst: unisim.vcomponents.MMCME4_ADV
       CLKOUT0_DUTY_CYCLE => 0.500000,
       CLKOUT0_PHASE => 0.000000,
       CLKOUT0_USE_FINE_PS => "FALSE",
-      CLKOUT1_DIVIDE => 1,
+      CLKOUT1_DIVIDE => 12,
       CLKOUT1_DUTY_CYCLE => 0.500000,
       CLKOUT1_PHASE => 0.000000,
       CLKOUT1_USE_FINE_PS => "FALSE",
-      CLKOUT2_DIVIDE => 1,
+      CLKOUT2_DIVIDE => 12,
       CLKOUT2_DUTY_CYCLE => 0.500000,
       CLKOUT2_PHASE => 0.000000,
       CLKOUT2_USE_FINE_PS => "FALSE",
-      CLKOUT3_DIVIDE => 1,
+      CLKOUT3_DIVIDE => 12,
       CLKOUT3_DUTY_CYCLE => 0.500000,
       CLKOUT3_PHASE => 0.000000,
       CLKOUT3_USE_FINE_PS => "FALSE",
@@ -151,11 +190,11 @@ mmcme4_adv_inst: unisim.vcomponents.MMCME4_ADV
       CLKINSTOPPED => NLW_mmcme4_adv_inst_CLKINSTOPPED_UNCONNECTED,
       CLKOUT0 => bbq_clk_clk_wiz_0,
       CLKOUT0B => NLW_mmcme4_adv_inst_CLKOUT0B_UNCONNECTED,
-      CLKOUT1 => NLW_mmcme4_adv_inst_CLKOUT1_UNCONNECTED,
+      CLKOUT1 => hbm_ref_clk_wiz_0,
       CLKOUT1B => NLW_mmcme4_adv_inst_CLKOUT1B_UNCONNECTED,
-      CLKOUT2 => NLW_mmcme4_adv_inst_CLKOUT2_UNCONNECTED,
+      CLKOUT2 => axi_clk_clk_wiz_0,
       CLKOUT2B => NLW_mmcme4_adv_inst_CLKOUT2B_UNCONNECTED,
-      CLKOUT3 => NLW_mmcme4_adv_inst_CLKOUT3_UNCONNECTED,
+      CLKOUT3 => apb_clk_clk_wiz_0,
       CLKOUT3B => NLW_mmcme4_adv_inst_CLKOUT3B_UNCONNECTED,
       CLKOUT4 => NLW_mmcme4_adv_inst_CLKOUT4_UNCONNECTED,
       CLKOUT5 => NLW_mmcme4_adv_inst_CLKOUT5_UNCONNECTED,
@@ -191,6 +230,9 @@ use UNISIM.VCOMPONENTS.ALL;
 entity clk_wiz_0 is
   port (
     bbq_clk : out STD_LOGIC;
+    hbm_ref : out STD_LOGIC;
+    axi_clk : out STD_LOGIC;
+    apb_clk : out STD_LOGIC;
     resetn : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1_p : in STD_LOGIC;
@@ -204,9 +246,12 @@ architecture STRUCTURE of clk_wiz_0 is
 begin
 inst: entity work.clk_wiz_0_clk_wiz_0_clk_wiz
      port map (
+      apb_clk => apb_clk,
+      axi_clk => axi_clk,
       bbq_clk => bbq_clk,
       clk_in1_n => clk_in1_n,
       clk_in1_p => clk_in1_p,
+      hbm_ref => hbm_ref,
       locked => locked,
       resetn => resetn
     );

@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1'
+HD_PWD='/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

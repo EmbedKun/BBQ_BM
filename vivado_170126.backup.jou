@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sun Jul 27 20:27:51 2025
+# Process ID: 170126
+# Current directory: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM
+# Command line: vivado BBQ_BM.xpr
+# Log file: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/vivado.log
+# Journal file: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/vivado.jou
+# Running On: gabber, OS: Linux, CPU Frequency: 2500.000 MHz, CPU Physical cores: 8, Host memory: 67177 MB
+#-----------------------------------------------------------
+start_gui

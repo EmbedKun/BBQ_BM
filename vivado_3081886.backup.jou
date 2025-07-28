@@ -1,0 +1,393 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Jul 25 15:29:30 2025
+# Process ID: 3081886
+# Current directory: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM
+# Command line: vivado BBQ_BM.xpr
+# Log file: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/vivado.log
+# Journal file: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project BBQ_BM.xpr
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+current_hw_device [get_hw_devices xcu280_u55c_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xcu280_u55c_0] 0]
+set_property PROBES.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.ltx} [get_hw_devices xcu280_u55c_0]
+set_property FULL_PROBES.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.ltx} [get_hw_devices xcu280_u55c_0]
+set_property PROGRAM.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.bit} [get_hw_devices xcu280_u55c_0]
+program_hw_devices [get_hw_devices xcu280_u55c_0]
+refresh_hw_device [lindex [get_hw_devices xcu280_u55c_0] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_2 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_3 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+save_wave_config {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+save_wave_config {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wcfg}
+save_wave_config {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_3/hw_ila_data_3.wcfg}
+close_hw_manager
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.bit} [get_hw_devices xcu280_u55c_0]
+set_property PROBES.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.ltx} [get_hw_devices xcu280_u55c_0]
+set_property FULL_PROBES.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.ltx} [get_hw_devices xcu280_u55c_0]
+current_hw_device [get_hw_devices xcu280_u55c_0]
+refresh_hw_device [lindex [get_hw_devices xcu280_u55c_0] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_2 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_3 -of_objects [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+set_property PROBES.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.ltx} [get_hw_devices xcu280_u55c_0]
+set_property FULL_PROBES.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.ltx} [get_hw_devices xcu280_u55c_0]
+set_property PROGRAM.FILE {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/impl_1/top.bit} [get_hw_devices xcu280_u55c_0]
+program_hw_devices [get_hw_devices xcu280_u55c_0]
+refresh_hw_device [lindex [get_hw_devices xcu280_u55c_0] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"bbq_inst/ila_2"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+   [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]\
+  [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"ila_1"}]]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xcu280_u55c_0] -filter {CELL_NAME=~"nolabel_line114"}]]
+save_wave_config {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+save_wave_config {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wcfg}
+save_wave_config {/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_3/hw_ila_data_3.wcfg}
+close_hw_manager

@@ -1,0 +1,18 @@
+sv xil_defaultlib --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/hdl/rtl" --include "../../../ipstatic/verif/model" --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/xsdb" \
+"../../../../BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/xsdb_top.v" \
+"../../../../BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/xsdb2apb.v" \
+"../../../../BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/hbm_v1_0_chipscope_xsdb_slave.sv" \
+"../../../../BBQ_BM.gen/sources_1/ip/hbm_0/hdl/rtl/hbm_v1_0_9.sv" \
+
+sv hbm_v1_0_9 --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/hdl/rtl" --include "../../../ipstatic/verif/model" --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/xsdb" \
+"../../../ipstatic/hdl/hbm_v1_0_vl_rfs.sv" \
+
+sv xil_defaultlib --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/hdl/rtl" --include "../../../ipstatic/verif/model" --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/xsdb" \
+"../../../../BBQ_BM.gen/sources_1/ip/hbm_0/verif/model/hbm_model.sv" \
+
+verilog xil_defaultlib --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/hdl/rtl" --include "../../../ipstatic/verif/model" --include "../../../../BBQ_BM.gen/sources_1/ip/hbm_0/xsdb" \
+"../../../../BBQ_BM.gen/sources_1/ip/hbm_0/sim/hbm_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

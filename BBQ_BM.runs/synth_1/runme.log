@@ -16,11 +16,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcu280'
 INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3150297
+INFO: [Synth 8-7075] Helper process launched with PID 236096
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3222.523 ; gain = 173.688 ; free physical = 22054 ; free virtual = 53712
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3228.559 ; gain = 173.719 ; free physical = 18026 ; free virtual = 53497
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:21]
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:21]
 	Parameter NB_LEVELS bound to: 2 - type: integer 
 	Parameter HEAP_BITMAP_WIDTH bound to: 32 - type: integer 
 	Parameter HEAP_ENTRY_DWIDTH bound to: 17 - type: integer 
@@ -30,15 +30,12 @@ INFO: [Synth 8-6157] synthesizing module 'top' [/home/gabber/FUDAN/workspace/BBQ
 	Parameter HEAP_ENTRY_AWIDTH bound to: 17 - type: integer 
 	Parameter HEAP_PRIORITY_AWIDTH bound to: 10 - type: integer 
 	Parameter HEAP_PRIORITY_BUCKETS_AWIDTH bound to: 10 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/clk_wiz_0_stub.v:5]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:78]
-INFO: [Synth 8-6157] synthesizing module 'ila_1' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/ila_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_1' (2#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/ila_1_stub.v:6]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:114]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (3#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'bbq' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/clk_wiz_0_stub.v:5]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:114]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (2#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'bbq' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:32]
 	Parameter HEAP_BITMAP_WIDTH bound to: 32 - type: integer 
 	Parameter HEAP_ENTRY_DWIDTH bound to: 17 - type: integer 
 	Parameter HEAP_MAX_NUM_ENTRIES bound to: 131071 - type: integer 
@@ -61,87 +58,88 @@ INFO: [Synth 8-6157] synthesizing module 'bbq' [/home/gabber/FUDAN/workspace/BBQ
 	Parameter LIST_T_WIDTH bound to: 34 - type: integer 
 	Parameter BITMAP_IDX_MASK bound to: 31 - type: integer 
 	Parameter HEAP_LOG_BITMAP_WIDTH bound to: 5 - type: integer 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:376]
-INFO: [Synth 8-6157] synthesizing module 'ila_2' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_2' (4#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/ila_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'fifo_generator_0' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/fifo_generator_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_0' (5#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/fifo_generator_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (6#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_1' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/blk_mem_gen_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_1' (7#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/blk_mem_gen_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_2' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/blk_mem_gen_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_2' (8#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-3150267-gabber/realtime/blk_mem_gen_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'ffs' [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv:25]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_0' (3#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (4#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_1' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_1' (5#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_2' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/blk_mem_gen_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_2' (6#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/blk_mem_gen_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ffs' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv:25]
 	Parameter WIDTH_LOG bound to: 5 - type: integer 
 	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ffs' (9#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv:25]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_2'. This will prevent further optimization [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:376]
-INFO: [Synth 8-6155] done synthesizing module 'bbq' (10#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:32]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'clk_wiz_inst'. This will prevent further optimization [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:36]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'nolabel_line114'. This will prevent further optimization [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:114]
-INFO: [Synth 8-6155] done synthesizing module 'top' (11#1) [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:21]
+INFO: [Synth 8-6155] done synthesizing module 'ffs' (7#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'bbq' (8#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/hbm_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hbm_0' (9#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-236070-gabber/realtime/hbm_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'apb_complete_0' of module 'hbm_0' is unconnected for instance 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:201]
+WARNING: [Synth 8-7071] port 'DRAM_0_STAT_CATTRIP' of module 'hbm_0' is unconnected for instance 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:201]
+WARNING: [Synth 8-7071] port 'DRAM_0_STAT_TEMP' of module 'hbm_0' is unconnected for instance 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:201]
+WARNING: [Synth 8-7023] instance 'hbm_0' of module 'hbm_0' has 47 connections declared, but only 44 given [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:201]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'clk_wiz_inst'. This will prevent further optimization [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:39]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'hbm_0'. This will prevent further optimization [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:201]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'nolabel_line114'. This will prevent further optimization [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:114]
+INFO: [Synth 8-6155] done synthesizing module 'top' (10#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3297.430 ; gain = 248.594 ; free physical = 22718 ; free virtual = 54377
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3304.465 ; gain = 249.625 ; free physical = 18741 ; free virtual = 54212
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3313.273 ; gain = 264.438 ; free physical = 22783 ; free virtual = 54442
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3319.309 ; gain = 264.469 ; free physical = 18784 ; free virtual = 54256
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3313.273 ; gain = 264.438 ; free physical = 22783 ; free virtual = 54442
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3319.309 ; gain = 264.469 ; free physical = 18784 ; free virtual = 54256
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3329.211 ; gain = 0.000 ; free physical = 22777 ; free virtual = 54436
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3334.246 ; gain = 0.000 ; free physical = 18774 ; free virtual = 54246
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'bbq_inst/priority_buckets'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'bbq_inst/priority_buckets'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/heap_entries'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/heap_entries'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/next_pointers'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/next_pointers'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/previous_pointers'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/previous_pointers'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'bbq_inst/free_list'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'bbq_inst/free_list'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2/blk_mem_gen_2_in_context.xdc] for cell 'bbq_inst/counters_l2'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2/blk_mem_gen_2_in_context.xdc] for cell 'bbq_inst/counters_l2'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_1/ila_1_in_context.xdc] for cell 'ila_1'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_1/ila_1_in_context.xdc] for cell 'ila_1'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'bbq_inst/ila_2'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_2/ila_2/ila_2_in_context.xdc] for cell 'bbq_inst/ila_2'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_inst'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_inst'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'nolabel_line114'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'nolabel_line114'
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc]
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'bbq_inst/priority_buckets'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1/blk_mem_gen_1_in_context.xdc] for cell 'bbq_inst/priority_buckets'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/heap_entries'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/heap_entries'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/next_pointers'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/next_pointers'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/previous_pointers'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0/blk_mem_gen_0_in_context.xdc] for cell 'bbq_inst/previous_pointers'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'bbq_inst/free_list'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0/fifo_generator_0_in_context.xdc] for cell 'bbq_inst/free_list'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2/blk_mem_gen_2_in_context.xdc] for cell 'bbq_inst/counters_l2'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2/blk_mem_gen_2_in_context.xdc] for cell 'bbq_inst/counters_l2'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_inst'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_inst'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'nolabel_line114'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'nolabel_line114'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hbm_0/hbm_0_in_context.xdc] for cell 'hbm_0'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hbm_0/hbm_0_in_context.xdc] for cell 'hbm_0'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc]
 CRITICAL WARNING: [Constraints 18-1056] Clock 'sys_clk' completely overrides clock 'sys_clk_p'.
-New: create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p], [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc:8]
-Previous: create_clock -period 10.000 [get_ports sys_clk_p], [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:1]
+New: create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p], [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc:8]
+Previous: create_clock -period 10.000 [get_ports sys_clk_p], [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:1]
 Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/dont_touch.xdc]
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3515.773 ; gain = 0.000 ; free physical = 22646 ; free virtual = 54305
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3525.777 ; gain = 0.000 ; free physical = 18642 ; free virtual = 54114
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3515.773 ; gain = 0.000 ; free physical = 22646 ; free virtual = 54305
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3525.777 ; gain = 0.000 ; free physical = 18642 ; free virtual = 54114
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/counters_l2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/heap_entries' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/next_pointers' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/previous_pointers' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/priority_buckets' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3518.742 ; gain = 469.906 ; free physical = 22764 ; free virtual = 54424
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3525.777 ; gain = 470.938 ; free physical = 18756 ; free virtual = 54227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -149,31 +147,30 @@ Start Loading Part and Timing Information
 Loading part: xcu280-fsvh2892-2L-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3518.742 ; gain = 469.906 ; free physical = 22764 ; free virtual = 54424
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 3525.777 ; gain = 470.938 ; free physical = 18756 ; free virtual = 54227
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for sys_clk_n. (constraint file  /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk_n. (constraint file  /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
-Applied set_property IO_BUFFER_TYPE = NONE for sys_clk_p. (constraint file  /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk_p. (constraint file  /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk_n. (constraint file  /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk_n. (constraint file  /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clk_p. (constraint file  /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clk_p. (constraint file  /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 9).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/priority_buckets. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/heap_entries. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/next_pointers. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/previous_pointers. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/free_list. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/counters_l2. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for ila_1. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/ila_2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz_inst. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line114. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for hbm_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 3518.742 ; gain = 469.906 ; free physical = 22764 ; free virtual = 54424
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 3525.777 ; gain = 470.938 ; free physical = 18756 ; free virtual = 54227
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bbq'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3518.742 ; gain = 469.906 ; free physical = 22749 ; free virtual = 54410
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3525.777 ; gain = 470.938 ; free physical = 18740 ; free virtual = 54213
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -194,7 +191,7 @@ Detailed RTL Component Info :
 	               34 Bit    Registers := 1     
 	               32 Bit    Registers := 48    
 	               18 Bit    Registers := 41    
-	               17 Bit    Registers := 46    
+	               17 Bit    Registers := 45    
 	               10 Bit    Registers := 14    
 	                5 Bit    Registers := 13    
 	                2 Bit    Registers := 13    
@@ -229,25 +226,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 3518.742 ; gain = 469.906 ; free physical = 22707 ; free virtual = 54377
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 3525.777 ; gain = 470.938 ; free physical = 18693 ; free virtual = 54176
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 3794.180 ; gain = 745.344 ; free physical = 22218 ; free virtual = 53888
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:34 . Memory (MB): peak = 3809.801 ; gain = 754.961 ; free physical = 18205 ; free virtual = 53688
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22142 ; free virtual = 53812
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:38 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18137 ; free virtual = 53620
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22141 ; free virtual = 53811
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18134 ; free virtual = 53617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -366,37 +363,37 @@ WARNING: [Synth 8-3295] tying undriven pin bbq_inst/reg_l2_bitmap_s[0]_inferred:
 WARNING: [Synth 8-3295] tying undriven pin bbq_inst/reg_l2_bitmap_s[0]_inferred:in0[18] to constant 0
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22126 ; free virtual = 53796
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18134 ; free virtual = 53616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22126 ; free virtual = 53796
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18134 ; free virtual = 53616
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22126 ; free virtual = 53796
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18135 ; free virtual = 53618
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22126 ; free virtual = 53796
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18135 ; free virtual = 53618
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22126 ; free virtual = 53796
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18135 ; free virtual = 53618
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22126 ; free virtual = 53796
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18135 ; free virtual = 53618
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -407,13 +404,12 @@ Report BlackBoxes:
 |      |BlackBox name    |Instances |
 +------+-----------------+----------+
 |1     |clk_wiz_0        |         1|
-|2     |ila_1            |         1|
-|3     |ila_0            |         1|
-|4     |ila_2            |         1|
-|5     |fifo_generator_0 |         1|
-|6     |blk_mem_gen_0    |         3|
-|7     |blk_mem_gen_1    |         1|
-|8     |blk_mem_gen_2    |         1|
+|2     |ila_0            |         1|
+|3     |hbm_0            |         1|
+|4     |fifo_generator_0 |         1|
+|5     |blk_mem_gen_0    |         3|
+|6     |blk_mem_gen_1    |         1|
+|7     |blk_mem_gen_2    |         1|
 +------+-----------------+----------+
 
 Report Cell Usage: 
@@ -425,46 +421,45 @@ Report Cell Usage:
 |4     |blk_mem_gen    |     2|
 |6     |clk_wiz        |     1|
 |7     |fifo_generator |     1|
-|8     |ila            |     3|
-|11    |CARRY8         |    38|
-|12    |LUT1           |   556|
-|13    |LUT2           |   265|
-|14    |LUT3           |   551|
-|15    |LUT4           |   282|
-|16    |LUT5           |   483|
-|17    |LUT6           |   934|
-|18    |MUXF7          |   197|
-|19    |MUXF8          |    62|
-|20    |FDRE           |  3551|
-|21    |FDSE           |     1|
-|22    |IBUF           |     1|
-|23    |OBUF           |     1|
+|8     |hbm            |     1|
+|9     |ila            |     1|
+|10    |CARRY8         |    38|
+|11    |LUT1           |  1036|
+|12    |LUT2           |   265|
+|13    |LUT3           |   551|
+|14    |LUT4           |   282|
+|15    |LUT5           |   483|
+|16    |LUT6           |   934|
+|17    |MUXF7          |   197|
+|18    |MUXF8          |    62|
+|19    |FDRE           |  3534|
+|20    |FDSE           |     1|
+|21    |IBUF           |     1|
+|22    |OBUF           |     1|
 +------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.688 ; gain = 891.852 ; free physical = 22126 ; free virtual = 53796
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3949.309 ; gain = 894.469 ; free physical = 18135 ; free virtual = 53618
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 118 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 3940.688 ; gain = 686.383 ; free physical = 22165 ; free virtual = 53835
-Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3940.695 ; gain = 891.852 ; free physical = 22165 ; free virtual = 53835
+Synthesis finished with 0 errors, 0 critical warnings and 464 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 3949.309 ; gain = 688.000 ; free physical = 18176 ; free virtual = 53659
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 3949.316 ; gain = 894.469 ; free physical = 18176 ; free virtual = 53659
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3940.695 ; gain = 0.000 ; free physical = 22254 ; free virtual = 53924
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3949.316 ; gain = 0.000 ; free physical = 18260 ; free virtual = 53743
 INFO: [Netlist 29-17] Analyzing 298 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'top' is not ideal for floorplanning, since the cellview 'bbq' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3975.672 ; gain = 0.000 ; free physical = 22166 ; free virtual = 53836
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3984.293 ; gain = 0.000 ; free physical = 18173 ; free virtual = 53656
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
 
 INFO: [Common 17-83] Releasing license: Synthesis
-43 Infos, 109 Warnings, 1 Critical Warnings and 0 Errors encountered.
+41 Infos, 111 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 3975.672 ; gain = 1609.219 ; free physical = 22331 ; free virtual = 54001
-INFO: [Common 17-600] The following parameters have non-default value.
-tcl.collectionResultDisplayLimit
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 3984.293 ; gain = 1617.836 ; free physical = 18339 ; free virtual = 53822
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-INFO: [Common 17-1381] The checkpoint '/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/top.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 25 15:43:59 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Jul 28 09:40:02 2025...

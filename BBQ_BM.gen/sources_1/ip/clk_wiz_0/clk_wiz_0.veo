@@ -56,6 +56,9 @@
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
 // _bbq_clk__100.00000______0.000______50.0______115.831_____87.180
+// _hbm_ref__100.00000______0.000______50.0______115.831_____87.180
+// _axi_clk__100.00000______0.000______50.0______115.831_____87.180
+// _apb_clk__100.00000______0.000______50.0______115.831_____87.180
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -72,6 +75,9 @@
    (
     // Clock out ports
     .bbq_clk(bbq_clk),     // output bbq_clk
+    .hbm_ref(hbm_ref),     // output hbm_ref
+    .axi_clk(axi_clk),     // output axi_clk
+    .apb_clk(apb_clk),     // output apb_clk
     // Status and control signals
     .resetn(resetn), // input resetn
     .locked(locked),       // output locked

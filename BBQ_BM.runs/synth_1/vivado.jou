@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Jul 25 15:42:59 2025
-# Process ID: 3150267
-# Current directory: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1
+# Start of session at: Mon Jul 28 09:39:01 2025
+# Process ID: 236070
+# Current directory: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/top.vds
-# Journal file: /home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.runs/synth_1/vivado.jou
+# Log file: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/top.vds
+# Journal file: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

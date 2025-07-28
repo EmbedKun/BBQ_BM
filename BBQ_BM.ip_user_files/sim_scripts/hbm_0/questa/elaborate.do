@@ -1,0 +1,1 @@
+vopt -64 +acc=npr -l elaborate.log -L xilinx_vip -L xpm -L xil_defaultlib -L hbm_v1_0_9 -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.hbm_0 xil_defaultlib.glbl -o hbm_0_opt

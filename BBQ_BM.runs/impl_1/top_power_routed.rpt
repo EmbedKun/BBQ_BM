@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date             : Fri Jul 25 15:47:33 2025
+| Date             : Mon Jul 28 09:44:50 2025
 | Host             : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,16 +30,16 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 3.453        |
-|   FPGA Power (W)         | 3.212        |
-|   HBM Power (W)          | 0.241        |
+| Total On-Chip Power (W)  | 4.651        |
+|   FPGA Power (W)         | 3.817        |
+|   HBM Power (W)          | 0.834        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.316        |
-| Device Static (W)        | 3.136        |
+| Dynamic (W)              | 1.490        |
+| Device Static (W)        | 3.161        |
 | Effective TJA (C/W)      | 0.4          |
-| Max Ambient (C)          | 98.5         |
-| Junction Temperature (C) | 26.5         |
+| Max Ambient (C)          | 98.0         |
+| Junction Temperature (C) | 27.0         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -54,21 +54,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.034 |        5 |       --- |             --- |
-| CLB Logic                |     0.027 |    16789 |       --- |             --- |
-|   LUT as Logic           |     0.023 |     5594 |   1303680 |            0.43 |
-|   LUT as Shift Register  |     0.002 |      342 |    600960 |            0.06 |
-|   Register               |     0.002 |     7974 |   2607360 |            0.31 |
-|   LUT as Distributed RAM |    <0.001 |       32 |    600960 |           <0.01 |
-|   CARRY8                 |    <0.001 |      100 |    162960 |            0.06 |
-|   Others                 |     0.000 |     1070 |       --- |             --- |
-|   F7/F8 Muxes            |     0.000 |      556 |   1303680 |            0.04 |
-| Signals                  |     0.063 |    14568 |       --- |             --- |
-| Block RAM                |     0.090 |    261.5 |      2016 |           12.97 |
-| MMCM                     |     0.097 |        0 |       --- |             --- |
+| Clocks                   |     0.031 |        9 |       --- |             --- |
+| CLB Logic                |     0.026 |    13666 |       --- |             --- |
+|   LUT as Logic           |     0.023 |     5119 |   1303680 |            0.39 |
+|   Register               |     0.001 |     6067 |   2607360 |            0.23 |
+|   LUT as Shift Register  |     0.001 |      108 |    600960 |            0.02 |
+|   LUT as Distributed RAM |    <0.001 |       40 |    600960 |           <0.01 |
+|   CARRY8                 |    <0.001 |       77 |    162960 |            0.05 |
+|   Others                 |     0.000 |      823 |       --- |             --- |
+|   F7/F8 Muxes            |     0.000 |      533 |   1303680 |            0.04 |
+| Signals                  |     0.058 |    12117 |       --- |             --- |
+| Block RAM                |     0.088 |    260.5 |      2016 |           12.92 |
+| HBM                      |     1.183 |        1 |         2 |           50.00 |
+| MMCM                     |     0.099 |        0 |       --- |             --- |
 | I/O                      |     0.005 |        4 |       624 |            0.64 |
-| Static Power             |     3.136 |          |           |                 |
-| Total                    |     3.453 |          |           |                 |
+| Static Power             |     3.161 |          |           |                 |
+|   HBM Static             |     0.245 |          |           |                 |
+|   Device Static          |     2.916 |          |           |                 |
+| Total                    |     4.651 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,10 +81,10 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint     |       0.850 |     1.521 |       0.250 |      1.271 |       NA    | Unspecified | NA         |
-| Vccint_io  |       0.850 |     0.238 |       0.001 |      0.238 |       NA    | Unspecified | NA         |
-| Vccbram    |       0.850 |     0.032 |       0.002 |      0.030 |       NA    | Unspecified | NA         |
-| Vccaux     |       1.800 |     0.876 |       0.054 |      0.822 |       NA    | Unspecified | NA         |
+| Vccint     |       0.850 |     1.575 |       0.277 |      1.298 |       NA    | Unspecified | NA         |
+| Vccint_io  |       0.850 |     0.666 |       0.425 |      0.240 |       NA    | Unspecified | NA         |
+| Vccbram    |       0.850 |     0.032 |       0.001 |      0.031 |       NA    | Unspecified | NA         |
+| Vccaux     |       1.800 |     0.922 |       0.102 |      0.820 |       NA    | Unspecified | NA         |
 | Vccaux_io  |       1.800 |     0.037 |       0.002 |      0.035 |       NA    | Unspecified | NA         |
 | Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -91,9 +94,9 @@ Table of Contents
 | Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc     |       1.800 |     0.024 |       0.000 |      0.024 |       NA    | Unspecified | NA         |
-| VCC_IO_HBM |       1.200 |     0.082 |       0.000 |      0.082 |       NA    | Unspecified | NA         |
-| VCC_HBM    |       1.200 |     0.076 |       0.000 |      0.076 |       NA    | Unspecified | NA         |
-| VCCAUX_HBM |       2.500 |     0.022 |       0.000 |      0.022 |       NA    | Unspecified | NA         |
+| VCC_IO_HBM |       1.200 |     0.359 |       0.277 |      0.082 |       NA    | Unspecified | NA         |
+| VCC_HBM    |       1.200 |     0.374 |       0.297 |      0.077 |       NA    | Unspecified | NA         |
+| VCCAUX_HBM |       2.500 |     0.027 |       0.006 |      0.022 |       NA    | Unspecified | NA         |
 | MGTYAVcc   |       0.900 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTYAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTYVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -140,8 +143,13 @@ Table of Contents
 +-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
 | Clock                                                                                               | Domain                                                            | Constraint (ns) |
 +-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
+| apb_clk_clk_wiz_0_1                                                                                 | clk_wiz_inst/inst/apb_clk_clk_wiz_0                               |            10.0 |
+| axi_clk_clk_wiz_0_1                                                                                 | clk_wiz_inst/inst/axi_clk_clk_wiz_0                               |            10.0 |
 | bbq_clk_clk_wiz_0_1                                                                                 | clk_wiz_inst/inst/bbq_clk_clk_wiz_0                               |            10.0 |
 | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/INTERNAL_TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/in0 |            50.0 |
+| hbm_0/inst/HBM_REF_CLK_0                                                                            | hbm_0/inst/HBM_REF_CLK_0_bufg                                     |            10.0 |
+| hbm_ref_clk_wiz_0_1                                                                                 | clk_wiz_inst/inst/hbm_ref                                         |            10.0 |
+| hbm_ref_clk_wiz_0_1                                                                                 | clk_wiz_inst/inst/hbm_ref_clk_wiz_0                               |            10.0 |
 | sys_clk                                                                                             | sys_clk_p                                                         |            10.0 |
 +-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+-----------------+
 
@@ -152,37 +160,35 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------------------+-----------+
-| Name                     | Power (W) |
-+--------------------------+-----------+
-| top                      |     0.316 |
-|   bbq_inst               |     0.191 |
-|     counters_l2          |     0.001 |
-|       U0                 |     0.001 |
-|     free_list            |     0.021 |
-|       U0                 |     0.021 |
-|     heap_entries         |     0.026 |
-|       U0                 |     0.026 |
-|     ila_2                |     0.008 |
-|       inst               |     0.008 |
-|     next_pointers        |     0.026 |
-|       U0                 |     0.026 |
-|     previous_pointers    |     0.026 |
-|       U0                 |     0.026 |
-|     priority_buckets     |     0.002 |
-|       U0                 |     0.002 |
-|   clk_wiz_inst           |     0.101 |
-|     inst                 |     0.101 |
-|       clkin1_ibufds      |     0.003 |
-|   dbg_hub                |     0.003 |
-|     inst                 |     0.003 |
-|       BSCANID.u_xsdbm_id |     0.003 |
-|   ila_1                  |     0.009 |
-|     inst                 |     0.009 |
-|       ila_core_inst      |     0.009 |
-|   nolabel_line114        |     0.009 |
-|     inst                 |     0.009 |
-|       ila_core_inst      |     0.009 |
-+--------------------------+-----------+
++---------------------------+-----------+
+| Name                      | Power (W) |
++---------------------------+-----------+
+| top                       |     1.490 |
+|   bbq_inst                |     0.180 |
+|     counters_l2           |     0.001 |
+|       U0                  |     0.001 |
+|     free_list             |     0.022 |
+|       U0                  |     0.022 |
+|     heap_entries          |     0.026 |
+|       U0                  |     0.026 |
+|     next_pointers         |     0.025 |
+|       U0                  |     0.025 |
+|     previous_pointers     |     0.027 |
+|       U0                  |     0.027 |
+|     priority_buckets      |     0.002 |
+|       U0                  |     0.002 |
+|   clk_wiz_inst            |     0.102 |
+|     inst                  |     0.102 |
+|       clkin1_ibufds       |     0.003 |
+|   dbg_hub                 |     0.003 |
+|     inst                  |     0.003 |
+|       BSCANID.u_xsdbm_id  |     0.003 |
+|   hbm_0                   |     1.192 |
+|     inst                  |     1.192 |
+|       ONE_STACK.u_hbm_top |     1.191 |
+|   nolabel_line114         |     0.010 |
+|     inst                  |     0.010 |
+|       ila_core_inst       |     0.010 |
++---------------------------+-----------+
 
 
