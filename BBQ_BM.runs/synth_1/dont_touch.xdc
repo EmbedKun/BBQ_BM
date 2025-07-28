@@ -3,11 +3,11 @@
 
 # XDC: new/top_constrs.xdc
 
+# IP: ip/fifo_generator_0/fifo_generator_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fifo_generator_0 || ORIG_REF_NAME==fifo_generator_0} -quiet] -quiet
+
 # IP: ip/blk_mem_gen_1/blk_mem_gen_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_1 || ORIG_REF_NAME==blk_mem_gen_1} -quiet] -quiet
 
 # IP: ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==blk_mem_gen_0 || ORIG_REF_NAME==blk_mem_gen_0} -quiet] -quiet
-
-# IP: ip/fifo_generator_0/fifo_generator_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==fifo_generator_0 || ORIG_REF_NAME==fifo_generator_0} -quiet] -quiet

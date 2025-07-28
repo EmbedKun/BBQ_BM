@@ -92,14 +92,13 @@ always @(posedge bbq_clk) begin
         heap_in_valid <= 0;
         heap_in_priority <= 0;
         heap_in_op_type <= HEAP_OP_ENQUE;
-//        counter2 <= (counter2<64'b0000000000000000000000000000000000000000000000000000000000011111)?(counter2 +1):64'b0000000000000000000000000000000000000000000000000000000000111111;
         init_done <= (init_done | heap_ready);
           if (init_done) begin
             counter <= counter + 1;
             heap_in_valid <= 1;
             heap_in_data <= counter[HEAP_ENTRY_DWIDTH-1:0];
             heap_in_priority <= counter[HEAP_PRIORITY_AWIDTH-1:0];
-            heap_in_op_type <= (counter[0] == 0) ? HEAP_OP_ENQUE : HEAP_OP_DEQUE_MIN;
+            heap_in_op_type <= (counter[0] == 0) ? HEAP_OP_ENQUE : HEAP_OP_DEQUE_MAX;
         end
     end
 end

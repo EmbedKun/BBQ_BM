@@ -20,10 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 package heap_ops;
 
-typedef enum logic [1:0] {
+typedef enum logic [2:0] {
     HEAP_OP_ENQUE = 0,
     HEAP_OP_DEQUE_MIN,
-    HEAP_OP_DEQUE_MAX
+    HEAP_OP_DEQUE_MAX,
+    HEAP_OP_SWAP_IN,
+    HEAP_OP_SWAP_OUT
 } heap_op_t;
 
 endpackage

@@ -112,13 +112,24 @@ typedef enum logic {
     OP_COLOR_RED
 } op_color_t;
 
+typedef enum logic {
+    HBM_OP_COLOR_BLUE,
+    HBM_OP_COLOR_RED
+} hbm_op_color_t;
+
 typedef enum logic [1:0] {
     READ_CARRY_RIGHT,
     READ_CARRY_DOWN,
     READ_CARRY_UP
 } read_carry_direction_t;
 
-// Heap state
+typedef enum logic [1:0] {
+    HBM_READ_CARRY_RIGHT,
+    HBM_READ_CARRY_DOWN,
+    HBM_READ_CARRY_UP
+} hbm_read_carry_direction_t;
+
+// SRAM_Heap state
 (* keep = "true" *)bitmap_t l1_bitmap; // L1 bitmap
 (* keep = "true" *)bitmap_t l2_bitmaps[NUM_BITMAPS_L2-1:0]; // L2 bitmaps
 (* keep = "true" *)counter_t l1_counters[NUM_COUNTERS_L1-1:0]; // L1 counters
@@ -191,6 +202,80 @@ typedef enum logic [1:0] {
 
 // Heap occupancy
 (* keep = "true" *)counter_t occupancy;
+
+// HBM_Heap state
+(* keep = "true" *)bitmap_t hbm_l1_bitmap; // L1 bitmap
+(* keep = "true" *)bitmap_t hbm_l2_bitmaps[NUM_BITMAPS_L2-1:0]; // L2 bitmaps
+(* keep = "true" *)counter_t hbm_l1_counters[NUM_COUNTERS_L1-1:0]; // L1 counters
+
+// Free list
+(* keep = "true" *)logic hbm_fl_empty;
+(* keep = "true" *)logic hbm_fl_rdreq;
+(* keep = "true" *)logic hbm_fl_wrreq;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_fl_q;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_fl_data;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_fl_q_r[7:0];
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_fl_wraddress_counter_r;
+
+// Heap entries
+(* keep = "true" *)logic hbm_he_rden;
+(* keep = "true" *)logic hbm_he_wren;
+(* keep = "true" *)logic hbm_he_rden_r;
+(* keep = "true" *)logic hbm_he_wren_r;
+(* keep = "true" *)logic [HEAP_ENTRY_DWIDTH-1:0] hbm_he_q;
+(* keep = "true" *)logic [HEAP_ENTRY_DWIDTH-1:0] hbm_he_data;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_he_rdaddress;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_he_wraddress;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_he_rdaddress_r;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_he_wraddress_r;
+
+// Next pointers
+(* keep = "true" *)logic hbm_np_rden;
+(* keep = "true" *)logic hbm_np_wren;
+(* keep = "true" *)logic hbm_np_rden_r;
+(* keep = "true" *)logic hbm_np_wren_r;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_np_q;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_np_data;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_np_rdaddress;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_np_wraddress;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_np_rdaddress_r;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_np_wraddress_r;
+
+// Previous pointers
+(* keep = "true" *)logic hbm_pp_rden;
+(* keep = "true" *)logic hbm_pp_wren;
+(* keep = "true" *)logic hbm_pp_rden_r;
+(* keep = "true" *)logic hbm_pp_wren_r;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_pp_q;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_pp_data;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_pp_rdaddress;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_pp_wraddress;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_pp_rdaddress_r;
+(* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] hbm_pp_wraddress_r;
+
+// Priority buckets
+(* keep = "true" *)logic hbm_pb_rden;
+(* keep = "true" *)logic hbm_pb_wren;
+(* keep = "true" *)logic hbm_pb_rdwr_conflict;
+(* keep = "true" *)logic hbm_reg_pb_rdwr_conflict_r1;
+(* keep = "true" *)logic hbm_reg_pb_rdwr_conflict_r2;
+(* keep = "true" *)logic [LIST_T_WIDTH-1:0] hbm_pb_q;
+(* keep = "true" *)logic [LIST_T_WIDTH-1:0] hbm_pb_q_r;
+(* keep = "true" *)logic [LIST_T_WIDTH-1:0] hbm_pb_data;
+(* keep = "true" *)logic [HEAP_PRIORITY_BUCKETS_AWIDTH-1:0] hbm_pb_rdaddress;
+(* keep = "true" *)logic [HEAP_PRIORITY_BUCKETS_AWIDTH-1:0] hbm_pb_wraddress;
+
+// L2 counters
+(* keep = "true" *)logic hbm_counter_l2_rden;
+(* keep = "true" *)logic hbm_counter_l2_wren;
+(* keep = "true" *)logic [COUNTER_T_WIDTH-1:0] hbm_counter_l2_q;
+(* keep = "true" *)logic [COUNTER_T_WIDTH-1:0] hbm_counter_l2_data;
+(* keep = "true" *)logic [COUNTER_L2_AWIDTH-1:0] hbm_counter_l2_rdaddress;
+(* keep = "true" *)logic [COUNTER_L2_AWIDTH-1:0] hbm_counter_l2_wraddress;
+(* keep = "true" *)logic [COUNTER_L2_AWIDTH-1:0] hbm_counter_l2_wraddress_counter_r;
+
+// Heap occupancy
+(* keep = "true" *)counter_t hbm_occupancy;
 
 /**
  * Housekeeping.
@@ -359,34 +444,203 @@ typedef enum logic [1:0] {
 (* keep = "true" *)bitmap_t                                ffs_l2_inst_msb_onehot[2:0];
 (* keep = "true" *)bitmap_t                                ffs_l2_inst_lsb_onehot[2:0];
 
+// Common pipeline metadata
+(* keep = "true" *)logic                                   hbm_reg_valid_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)heap_op_t                               hbm_reg_op_type_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)heap_entry_data_t                       hbm_reg_he_data_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic [BITMAP_L2_AWIDTH-1:0]            hbm_reg_l2_addr_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)op_color_t                              hbm_reg_op_color_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   hbm_reg_is_enque_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)heap_priority_t                         hbm_reg_priority_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)bitmap_t                                hbm_reg_l2_bitmap_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   hbm_reg_is_deque_min_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   hbm_reg_is_deque_max_s[NUM_PIPELINE_STAGES:0];
+
+// Stage 1 metadata
+(* keep = "true" *)logic                                   hbm_valid_s1;
+(* keep = "true" *)counter_t                               hbm_old_occupancy_s1;
+(* keep = "true" *)counter_t                               hbm_new_occupancy_s1;
+(* keep = "true" *)counter_t                               hbm_reg_old_occupancy_s1;
+(* keep = "true" *)counter_t                               hbm_reg_new_occupancy_s1;
+
+// Stage 2 metadata
+(* keep = "true" *)read_carry_direction_t                  hbm_rcd_s2;
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_l1_bitmap_idx_s2;
+(* keep = "true" *)logic                                   hbm_l1_bitmap_empty_s2; 
+(* keep = "true" *)bitmap_t                                hbm_l1_bitmap_postop_s2;
+(* keep = "true" *)bitmap_t                                hbm_l1_bitmap_idx_onehot_s2;
+(* keep = "true" *)logic                                   hbm_l1_bitmap_changes_s3_s2;
+(* keep = "true" *)counter_t                               hbm_reg_l1_counter_s2;
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_reg_l1_bitmap_idx_s2;
+(* keep = "true" *)logic                                   hbm_reg_l1_bitmap_empty_s2;
+(* keep = "true" *)bitmap_t                                hbm_reg_l1_bitmap_postop_s2;
+(* keep = "true" *)bitmap_t                                hbm_reg_l1_bitmap_idx_onehot_s2;
+
+// Stage 3 metadata
+(* keep = "true" *)bitmap_t                                hbm_l1_bitmap_s3;
+(* keep = "true" *)counter_t                               hbm_l1_counter_s3;
+(* keep = "true" *)logic                                   hbm_l1_counter_non_zero_s3;
+(* keep = "true" *)logic                                   hbm_l2_addr_conflict_s4_s3;
+(* keep = "true" *)logic                                   hbm_l2_addr_conflict_s5_s3;
+(* keep = "true" *)logic                                   hbm_l2_addr_conflict_s6_s3;
+(* keep = "true" *)logic                                   hbm_l2_addr_conflict_s7_s3;
+(* keep = "true" *)counter_t                               hbm_reg_l1_counter_s3;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s4_s3;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s5_s3;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s6_s3;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s7_s3;
+
+// Stage 4 metadata
+(* keep = "true" *)read_carry_direction_t                  hbm_rcd_s4;
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_l2_bitmap_idx_s4;
+(* keep = "true" *)logic                                   hbm_l2_bitmap_empty_s4;
+(* keep = "true" *)bitmap_t                                hbm_l2_bitmap_postop_s4;
+(* keep = "true" *)bitmap_t                                hbm_l2_bitmap_idx_onehot_s4;
+(* keep = "true" *)logic                                   hbm_l2_bitmap_changes_s6_s4;
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_reg_l2_bitmap_idx_s4;
+(* keep = "true" *)logic                                   hbm_reg_l2_bitmap_empty_s4;
+(* keep = "true" *)bitmap_t                                hbm_reg_l2_bitmap_postop_s4;
+(* keep = "true" *)bitmap_t                                hbm_reg_l2_bitmap_idx_onehot_s4;
+(* keep = "true" *)logic                                   hbm_reg_l2_counter_rdvalid_r1_s4;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s5_s4;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s6_s4;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s7_s4;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s8_s4;
+
+// Stage 5 metadata
+(* keep = "true" *)read_carry_direction_t                  hbm_rcd_s5;
+(* keep = "true" *)counter_t                               hbm_l2_counter_s5;
+(* keep = "true" *)counter_t                               hbm_l2_counter_q_s5;
+(* keep = "true" *)counter_t                               hbm_reg_l2_counter_s5;
+(* keep = "true" *)counter_t                               hbm_reg_l2_counter_rc_s5;
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_reg_l2_bitmap_idx_s5;
+(* keep = "true" *)bitmap_t                                hbm_reg_l2_bitmap_postop_s5;
+(* keep = "true" *)bitmap_t                                hbm_reg_l2_bitmap_idx_onehot_s5;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s6_s5;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s7_s5;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s8_s5;
+(* keep = "true" *)logic                                   hbm_reg_l2_addr_conflict_s9_s5;
+
+// Stage 6 metadata
+(* keep = "true" *)heap_priority_t                         hbm_priority_s6;
+(* keep = "true" *)bitmap_t                                hbm_l2_bitmap_s6;
+(* keep = "true" *)counter_t                               hbm_l2_counter_s6;
+(* keep = "true" *)logic                                   hbm_l2_counter_non_zero_s6;
+(* keep = "true" *)logic                                   hbm_pb_addr_conflict_s7_s6;
+(* keep = "true" *)logic                                   hbm_pb_addr_conflict_s8_s6;
+(* keep = "true" *)logic                                   hbm_pb_addr_conflict_s9_s6;
+(* keep = "true" *)logic                                   hbm_pb_addr_conflict_s10_s6;
+(* keep = "true" *)counter_t                               hbm_reg_l2_counter_s6;
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_reg_l2_bitmap_idx_s6;
+(* keep = "true" *)counter_t                               hbm_reg_old_l2_counter_s6;
+(* keep = "true" *)logic                                   hbm_reg_l2_counter_non_zero_s6;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s7_s6;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s8_s6;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s9_s6;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s10_s6;
+
+// Stage 7 metadata
+(* keep = "true" *)op_color_t                              hbm_op_color_s7;
+(* keep = "true" *)logic                                   hbm_reg_pb_update_s7;
+(* keep = "true" *)logic                                   hbm_reg_pb_data_conflict_s7;
+(* keep = "true" *)logic                                   hbm_reg_pb_state_changes_s7;
+(* keep = "true" *)logic                                   hbm_reg_pb_tail_pp_changes_s7;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s8_s7;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s9_s7;
+
+// Stage 8 metadata
+(* keep = "true" *)logic                                   hbm_pp_changes_s9_s8;
+(* keep = "true" *)logic                                   hbm_pp_changes_s10_s8;
+(* keep = "true" *)list_t                                  hbm_reg_pb_q_s8;
+(* keep = "true" *)heap_entry_ptr_t                        hbm_reg_pp_data_s8;
+(* keep = "true" *)logic                                   hbm_reg_pp_data_valid_s8;
+(* keep = "true" *)logic                                   hbm_reg_pb_data_conflict_s8;
+(* keep = "true" *)logic                                   hbm_reg_pb_state_changes_s8;
+(* keep = "true" *)logic                                   hbm_reg_pb_tail_pp_changes_s8;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s9_s8;
+(* keep = "true" *)logic                                   hbm_reg_pb_addr_conflict_s10_s8;
+
+// Stage 9 metadata
+(* keep = "true" *)heap_entry_data_t                       hbm_he_q_s9;
+(* keep = "true" *)heap_entry_ptr_t                        hbm_np_q_s9;
+(* keep = "true" *)heap_entry_ptr_t                        hbm_pp_q_s9;
+(* keep = "true" *)heap_entry_data_t                       hbm_reg_he_q_s9;
+(* keep = "true" *)heap_entry_ptr_t                        hbm_reg_np_q_s9;
+(* keep = "true" *)heap_entry_ptr_t                        hbm_reg_pp_q_s9;
+(* keep = "true" *)list_t                                  hbm_reg_pb_q_s9;
+(* keep = "true" *)list_t                                  hbm_reg_pb_new_s9;
+(* keep = "true" *)logic                                   hbm_reg_pb_data_conflict_s9;
+(* keep = "true" *)logic                                   hbm_reg_pb_state_changes_s9;
+(* keep = "true" *)logic                                   hbm_reg_pb_tail_pp_changes_s9;
+
+// Stage 10 metadata
+(* keep = "true" *)heap_entry_data_t                       hbm_he_data_s10;
+(* keep = "true" *)heap_entry_data_t                       hbm_reg_he_data_s10;
+(* keep = "true" *)heap_entry_ptr_t                        hbm_reg_np_data_s10;
+(* keep = "true" *)heap_entry_ptr_t                        hbm_reg_pp_data_s10;
+(* keep = "true" *)list_t                                  hbm_reg_pb_data_s10;
+
+// Stage 11 metadata
+(* keep = "true" *)list_t                                  hbm_reg_pb_data_s11;
+
+// Init signals
+(* keep = "true" *)logic                                   hbm_counter_l2_init_done_r;
+(* keep = "true" *)logic                                   hbm_fl_init_done_r;
+(* keep = "true" *)logic                                   hbm_counter_l2_init_done;
+(* keep = "true" *)logic                                   hbm_fl_init_done;
+
+// Intermediate signals
+(* keep = "true" *)list_t                                  hbm_int_pb_data;
+(* keep = "true" *)list_t                                  hbm_int_pb_q;
+
+// Miscellaneous signals
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_ffs_l1_inst_msb[1:0];
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_ffs_l1_inst_lsb[1:0];
+(* keep = "true" *)logic                                   hbm_ffs_l1_inst_zero[1:0];
+(* keep = "true" *)bitmap_t                                hbm_ffs_l1_inst_msb_onehot[1:0];
+(* keep = "true" *)bitmap_t                                hbm_ffs_l1_inst_lsb_onehot[1:0];
+
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_ffs_l2_inst_msb[2:0];
+(* keep = "true" *)logic [HEAP_LOG_BITMAP_WIDTH-1:0]       hbm_ffs_l2_inst_lsb[2:0];
+(* keep = "true" *)logic                                   hbm_ffs_l2_inst_zero[2:0];
+(* keep = "true" *)bitmap_t                                hbm_ffs_l2_inst_msb_onehot[2:0];
+(* keep = "true" *)bitmap_t                                hbm_ffs_l2_inst_lsb_onehot[2:0];
+
 `ifdef DEBUG
 logic                                   debug_newline;
 `endif
 
 assign pb_data = int_pb_data;
-reg [16:0] counter;//debug
 
 // Output assignments
 assign ready = !rst & (state== FSM_STATE_READY);
-assign out_valid = reg_valid_s[NUM_PIPELINE_STAGES-1];
-assign out_op_type = reg_op_type_s[NUM_PIPELINE_STAGES-1];
-assign out_he_data = reg_he_data_s[NUM_PIPELINE_STAGES-1];
-assign out_he_priority = reg_priority_s[NUM_PIPELINE_STAGES-1];
+assign out_valid = reg_valid_s[NUM_PIPELINE_STAGES-1];  //TODO
+assign out_op_type = reg_op_type_s[NUM_PIPELINE_STAGES-1];  //TODO
+assign out_he_data = reg_he_data_s[NUM_PIPELINE_STAGES-1];  //TODO
+assign out_he_priority = reg_priority_s[NUM_PIPELINE_STAGES-1];     //TODO
 
 /**
  * State-dependent signals (data, wraddress, and wren) for the
- * FL, priority buckets and SRAM-based LX bitmaps and counters.
+ * FL, priority buckets and SRAM-based LX bitmaps and counters for SRAM or HBM.
  */
+ 
 always_comb begin
     state_next = state;
     fl_init_done = fl_init_done_r;
     counter_l2_init_done = counter_l2_init_done_r;
-
+    
+    hbm_fl_init_done = hbm_fl_init_done_r;
+    hbm_counter_l2_init_done = hbm_counter_l2_init_done_r;
+    
     fl_wrreq = 0;
     counter_l2_wren = 0;
 
+    hbm_fl_wrreq = 0;
+    hbm_counter_l2_wren = 0;
+    
     // Initialization state
     if (state == FSM_STATE_INIT) begin
+        // SRAM BM
         // Free list
         fl_data = fl_wraddress_counter_r;
         if (!fl_init_done_r) begin
@@ -402,10 +656,26 @@ always_comb begin
             counter_l2_init_done = (counter_l2_wraddress_counter_r ==
                                     (NUM_COUNTERS_L2 - 1));
         end
+
+        // HBM BM
+        // TODO
+        hbm_fl_data = hbm_fl_wraddress_counter_r;
+        if (!hbm_fl_init_done_r) begin
+            hbm_fl_wrreq = 1;
+            hbm_fl_init_done = (hbm_fl_wraddress_counter_r ==
+                            (HEAP_MAX_NUM_ENTRIES - 1));
+        end
+        // L2 counters
+        hbm_counter_l2_data = 0;
+        hbm_counter_l2_wraddress = hbm_counter_l2_wraddress_counter_r;
+        if (!hbm_counter_l2_init_done_r) begin
+            hbm_counter_l2_wren = 1;
+            hbm_counter_l2_init_done = (hbm_counter_l2_wraddress_counter_r ==
+                                    (NUM_COUNTERS_L2 - 1));
+        end
         // Finished initializing the queue (including priority buckets,
         // free list, and the LX bitmaps). Proceed to the ready state.
-        if (fl_init_done_r & counter_l2_init_done_r) begin
-//        if (counter > 17'b01111111111111111) begin
+        if (hbm_counter_l2_init_done_r & hbm_fl_init_done_r & fl_init_done_r & counter_l2_init_done_r) begin
             state_next = FSM_STATE_READY;
         end
     end
@@ -930,9 +1200,9 @@ end
 
 always @(posedge clk) begin
     if (rst) begin
+        // SRAM
         // Reset occupancy
         occupancy <= 0;
-        counter <=0;
         // Reset bitmaps
         l1_bitmap <= 0;
         for (i = 0; i < NUM_COUNTERS_L1; i = i + 1) begin
@@ -952,6 +1222,29 @@ always @(posedge clk) begin
         fl_wraddress_counter_r <= 0;
         counter_l2_init_done_r <= 0;
         counter_l2_wraddress_counter_r <= 0;
+        
+        // HBM
+        // Reset occupancy
+        hbm_occupancy <= 0;
+        // Reset bitmaps
+        hbm_l1_bitmap <= 0;
+        for (i = 0; i < NUM_COUNTERS_L1; i = i + 1) begin
+            hbm_l1_counters[i] <= 0;
+        end
+        for (i = 0; i < NUM_BITMAPS_L2; i = i + 1) begin
+            hbm_l2_bitmaps[i] <= 0;
+        end
+
+        // Reset pipeline stages
+        for (i = 0; i <= NUM_PIPELINE_STAGES; i = i + 1) begin
+            hbm_reg_valid_s[i] <= 0;
+        end
+
+        // Reset init signals
+        hbm_fl_init_done_r <= 0;
+        hbm_fl_wraddress_counter_r <= 0;
+        hbm_counter_l2_init_done_r <= 0;
+        hbm_counter_l2_wraddress_counter_r <= 0;
 
         // Reset FSM state
         state <= FSM_STATE_INIT;
@@ -993,41 +1286,6 @@ always @(posedge clk) begin
         reg_op_color_s[10] <= reg_op_color_s[9];
         reg_l2_bitmap_s[10] <= reg_l2_bitmap_s[9];
 
-        `ifdef DEBUG
-        if (reg_valid_s[9]) begin
-            if (!reg_pb_state_changes_s9) begin
-                $display(
-                    "[BBQ] At S10 (op: %s, color: %s),",
-                    reg_op_type_s[9].name, reg_op_color_s[9].name,
-                    " updating (priority = %0d),",
-                    reg_priority_s[9],
-                    " pb (head, tail) changes from ",
-                    "(%b, %b) to (%b, %b)", reg_pb_q_s9.head,
-                    reg_pb_q_s9.tail, int_pb_data.head, int_pb_data.tail);
-            end
-            else if (reg_is_enque_s[9]) begin
-                $display(
-                    "[BBQ] At S10 (op: %s, color: %s),",
-                    reg_op_type_s[9].name, reg_op_color_s[9].name,
-                    " updating (priority = %0d),",
-                    reg_priority_s[9],
-                    " pb (head, tail) changes from ",
-                    "(INVALID_PTR, INVALID_PTR) to (%b, %b)",
-                    int_pb_data.head, int_pb_data.tail);
-            end
-            else begin
-                $display(
-                    "[BBQ] At S10 (op: %s, color: %s),",
-                    reg_op_type_s[9].name, reg_op_color_s[9].name,
-                    " updating (priority = %0d),",
-                    reg_priority_s[9],
-                    " pb (head, tail) changes from ",
-                    "(%b, %b) to (INVALID_PTR, INVALID_PTR)",
-                    reg_pb_q_s9.head, reg_pb_q_s9.tail);
-            end
-        end
-        `endif
-
         /**
          * Stage 9: Read delay for HE and pointers.
          */
@@ -1066,25 +1324,6 @@ always @(posedge clk) begin
             reg_pb_new_s9.head <= fl_q_r[6];
         end
 
-        `ifdef SIM
-        if (reg_valid_s[8]) begin
-            if ((he_wren && he_rden_r && (he_wraddress == he_rdaddress_r)) ||
-                (np_wren && np_rden_r && (np_wraddress == np_rdaddress_r))) begin
-                $display("[BBQ] Error: Unexpected conflict in R/W access");
-                $finish;
-            end
-        end
-        `endif
-        `ifdef DEBUG
-        if (reg_valid_s[8]) begin
-            $display(
-                "[BBQ] At S9 (op: %s)",
-                reg_op_type_s[8].name,
-                " for PB (priority = %0d)",
-                reg_priority_s[8]);
-        end
-        `endif
-
         /**
          * Stage 8: Read the heap entry and prev/next pointer
          * corresponding to the priority bucket to deque.
@@ -1109,16 +1348,6 @@ always @(posedge clk) begin
 
         reg_pp_data_s8 <= pp_changes_s9_s8 ? fl_q_r[5] : fl_q_r[6];
         reg_pp_data_valid_s8 <= (pp_changes_s9_s8 || pp_changes_s10_s8);
-
-        `ifdef DEBUG
-        if (reg_valid_s[7]) begin
-            $display(
-                "[BBQ] At S8 (op: %s)",
-                reg_op_type_s[7].name,
-                " for PB (priority = %0d)",
-                reg_priority_s[7]);
-        end
-        `endif
 
         /**
          * Stage 7: Compute op color, read delay for PB.
@@ -1159,17 +1388,6 @@ always @(posedge clk) begin
             !reg_old_l2_counter_s6[WATERLEVEL_IDX]
             && reg_old_l2_counter_s6[0]);
 
-        `ifdef DEBUG
-        if (reg_valid_s[6]) begin
-            $display(
-                "[BBQ] At S7 (op: %s)",
-                reg_op_type_s[6].name,
-                " for PB (priority = %0d)",
-                reg_priority_s[6],
-                " assigned color %s", op_color_s7.name);
-        end
-        `endif
-
         /**
          * Stage 6: Write-back the L2 counter and bitmap,
          * and read the corresponding PB (head and tail).
@@ -1199,15 +1417,6 @@ always @(posedge clk) begin
         if (reg_valid_s[5]) begin
             l2_bitmaps[reg_l2_addr_s[5]] <= l2_bitmap_s6;
         end
-
-        `ifdef DEBUG
-        if (reg_valid_s[5]) begin
-            $display(
-                "[BBQ] At S6 (op: %s), updating L2 counter (L2_addr, L2_idx) ",
-                reg_op_type_s[5].name, "= (%0d, %0d) to %0d", reg_l2_addr_s[5],
-                reg_l2_bitmap_idx_s5, l2_counter_s6[WATERLEVEL_IDX-1:0]);
-        end
-        `endif
 
         /**
          * Stage 5: NOOP, read delay for L2 counter.
@@ -1247,15 +1456,6 @@ always @(posedge clk) begin
         reg_l2_bitmap_s[5] <= (
             reg_l2_addr_conflict_s5_s4 ?
             l2_bitmap_s6 : reg_l2_bitmap_s[4]);
-
-        `ifdef DEBUG
-        if (reg_valid_s[4]) begin
-            $display(
-                "[BBQ] At S5 (op: %s) for (L2 addr = %0d),",
-                reg_op_type_s[4].name, reg_l2_addr_s[4],
-                " RCD is %s", rcd_s5.name);
-        end
-        `endif
 
         /**
          * Stage 4: Compute the L2 bitmap index and postop
@@ -1304,15 +1504,6 @@ always @(posedge clk) begin
             reg_l2_addr_conflict_s5_s3 ?
             l2_bitmap_s6 : reg_l2_bitmap_s[3]);
 
-        `ifdef DEBUG
-        if (reg_valid_s[3]) begin
-            $display(
-                "[BBQ] At S4 (op: %s) for (L2 addr = %0d),",
-                reg_op_type_s[3].name, reg_l2_addr_s[3],
-                " RCD is %s", rcd_s4.name);
-        end
-        `endif
-
         /**
          * Stage 3: Write-back the L1 counter and bitmap,
          * and read the corresponding L2 bitmap.
@@ -1343,14 +1534,6 @@ always @(posedge clk) begin
         reg_l2_bitmap_s[3] <= (
             l2_addr_conflict_s6_s3 ?
             l2_bitmap_s6 : l2_bitmaps[reg_l1_bitmap_idx_s2]);
-
-        `ifdef DEBUG
-        if (reg_valid_s[2]) begin
-            $display(
-                "[BBQ] At S3 (op: %s), updating L1 counter (L1_idx = %0d) to %0d",
-                reg_op_type_s[2].name, reg_l1_bitmap_idx_s2, l1_counter_s3[WATERLEVEL_IDX-1:0]);
-        end
-        `endif
 
         /**
          * Stage 2: Compute the L1 bitmap index and postop
@@ -1384,15 +1567,6 @@ always @(posedge clk) begin
         default: ;
         endcase
 
-        `ifdef DEBUG
-        if (reg_valid_s[1]) begin
-            $display(
-                "[BBQ] At S2 (op: %s),",
-                reg_op_type_s[1].name,
-                " RCD is %s", rcd_s2.name);
-        end
-        `endif
-
         /**
          * Stage 1: Determine operation validity. Disables the pipeline
          * stage if the BBQ is empty (deques) or FL is empty (enqueues).
@@ -1412,21 +1586,6 @@ always @(posedge clk) begin
             occupancy <= new_occupancy_s1;
         end
 
-        `ifdef DEBUG
-        if (reg_valid_s[0] && !valid_s1) begin
-            $display(
-                "[BBQ] At S1 (op: %s), rejected at Stage 0->1",
-                reg_op_type_s[0].name);
-        end
-        if (valid_s1) begin
-            $display(
-                "[BBQ] At S1 (op: %s), updating occupancy",
-                reg_op_type_s[0].name, " from %0d to %0d",
-                old_occupancy_s1[WATERLEVEL_IDX-1:0],
-                new_occupancy_s1[WATERLEVEL_IDX-1:0]);
-        end
-        `endif
-
         /**
          * Stage 0: Register inputs.
          */
@@ -1437,27 +1596,6 @@ always @(posedge clk) begin
         reg_is_enque_s[0] <= (in_op_type == HEAP_OP_ENQUE);
         reg_is_deque_max_s[0] <= (in_op_type == HEAP_OP_DEQUE_MAX);
         reg_is_deque_min_s[0] <= (in_op_type == HEAP_OP_DEQUE_MIN);
-
-        `ifdef DEBUG
-        if (in_valid) begin
-            if (in_op_type == HEAP_OP_ENQUE) begin
-                $display("[BBQ] At S0, enqueing %0d with priority %0d",
-                         in_he_data, in_he_priority);
-            end
-            else begin
-                $display("[BBQ] At S0, performing %s",
-                         in_op_type.name);
-            end
-        end
-
-        if (debug_newline) begin
-            $display("");
-        end
-        if ((state == FSM_STATE_INIT) &&
-            (state_next == FSM_STATE_READY)) begin
-            $display("[BBQ] Heap initialization complete!");
-        end
-        `endif
 
         // Register init signals
 //        counter <= (counter==17'b11111111111111111)?17'b11111111111111111:(counter +1);
@@ -1495,9 +1633,382 @@ always @(posedge clk) begin
 
         // Update FSM state
         state <= state_next;
+        
+        // HBM TODO LIST:
+        
+        /**
+         * Stage 11: Spillover stage.
+         */
+        hbm_reg_valid_s[11] <= hbm_reg_valid_s[10];
+        hbm_reg_he_data_s[11] <= hbm_reg_he_data_s[10];
+        hbm_reg_op_type_s[11] <= hbm_reg_op_type_s[10];
+        hbm_reg_is_enque_s[11] <= hbm_reg_is_enque_s[10];
+        hbm_reg_priority_s[11] <= hbm_reg_priority_s[10];
+        hbm_reg_is_deque_max_s[11] <= hbm_reg_is_deque_max_s[10];
+        hbm_reg_is_deque_min_s[11] <= hbm_reg_is_deque_min_s[10];
+
+        hbm_reg_pb_data_s11 <= hbm_reg_pb_data_s10;
+        hbm_reg_l2_addr_s[11] <= hbm_reg_l2_addr_s[10];
+        hbm_reg_op_color_s[11] <= hbm_reg_op_color_s[10];
+        hbm_reg_l2_bitmap_s[11] <= hbm_reg_l2_bitmap_s[10];
+
+        /**
+         * Stage 10: Perform writes: update the priority bucket,
+         * the free list, heap entries, next and prev pointers.
+         */
+        hbm_reg_valid_s[10] <= hbm_reg_valid_s[9];
+        hbm_reg_he_data_s[10] <= hbm_he_data_s10;
+        hbm_reg_op_type_s[10] <= hbm_reg_op_type_s[9];
+        hbm_reg_is_enque_s[10] <= hbm_reg_is_enque_s[9];
+        hbm_reg_priority_s[10] <= hbm_reg_priority_s[9];
+        hbm_reg_is_deque_max_s[10] <= hbm_reg_is_deque_max_s[9];
+        hbm_reg_is_deque_min_s[10] <= hbm_reg_is_deque_min_s[9];
+
+        hbm_reg_he_data_s10 <= hbm_he_data;
+        hbm_reg_np_data_s10 <= hbm_np_data;
+        hbm_reg_pp_data_s10 <= hbm_pp_data;
+        hbm_reg_pb_data_s10 <= hbm_int_pb_data;
+        hbm_reg_l2_addr_s[10] <= hbm_reg_l2_addr_s[9];
+        hbm_reg_op_color_s[10] <= hbm_reg_op_color_s[9];
+        hbm_reg_l2_bitmap_s[10] <= hbm_reg_l2_bitmap_s[9];
+
+        /**
+         * Stage 9: Read delay for HE and pointers.
+         */
+        hbm_reg_valid_s[9] <= hbm_reg_valid_s[8];
+        hbm_reg_he_data_s[9] <= hbm_reg_he_data_s[8];
+        hbm_reg_op_type_s[9] <= hbm_reg_op_type_s[8];
+        hbm_reg_is_enque_s[9] <= hbm_reg_is_enque_s[8];
+        hbm_reg_priority_s[9] <= hbm_reg_priority_s[8];
+        hbm_reg_is_deque_max_s[9] <= hbm_reg_is_deque_max_s[8];
+        hbm_reg_is_deque_min_s[9] <= hbm_reg_is_deque_min_s[8];
+
+        hbm_reg_l2_addr_s[9] <= hbm_reg_l2_addr_s[8];
+        hbm_reg_op_color_s[9] <= hbm_reg_op_color_s[8];
+        hbm_reg_l2_bitmap_s[9] <= hbm_reg_l2_bitmap_s[8];
+        hbm_reg_pb_data_conflict_s9 <= hbm_reg_pb_data_conflict_s8;
+        hbm_reg_pb_state_changes_s9 <= hbm_reg_pb_state_changes_s8;
+        hbm_reg_pb_tail_pp_changes_s9 <= hbm_reg_pb_tail_pp_changes_s8;
+
+        hbm_reg_he_q_s9 <= hbm_he_q_s9;
+        hbm_reg_np_q_s9 <= hbm_np_q_s9;
+        hbm_reg_pp_q_s9 <= hbm_pp_q_s9;
+
+        hbm_reg_pb_q_s9 <= (
+            hbm_reg_pb_addr_conflict_s9_s8 ?
+               hbm_int_pb_data : hbm_reg_pb_q_s8);
+
+        hbm_reg_pb_new_s9 <= (
+            hbm_reg_pb_addr_conflict_s9_s8 ?
+               hbm_int_pb_data : hbm_reg_pb_q_s8);
+
+        if (hbm_reg_is_enque_s[8]) begin
+            // PB becomes non-empty, update tail
+            if (hbm_reg_pb_state_changes_s8) begin
+                hbm_reg_pb_new_s9.tail <= hbm_fl_q_r[6];
+            end
+            hbm_reg_pb_new_s9.head <= hbm_fl_q_r[6];
+        end
+
+        /**
+         * Stage 8: Read the heap entry and prev/next pointer
+         * corresponding to the priority bucket to deque.
+         */
+        hbm_reg_valid_s[8] <= hbm_reg_valid_s[7];
+        hbm_reg_he_data_s[8] <= hbm_reg_he_data_s[7];
+        hbm_reg_op_type_s[8] <= hbm_reg_op_type_s[7];
+        hbm_reg_is_enque_s[8] <= hbm_reg_is_enque_s[7];
+        hbm_reg_priority_s[8] <= hbm_reg_priority_s[7];
+        hbm_reg_is_deque_max_s[8] <= hbm_reg_is_deque_max_s[7];
+        hbm_reg_is_deque_min_s[8] <= hbm_reg_is_deque_min_s[7];
+
+        hbm_reg_pb_q_s8 <= hbm_int_pb_q;
+        hbm_reg_l2_addr_s[8] <= hbm_reg_l2_addr_s[7];
+        hbm_reg_op_color_s[8] <= hbm_reg_op_color_s[7];
+        hbm_reg_l2_bitmap_s[8] <= hbm_reg_l2_bitmap_s[7];
+        hbm_reg_pb_data_conflict_s8 <= hbm_reg_pb_data_conflict_s7;
+        hbm_reg_pb_state_changes_s8 <= hbm_reg_pb_state_changes_s7;
+        hbm_reg_pb_tail_pp_changes_s8 <= hbm_reg_pb_tail_pp_changes_s7;
+        hbm_reg_pb_addr_conflict_s9_s8 <= hbm_reg_pb_addr_conflict_s8_s7;
+        hbm_reg_pb_addr_conflict_s10_s8 <= hbm_reg_pb_addr_conflict_s9_s7;
+
+        hbm_reg_pp_data_s8 <= hbm_pp_changes_s9_s8 ? hbm_fl_q_r[5] : hbm_fl_q_r[6];
+        hbm_reg_pp_data_valid_s8 <= (hbm_pp_changes_s9_s8 || hbm_pp_changes_s10_s8);
+
+        /**
+         * Stage 7: Compute op color, read delay for PB.
+         */
+        hbm_reg_valid_s[7] <= hbm_reg_valid_s[6];
+        hbm_reg_he_data_s[7] <= hbm_reg_he_data_s[6];
+        hbm_reg_op_type_s[7] <= hbm_reg_op_type_s[6];
+        hbm_reg_is_enque_s[7] <= hbm_reg_is_enque_s[6];
+        hbm_reg_priority_s[7] <= hbm_reg_priority_s[6];
+        hbm_reg_is_deque_max_s[7] <= hbm_reg_is_deque_max_s[6];
+        hbm_reg_is_deque_min_s[7] <= hbm_reg_is_deque_min_s[6];
+
+        hbm_reg_op_color_s[7] <= hbm_op_color_s7;
+        hbm_reg_l2_addr_s[7] <= hbm_reg_l2_addr_s[6];
+        hbm_reg_l2_bitmap_s[7] <= hbm_reg_l2_bitmap_s[6];
+        hbm_reg_pb_update_s7 <= hbm_reg_pb_addr_conflict_s9_s6;
+        hbm_reg_pb_addr_conflict_s8_s7 <= hbm_reg_pb_addr_conflict_s7_s6;
+        hbm_reg_pb_addr_conflict_s9_s7 <= hbm_reg_pb_addr_conflict_s8_s6;
+
+        // Determine if this op is going to result in PB data
+        // conflict (dequeing a PB immediately after an enque
+        // operation that causes it to become non-empty).
+        hbm_reg_pb_data_conflict_s7 <= (hbm_reg_is_enque_s[7] &&
+            !hbm_reg_l2_counter_non_zero_s6 && hbm_reg_pb_addr_conflict_s7_s6);
+
+        // Determine if this op causes the PB state to change.
+        // Change of state is defined differently based on op:
+        // for enques, corresponds to a PB becoming non-empty,
+        // and for deques, corresponds to a PB becoming empty.
+        hbm_reg_pb_state_changes_s7 <= (hbm_reg_is_enque_s[6] ?
+            (!hbm_reg_l2_counter_s6[WATERLEVEL_IDX] && hbm_reg_l2_counter_s6[0]) :
+            (!hbm_reg_l2_counter_s6[WATERLEVEL_IDX] && !hbm_reg_l2_counter_s6[0]));
+
+        // Determine if this op causes the previous pointer
+        // corresponding to the PB tail to change. High iff
+        // enqueing into a PB containing a single element.
+        hbm_reg_pb_tail_pp_changes_s7 <= (hbm_reg_is_enque_s[6] &&
+            !hbm_reg_old_l2_counter_s6[WATERLEVEL_IDX]
+            && hbm_reg_old_l2_counter_s6[0]);
+
+        /**
+         * Stage 6: Write-back the L2 counter and bitmap,
+         * and read the corresponding PB (head and tail).
+         */
+        hbm_reg_valid_s[6] <= hbm_reg_valid_s[5];
+        hbm_reg_he_data_s[6] <= hbm_reg_he_data_s[5];
+        hbm_reg_op_type_s[6] <= hbm_reg_op_type_s[5];
+        hbm_reg_is_enque_s[6] <= hbm_reg_is_enque_s[5];
+        hbm_reg_priority_s[6] <= hbm_priority_s6;
+        hbm_reg_is_deque_max_s[6] <= hbm_reg_is_deque_max_s[5];
+        hbm_reg_is_deque_min_s[6] <= hbm_reg_is_deque_min_s[5];
+
+        hbm_reg_l2_bitmap_s[6] <= hbm_l2_bitmap_s6;
+        hbm_reg_l2_addr_s[6] <= hbm_reg_l2_addr_s[5];
+
+        hbm_reg_l2_counter_s6 <= hbm_l2_counter_s6;
+        hbm_reg_l2_bitmap_idx_s6 <= hbm_reg_l2_bitmap_idx_s5;
+        hbm_reg_old_l2_counter_s6 <= hbm_reg_l2_counter_rc_s5;
+        hbm_reg_l2_counter_non_zero_s6 <= hbm_l2_counter_non_zero_s6;
+
+        hbm_reg_pb_addr_conflict_s7_s6 <= hbm_pb_addr_conflict_s7_s6;
+        hbm_reg_pb_addr_conflict_s8_s6 <= hbm_pb_addr_conflict_s8_s6;
+        hbm_reg_pb_addr_conflict_s9_s6 <= hbm_pb_addr_conflict_s9_s6;
+        hbm_reg_pb_addr_conflict_s10_s6 <= hbm_pb_addr_conflict_s10_s6;
+
+        // Write-back L2 bitmap
+        if (hbm_reg_valid_s[5]) begin
+            hbm_l2_bitmaps[reg_l2_addr_s[5]] <= hbm_l2_bitmap_s6;
+        end
+
+        /**
+         * Stage 5: NOOP, read delay for L2 counter.
+         */
+        hbm_reg_valid_s[5] <= hbm_reg_valid_s[4];
+        hbm_reg_he_data_s[5] <= hbm_reg_he_data_s[4];
+        hbm_reg_op_type_s[5] <= hbm_reg_op_type_s[4];
+        hbm_reg_is_enque_s[5] <= hbm_reg_is_enque_s[4];
+        hbm_reg_priority_s[5] <= hbm_reg_priority_s[4];
+        hbm_reg_is_deque_max_s[5] <= hbm_reg_is_deque_max_s[4];
+        hbm_reg_is_deque_min_s[5] <= hbm_reg_is_deque_min_s[4];
+
+        hbm_reg_l2_addr_s[5] <= hbm_reg_l2_addr_s[4];
+        hbm_reg_l2_addr_conflict_s6_s5 <= hbm_reg_l2_addr_conflict_s5_s4;
+        hbm_reg_l2_addr_conflict_s7_s5 <= hbm_reg_l2_addr_conflict_s6_s4;
+        hbm_reg_l2_addr_conflict_s8_s5 <= hbm_reg_l2_addr_conflict_s7_s4;
+        hbm_reg_l2_addr_conflict_s9_s5 <= hbm_reg_l2_addr_conflict_s8_s4;
+
+        hbm_reg_l2_counter_s5 <= (hbm_reg_l2_counter_rdvalid_r1_s4 ?
+                              hbm_l2_counter_q_s5 : hbm_l2_counter_s5);
+        case (hbm_rcd_s5)
+        HBM_READ_CARRY_DOWN: begin
+            hbm_reg_l2_bitmap_idx_s5 <= hbm_reg_l2_bitmap_idx_s4;
+            hbm_reg_l2_bitmap_postop_s5 <= hbm_reg_l2_bitmap_postop_s4;
+            hbm_reg_l2_bitmap_idx_onehot_s5 <= hbm_reg_l2_bitmap_idx_onehot_s4;
+
+            hbm_reg_l2_counter_rc_s5 <= (hbm_reg_l2_counter_rdvalid_r1_s4 ?
+                                     hbm_l2_counter_q_s5 : hbm_l2_counter_s5);
+        end
+        HBM_READ_CARRY_RIGHT: begin
+            hbm_reg_l2_counter_rc_s5 <= hbm_l2_counter_s6;
+        end
+        default: ;
+        endcase
+
+        // Forward L2 bitmap updates
+        hbm_reg_l2_bitmap_s[5] <= (
+            hbm_reg_l2_addr_conflict_s5_s4 ?
+            hbm_l2_bitmap_s6 : hbm_reg_l2_bitmap_s[4]);
+
+        /**
+         * Stage 4: Compute the L2 bitmap index and postop
+         * bitmap, and read the corresponding L2 counter.
+         */
+        hbm_reg_valid_s[4] <= hbm_reg_valid_s[3];
+        hbm_reg_he_data_s[4] <= hbm_reg_he_data_s[3];
+        hbm_reg_op_type_s[4] <= hbm_reg_op_type_s[3];
+        hbm_reg_is_enque_s[4] <= hbm_reg_is_enque_s[3];
+        hbm_reg_priority_s[4] <= hbm_reg_priority_s[3];
+        hbm_reg_is_deque_max_s[4] <= hbm_reg_is_deque_max_s[3];
+        hbm_reg_is_deque_min_s[4] <= hbm_reg_is_deque_min_s[3];
+
+        hbm_reg_l2_addr_s[4] <= hbm_reg_l2_addr_s[3];
+        hbm_reg_l2_addr_conflict_s5_s4 <= hbm_reg_l2_addr_conflict_s4_s3;
+        hbm_reg_l2_addr_conflict_s6_s4 <= hbm_reg_l2_addr_conflict_s5_s3;
+        hbm_reg_l2_addr_conflict_s7_s4 <= hbm_reg_l2_addr_conflict_s6_s3;
+        hbm_reg_l2_addr_conflict_s8_s4 <= hbm_reg_l2_addr_conflict_s7_s3;
+
+        hbm_reg_l2_counter_rdvalid_r1_s4 <= 0;
+
+        case (hbm_rcd_s4)
+        HBM_READ_CARRY_DOWN: begin
+            hbm_reg_l2_bitmap_idx_s4 <= hbm_l2_bitmap_idx_s4;
+            hbm_reg_l2_bitmap_empty_s4 <= hbm_l2_bitmap_empty_s4;
+            hbm_reg_l2_bitmap_postop_s4 <= hbm_l2_bitmap_postop_s4;
+            hbm_reg_l2_bitmap_idx_onehot_s4 <= hbm_l2_bitmap_idx_onehot_s4;
+
+            hbm_reg_l2_counter_rdvalid_r1_s4 <= (!hbm_l2_bitmap_empty_s4);
+        end
+        HBM_READ_CARRY_UP: begin
+            hbm_reg_l2_bitmap_empty_s4 <= 0;
+            hbm_reg_l2_bitmap_idx_s4 <= hbm_reg_l2_bitmap_idx_s5;
+            hbm_reg_l2_bitmap_idx_onehot_s4 <= hbm_reg_l2_bitmap_idx_onehot_s5;
+
+            if (!hbm_reg_l2_addr_conflict_s4_s3) begin
+                hbm_reg_l2_bitmap_postop_s4 <= (
+                    hbm_reg_l2_bitmap_postop_s5);
+            end
+        end
+        default: ;
+        endcase
+
+        // Forward L2 bitmap updates
+        hbm_reg_l2_bitmap_s[4] <= (
+            hbm_reg_l2_addr_conflict_s5_s3 ?
+            hbm_l2_bitmap_s6 : hbm_reg_l2_bitmap_s[3]);
+
+        /**
+         * Stage 3: Write-back the L1 counter and bitmap,
+         * and read the corresponding L2 bitmap.
+         */
+        hbm_reg_valid_s[3] <= hbm_reg_valid_s[2];
+        hbm_reg_he_data_s[3] <= hbm_reg_he_data_s[2];
+        hbm_reg_op_type_s[3] <= hbm_reg_op_type_s[2];
+        hbm_reg_is_enque_s[3] <= hbm_reg_is_enque_s[2];
+        hbm_reg_priority_s[3] <= hbm_reg_priority_s[2];
+        hbm_reg_is_deque_max_s[3] <= hbm_reg_is_deque_max_s[2];
+        hbm_reg_is_deque_min_s[3] <= hbm_reg_is_deque_min_s[2];
+
+        hbm_reg_l2_addr_s[3] <= hbm_reg_l1_bitmap_idx_s2;
+
+        hbm_reg_l1_counter_s3 <= hbm_l1_counter_s3;
+        hbm_reg_l2_addr_conflict_s4_s3 <= hbm_l2_addr_conflict_s4_s3;
+        hbm_reg_l2_addr_conflict_s5_s3 <= hbm_l2_addr_conflict_s5_s3;
+        hbm_reg_l2_addr_conflict_s6_s3 <= hbm_l2_addr_conflict_s6_s3;
+        hbm_reg_l2_addr_conflict_s7_s3 <= hbm_l2_addr_conflict_s7_s3;
+
+        // Write-back L1 bitmap and counter
+        if (hbm_reg_valid_s[2]) begin
+            hbm_l1_bitmap <= hbm_l1_bitmap_s3;
+            hbm_l1_counters[hbm_reg_l1_bitmap_idx_s2] <= hbm_l1_counter_s3;
+        end
+
+        // Forward L2 bitmap updates
+        hbm_reg_l2_bitmap_s[3] <= (
+            hbm_l2_addr_conflict_s6_s3 ?
+            hbm_l2_bitmap_s6 : hbm_l2_bitmaps[reg_l1_bitmap_idx_s2]);
+
+        /**
+         * Stage 2: Compute the L1 bitmap index and postop
+         * bitmap, and read the corresponding L1 counter.
+         */
+        hbm_reg_valid_s[2] <= hbm_reg_valid_s[1];
+        hbm_reg_he_data_s[2] <= hbm_reg_he_data_s[1];
+        hbm_reg_op_type_s[2] <= hbm_reg_op_type_s[1];
+        hbm_reg_is_enque_s[2] <= hbm_reg_is_enque_s[1];
+        hbm_reg_priority_s[2] <= hbm_reg_priority_s[1];
+        hbm_reg_is_deque_max_s[2] <= hbm_reg_is_deque_max_s[1];
+        hbm_reg_is_deque_min_s[2] <= hbm_reg_is_deque_min_s[1];
+
+        hbm_reg_l1_bitmap_empty_s2 <= 0;
+
+        case (hbm_rcd_s2)
+        HBM_READ_CARRY_DOWN: begin
+            hbm_reg_l1_bitmap_idx_s2 <= hbm_l1_bitmap_idx_s2;
+            hbm_reg_l1_bitmap_empty_s2 <= hbm_l1_bitmap_empty_s2;
+            hbm_reg_l1_bitmap_postop_s2 <= hbm_l1_bitmap_postop_s2;
+            hbm_reg_l1_bitmap_idx_onehot_s2 <= hbm_l1_bitmap_idx_onehot_s2;
+
+            hbm_reg_l1_counter_s2 <= (
+                (hbm_reg_valid_s[2] &&
+                    (hbm_l1_bitmap_idx_s2 == hbm_reg_l1_bitmap_idx_s2)) ?
+                    hbm_l1_counter_s3 : hbm_l1_counters[hbm_l1_bitmap_idx_s2]);
+        end
+        HBM_READ_CARRY_RIGHT: begin
+            hbm_reg_l1_counter_s2 <= hbm_l1_counter_s3;
+        end
+        default: ;
+        endcase
+
+        /**
+         * Stage 1: Determine operation validity. Disables the pipeline
+         * stage if the BBQ is empty (deques) or FL is empty (enqueues).
+         */
+        hbm_reg_valid_s[1] <= hbm_valid_s1;
+        hbm_reg_he_data_s[1] <= hbm_reg_he_data_s[0];
+        hbm_reg_op_type_s[1] <= hbm_reg_op_type_s[0];
+        hbm_reg_is_enque_s[1] <= hbm_reg_is_enque_s[0];
+        hbm_reg_priority_s[1] <= hbm_reg_priority_s[0];
+        hbm_reg_is_deque_max_s[1] <= hbm_reg_is_deque_max_s[0];
+        hbm_reg_is_deque_min_s[1] <= hbm_reg_is_deque_min_s[0];
+
+        hbm_reg_old_occupancy_s1 <= hbm_old_occupancy_s1;
+        hbm_reg_new_occupancy_s1 <= hbm_new_occupancy_s1;
+
+        if (hbm_valid_s1) begin
+            hbm_occupancy <= hbm_new_occupancy_s1;
+        end
+
+        // Register init signals
+        hbm_fl_init_done_r <= hbm_fl_init_done;
+        hbm_counter_l2_init_done_r <= hbm_counter_l2_init_done;
+        
+        hbm_fl_wraddress_counter_r <= hbm_fl_wraddress_counter_r + 1;
+        hbm_counter_l2_wraddress_counter_r <= hbm_counter_l2_wraddress_counter_r + 1;
+
+        // Register read signals
+        hbm_pb_q_r <= hbm_pb_q;
+        hbm_he_rden_r <= hbm_he_rden;
+        hbm_np_rden_r <= hbm_np_rden;
+        hbm_pp_rden_r <= hbm_pp_rden;
+        hbm_he_rdaddress_r <= hbm_he_rdaddress;
+        hbm_np_rdaddress_r <= hbm_np_rdaddress;
+        hbm_pp_rdaddress_r <= hbm_pp_rdaddress;
+
+        // Register write signals
+        hbm_he_wren_r <= hbm_he_wren;
+        hbm_np_wren_r <= hbm_np_wren;
+        hbm_pp_wren_r <= hbm_pp_wren;
+        hbm_he_wraddress_r <= hbm_he_wraddress;
+        hbm_np_wraddress_r <= hbm_np_wraddress;
+        hbm_pp_wraddress_r <= hbm_pp_wraddress;
+
+        hbm_fl_q_r[0] <= hbm_fl_q;
+        for (i = 0; i < 7; i = i + 1) begin
+            hbm_fl_q_r[i + 1] <= hbm_fl_q_r[i];
+        end
+
+        // Register R/W conflict signals
+        hbm_reg_pb_rdwr_conflict_r1 <= hbm_pb_rdwr_conflict;
+        hbm_reg_pb_rdwr_conflict_r2 <= hbm_reg_pb_rdwr_conflict_r1;
+
     end
 end
 
+//SRAM_Buffer_Management_Struct
 // Free list
 fifo_generator_0 #()
 free_list (
@@ -1570,6 +2081,80 @@ counters_l2 (
     .doutb(counter_l2_q)
 );
 
+//HBM_Buffer_Management_Struct
+// Free list
+fifo_generator_0 #()
+hbm_free_list (
+    .clk(clk),
+    .din(hbm_fl_data),
+    .rd_en(hbm_fl_rdreq),
+    .wr_en(hbm_fl_wrreq),
+    .empty(hbm_fl_empty),
+    .full(),
+    .dout(hbm_fl_q)
+);
+
+// Heap entries
+blk_mem_gen_3 #()
+hbm_heap_entries (
+    .clka(clk),
+    .clkb(clk),
+    .dina(hbm_he_data),
+    .wea(hbm_he_wren),
+    .addrb(hbm_he_rdaddress),
+    .addra(hbm_he_wraddress),
+    .doutb(hbm_he_q)
+);
+
+// Next pointers
+blk_mem_gen_4 #()
+hbm_next_pointers (
+    .clka(clk),
+    .clkb(clk),
+    .dina(hbm_np_data),
+    .wea(hbm_np_wren),
+    .addrb(hbm_np_rdaddress),
+    .addra(hbm_np_wraddress),
+    .doutb(hbm_np_q)
+);
+
+// Previous pointers
+blk_mem_gen_4 #()
+hbm_previous_pointers (
+    .clka(clk),
+    .clkb(clk),
+    .dina(hbm_pp_data),
+    .wea(hbm_pp_wren),
+    .addrb(hbm_pp_rdaddress),
+    .addra(hbm_pp_wraddress),
+    .doutb(hbm_pp_q)
+);
+
+// Priority buckets
+blk_mem_gen_5 #()
+hbm_priority_buckets (
+    .clka(clk),
+    .clkb(clk),
+    .dina(hbm_pb_data),
+    .wea(hbm_pb_wren),
+    .addrb(hbm_pb_rdaddress),
+    .addra(hbm_pb_wraddress),
+    .doutb(hbm_pb_q)
+);
+
+// L2 counters
+blk_mem_gen_6 #()
+hbm_counters_l2 (
+    .clka(clk),
+    .clkb(clk),
+    .dina(hbm_counter_l2_data),
+    .wea(hbm_counter_l2_wren),
+    .addrb(hbm_counter_l2_rdaddress),
+    .addra(hbm_counter_l2_wraddress),
+    .doutb(hbm_counter_l2_q)
+);
+
+//SRAM FFSs
 // L1 FFSs
 ffs #(
     .WIDTH_LOG(HEAP_LOG_BITMAP_WIDTH)
@@ -1632,5 +2217,67 @@ ffs_l2_inst2 (
     .zero(ffs_l2_inst_zero[2])
 );
 
-endmodule
+//HBM FFSs
+// L1 FFSs
+ffs #(
+    .WIDTH_LOG(HEAP_LOG_BITMAP_WIDTH)
+)
+hbm_ffs_l1_inst0 (
+    .x(hbm_l1_bitmap),
+    .msb(hbm_ffs_l1_inst_msb[0]),
+    .lsb(hbm_ffs_l1_inst_lsb[0]),
+    .msb_onehot(hbm_ffs_l1_inst_msb_onehot[0]),
+    .lsb_onehot(hbm_ffs_l1_inst_lsb_onehot[0]),
+    .zero(hbm_ffs_l1_inst_zero[0])
+);
 
+ffs #(
+    .WIDTH_LOG(HEAP_LOG_BITMAP_WIDTH)
+)
+hbm_ffs_l1_inst1 (
+    .x(hbm_reg_l1_bitmap_postop_s2),
+    .msb(hbm_ffs_l1_inst_msb[1]),
+    .lsb(hbm_ffs_l1_inst_lsb[1]),
+    .msb_onehot(hbm_ffs_l1_inst_msb_onehot[1]),
+    .lsb_onehot(hbm_ffs_l1_inst_lsb_onehot[1]),
+    .zero(hbm_ffs_l1_inst_zero[1])
+);
+
+// L2 FFSs
+ffs #(
+    .WIDTH_LOG(HEAP_LOG_BITMAP_WIDTH)
+)
+hbm_ffs_l2_inst0 (
+    .x(hbm_reg_l2_bitmap_s[3]),
+    .msb(hbm_ffs_l2_inst_msb[0]),
+    .lsb(hbm_ffs_l2_inst_lsb[0]),
+    .msb_onehot(hbm_ffs_l2_inst_msb_onehot[0]),
+    .lsb_onehot(hbm_ffs_l2_inst_lsb_onehot[0]),
+    .zero(hbm_ffs_l2_inst_zero[0])
+);
+
+ffs #(
+    .WIDTH_LOG(HEAP_LOG_BITMAP_WIDTH)
+)
+hbm_ffs_l2_inst1 (
+    .x(hbm_reg_l2_bitmap_postop_s4),
+    .msb(hbm_ffs_l2_inst_msb[1]),
+    .lsb(hbm_ffs_l2_inst_lsb[1]),
+    .msb_onehot(hbm_ffs_l2_inst_msb_onehot[1]),
+    .lsb_onehot(hbm_ffs_l2_inst_lsb_onehot[1]),
+    .zero(hbm_ffs_l2_inst_zero[1])
+);
+
+ffs #(
+    .WIDTH_LOG(HEAP_LOG_BITMAP_WIDTH)
+)
+hbm_ffs_l2_inst2 (
+    .x(hbm_reg_l2_bitmap_postop_s5),
+    .msb(hbm_ffs_l2_inst_msb[2]),
+    .lsb(hbm_ffs_l2_inst_lsb[2]),
+    .msb_onehot(hbm_ffs_l2_inst_msb_onehot[2]),
+    .lsb_onehot(hbm_ffs_l2_inst_lsb_onehot[2]),
+    .zero(hbm_ffs_l2_inst_zero[2])
+);
+
+endmodule

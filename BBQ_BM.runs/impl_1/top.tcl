@@ -123,6 +123,8 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
+  set_param xicom.use_bs_reader 1
+  set_param tcl.collectionResultDisplayLimit 0
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xcu280-fsvh2892-2L-e
   set_property board_part xilinx.com:au280:part0:1.1 [current_project]
@@ -138,13 +140,17 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/top.dcp
+  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_0/ila_0.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/hbm_0/hbm_0.xci
+  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_4/blk_mem_gen_4.xci
+  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_5/blk_mem_gen_5.xci
+  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6.xci
+  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc
 OPTRACE "read constraints: implementation" END { }

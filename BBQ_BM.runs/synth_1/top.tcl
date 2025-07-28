@@ -70,6 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xcu280-fsvh2892-2L-e
 
@@ -93,15 +96,15 @@ read_verilog -library xil_defaultlib -sv {
   /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv
   /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv
 }
+read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_ooc.xdc]
+
 read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci
 set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1_ooc.xdc]
 
 read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]
-
-read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
-set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
-set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/fifo_generator_0/fifo_generator_0_ooc.xdc]
 
 read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2.xci
 set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_2/blk_mem_gen_2_ooc.xdc]
@@ -120,6 +123,18 @@ set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/wor
 read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/hbm_0/hbm_0.xci
 set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hdl/par/hbm_ip.xdc]
 set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hdl/par/hbm_0_ooc.xdc]
+
+read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_4/blk_mem_gen_4.xci
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_4/blk_mem_gen_4_ooc.xdc]
+
+read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_5/blk_mem_gen_5.xci
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_5/blk_mem_gen_5_ooc.xdc]
+
+read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6.xci
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6_ooc.xdc]
+
+read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3.xci
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
