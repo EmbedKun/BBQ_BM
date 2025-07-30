@@ -133,8 +133,11 @@ set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/wor
 read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6.xci
 set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6_ooc.xdc]
 
-read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3.xci
-set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3_ooc.xdc]
+read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_1/ila_1.xci
+set_property used_in_synthesis false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

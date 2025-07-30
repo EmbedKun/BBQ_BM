@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Jul 28 21:44:51 2025
+| Date         : Tue Jul 29 16:02:35 2025
 | Host         : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_methodology -file top_methodology_drc_routed.rpt -pb top_methodology_drc_routed.pb -rpx top_methodology_drc_routed.rpx
 | Design       : top
@@ -23,13 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 10
+             Violations found: 11
 +-----------+------------------+--------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                            | Violations |
 +-----------+------------------+--------------------------------------------------------+------------+
 | TIMING-2  | Critical Warning | Invalid primary clock source pin                       | 1          |
 | TIMING-4  | Critical Warning | Invalid primary clock redefinition on a clock tree     | 1          |
 | LUTAR-1   | Warning          | LUT drives async reset alert                           | 5          |
+| TIMING-9  | Warning          | Unknown CDC Logic                                      | 1          |
 | TIMING-18 | Warning          | Missing input or output delay                          | 1          |
 | XDCC-7    | Warning          | Scoped Clock constraint overwritten on the same source | 1          |
 | CLKC-5    | Advisory         | BUFGCE with constant CE has BUFG driver                | 1          |
@@ -39,12 +40,12 @@ Table of Contents
 -----------------
 TIMING-2#1 Critical Warning
 Invalid primary clock source pin  
-A primary clock hbm_0/inst/HBM_REF_CLK_0 is created on an inappropriate pin hbm_0/inst/HBM_REF_CLK_0. It is recommended to create a primary clock only on a proper clock source (input port or primitive output pin with no timing arc)
+A primary clock bbq_inst/hbm_heap_entries/inst/HBM_REF_CLK_0 is created on an inappropriate pin bbq_inst/hbm_heap_entries/inst/HBM_REF_CLK_0. It is recommended to create a primary clock only on a proper clock source (input port or primitive output pin with no timing arc)
 Related violations: <none>
 
 TIMING-4#1 Critical Warning
 Invalid primary clock redefinition on a clock tree  
-Invalid clock redefinition on a clock tree. The primary clock hbm_0/inst/HBM_REF_CLK_0 is defined downstream of clock hbm_ref_clk_wiz_0_1 and overrides its insertion delay and/or waveform definition
+Invalid clock redefinition on a clock tree. The primary clock bbq_inst/hbm_heap_entries/inst/HBM_REF_CLK_0 is defined downstream of clock hbm_ref_clk_wiz_0_1 and overrides its insertion delay and/or waveform definition
 Related violations: <none>
 
 LUTAR-1#1 Warning
@@ -89,6 +90,11 @@ dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[8]/CLR
 dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[9]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
+TIMING-9#1 Warning
+Unknown CDC Logic  
+One or more asynchronous Clock Domain Crossing has been detected between 2 clock domains through a set_false_path or a set_clock_groups or set_max_delay -datapath_only constraint but no double-registers logic synchronizer has been found on the side of the capture clock. It is recommended to run report_cdc for a complete and detailed CDC coverage. Please consider using XPM_CDC to avoid Critical severities
+Related violations: <none>
+
 TIMING-18#1 Warning
 Missing input or output delay  
 An output delay is missing on bbq_out relative to clock(s) sys_clk
@@ -103,7 +109,7 @@ Related violations: <none>
 
 CLKC-5#1 Advisory
 BUFGCE with constant CE has BUFG driver  
-The BUFGCE cell hbm_0/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 hbm_0/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0/I pin (and CE pin not ACTIVE) is driven by BUFGCE clock buffer clk_wiz_inst/inst/clkout2_buf. This may be an unnecessary use of multiple clocking resources and should be reviewed. Cascaded buffers introduce skew that can lead to difficult or impossible timing closure.
+The BUFGCE cell bbq_inst/hbm_heap_entries/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 bbq_inst/hbm_heap_entries/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0/I pin (and CE pin not ACTIVE) is driven by BUFGCE clock buffer clk_wiz_inst/inst/clkout2_buf. This may be an unnecessary use of multiple clocking resources and should be reviewed. Cascaded buffers introduce skew that can lead to difficult or impossible timing closure.
 Related violations: <none>
 
 

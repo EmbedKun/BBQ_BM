@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Jul 28 21:44:49 2025
+| Date         : Tue Jul 29 16:02:33 2025
 | Host         : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_drc -file top_drc_routed.rpt -pb top_drc_routed.pb -rpx top_drc_routed.rpx
 | Design       : top
@@ -36,12 +36,12 @@ Table of Contents
 -----------------
 REQP-1852#1 Warning
 BUFGCE_cascade_from_clock_buf  
-Cascaded clock buffers exist in the design with constant CE pin. This may result in large clock skew and timing violations. Cell BUFGCE hbm_0/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 I pin is driven by another clock buffer clk_wiz_inst/inst/clkout2_buf.
+Cascaded clock buffers exist in the design with constant CE pin. This may result in large clock skew and timing violations. Cell BUFGCE bbq_inst/hbm_heap_entries/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 I pin is driven by another clock buffer clk_wiz_inst/inst/clkout2_buf.
 Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-49 net(s) have no routable loads. The problem bus(es) and/or net(s) are bbq_inst/free_list/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
+55 net(s) have no routable loads. The problem bus(es) and/or net(s) are bbq_inst/free_list/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
 bbq_inst/free_list/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_i,
 bbq_inst/hbm_free_list/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i,
 bbq_inst/hbm_free_list/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_afull_fb,
@@ -56,7 +56,7 @@ dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0],
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0],
 dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0]
- (the first 15 of 31 listed).
+ (the first 15 of 37 listed).
 Related violations: <none>
 
 

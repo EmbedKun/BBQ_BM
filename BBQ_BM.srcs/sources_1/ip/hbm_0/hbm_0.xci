@@ -3786,9 +3786,9 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SAXI_30">false</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SAXI_31">false</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.STACK_8HI">false</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SWITCH_ENABLE_00">TRUE</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SWITCH_ENABLE_00">FALSE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SWITCH_ENABLE_01">FALSE</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SWITCH_EN_0">1</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SWITCH_EN_0">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.SWITCH_EN_1">0</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.TEMP_WAIT_PERIOD_0">100000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.TEMP_WAIT_PERIOD_1">100000</spirit:configurableElementValue>
@@ -5098,7 +5098,7 @@
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_SAXI_31">true</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_SINGLE_STACK_SELECTION">LEFT</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_STACK_8HI">false</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_SWITCH_ENABLE_00">TRUE</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_SWITCH_ENABLE_00">FALSE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_SWITCH_ENABLE_01">FALSE</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_TEMP_POLL_CNT_0">100000</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_TEMP_POLL_CNT_1">100000</spirit:configurableElementValue>
@@ -7457,6 +7457,7 @@
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_SAXI_13" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_SAXI_14" xilinx:valueSource="user"/>
             <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_SAXI_15" xilinx:valueSource="user"/>
+            <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_SWITCH_ENABLE_00" xilinx:valueSource="user"/>
           </xilinx:configElementInfos>
           <xilinx:boundaryDescriptionInfo>
             <xilinx:boundaryDescription xilinx:boundaryDescriptionJSON="{&quot;ip_boundary&quot;:{&quot;ports&quot;:{&quot;HBM_REF_CLK_0&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;0&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ACLK&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;0&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ARESET_N&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;0&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ARADDR&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;32&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ARBURST&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;1&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ARID&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;5&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ARLEN&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;3&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ARSIZE&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;2&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_ARVALID&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;0&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_AWADDR&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;32&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_AWBURST&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;1&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_AWID&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;5&quot;,&quot;physical_right&quot;:&quot;0&quot;},&quot;AXI_00_AWLEN&quot;:{&quot;direction&quot;:&quot;in&quot;,&quot;physical_left&quot;:&quot;3&quot;,&quot;physical

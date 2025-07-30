@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/home/gabber/FUDAN/workspace/BBQ_BM/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
+      <db_ref path="/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
@@ -15,24 +15,46 @@
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="258"></NameColumnWidth>
-      <ValueColumnWidth column_width="94"></ValueColumnWidth>
+      <ValueColumnWidth column_width="82"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="2" />
+   <WVObjectSize size="5" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="logic" fp_name="init_done">
+   <wvobject type="array" fp_name="heap_out_he_data">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">init_done</obj_property>
-      <obj_property name="ObjectShortName">init_done</obj_property>
+      <obj_property name="ElementShortName">heap_out_he_data[16:0]</obj_property>
+      <obj_property name="ObjectShortName">heap_out_he_data[16:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="counter">
+   <wvobject type="array" fp_name="heap_out_he_priority">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">counter[63:0]</obj_property>
-      <obj_property name="ObjectShortName">counter[63:0]</obj_property>
+      <obj_property name="ElementShortName">heap_out_he_priority[9:0]</obj_property>
+      <obj_property name="ObjectShortName">heap_out_he_priority[9:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="heap_out_op_type">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">heap_out_op_type[1:0]</obj_property>
+      <obj_property name="ObjectShortName">heap_out_op_type[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="heap_out_valid">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">heap_out_valid</obj_property>
+      <obj_property name="ObjectShortName">heap_out_valid</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="locked">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">locked</obj_property>
+      <obj_property name="ObjectShortName">locked</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

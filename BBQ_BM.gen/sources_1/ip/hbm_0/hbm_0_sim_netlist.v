@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Sun Jul 27 20:33:19 2025
+// Date        : Tue Jul 29 15:13:21 2025
 // Host        : gabber running 64-bit Ubuntu 22.04.5 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hbm_0_sim_netlist.v
@@ -942,9 +942,9 @@ module hbm_0
   (* READ_PERCENT_29 = "40" *) 
   (* READ_PERCENT_30 = "40" *) 
   (* READ_PERCENT_31 = "40" *) 
-  (* SWITCH_ENABLE_00 = "TRUE" *) 
+  (* SWITCH_ENABLE_00 = "FALSE" *) 
   (* SWITCH_ENABLE_01 = "FALSE" *) 
-  (* SWITCH_EN_0 = "16'b0000000000000001" *) 
+  (* SWITCH_EN_0 = "16'b0000000000000000" *) 
   (* SWITCH_EN_1 = "16'b0000000000000000" *) 
   (* TEMP_WAIT_PERIOD_0 = "100000" *) 
   (* TEMP_WAIT_PERIOD_1 = "100000" *) 
@@ -14482,7 +14482,7 @@ module hbm_0_hbm_top
     .READ_PERCENT_15(40),
     .SIM_DEVICE("ULTRASCALE_PLUS"),
     .STACK_LOCATION(0),
-    .SWITCH_ENABLE("TRUE"),
+    .SWITCH_ENABLE("FALSE"),
     .WRITE_PERCENT_00(40),
     .WRITE_PERCENT_01(40),
     .WRITE_PERCENT_02(40),
@@ -15635,8 +15635,8 @@ endmodule
 (* READ_PERCENT_22 = "40" *) (* READ_PERCENT_23 = "40" *) (* READ_PERCENT_24 = "40" *) 
 (* READ_PERCENT_25 = "40" *) (* READ_PERCENT_26 = "40" *) (* READ_PERCENT_27 = "40" *) 
 (* READ_PERCENT_28 = "40" *) (* READ_PERCENT_29 = "40" *) (* READ_PERCENT_30 = "40" *) 
-(* READ_PERCENT_31 = "40" *) (* SWITCH_ENABLE_00 = "TRUE" *) (* SWITCH_ENABLE_01 = "FALSE" *) 
-(* SWITCH_EN_0 = "16'b0000000000000001" *) (* SWITCH_EN_1 = "16'b0000000000000000" *) (* TEMP_WAIT_PERIOD_0 = "100000" *) 
+(* READ_PERCENT_31 = "40" *) (* SWITCH_ENABLE_00 = "FALSE" *) (* SWITCH_ENABLE_01 = "FALSE" *) 
+(* SWITCH_EN_0 = "16'b0000000000000000" *) (* SWITCH_EN_1 = "16'b0000000000000000" *) (* TEMP_WAIT_PERIOD_0 = "100000" *) 
 (* TEMP_WAIT_PERIOD_1 = "100000" *) (* WRITE_PERCENT_00 = "40" *) (* WRITE_PERCENT_01 = "40" *) 
 (* WRITE_PERCENT_02 = "40" *) (* WRITE_PERCENT_03 = "40" *) (* WRITE_PERCENT_04 = "40" *) 
 (* WRITE_PERCENT_05 = "40" *) (* WRITE_PERCENT_06 = "40" *) (* WRITE_PERCENT_07 = "40" *) 
@@ -40016,224 +40016,224 @@ module hbm_0_xpm_memory_spram
   wire NLW_xpm_memory_base_inst_sbiterrb_UNCONNECTED;
   wire [31:0]NLW_xpm_memory_base_inst_doutb_UNCONNECTED;
 
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[0]_i_1 
        (.I0(douta[0]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[0]));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[10]_i_1 
        (.I0(douta[10]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[10]));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[11]_i_1 
        (.I0(douta[11]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[11]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[12]_i_1 
        (.I0(douta[12]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[12]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[13]_i_1 
        (.I0(douta[13]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[13]));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[14]_i_1 
        (.I0(douta[14]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[14]));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[15]_i_1 
        (.I0(douta[15]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[15]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[16]_i_1 
        (.I0(douta[16]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[16]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[17]_i_1 
        (.I0(douta[17]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[17]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[18]_i_1 
        (.I0(douta[18]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[18]));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[19]_i_1 
        (.I0(douta[19]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[19]));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[1]_i_1 
        (.I0(douta[1]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[1]));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[20]_i_1 
        (.I0(douta[20]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[20]));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[21]_i_1 
        (.I0(douta[21]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[21]));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[2]_i_1 
        (.I0(douta[2]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[2]));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[3]_i_1 
        (.I0(douta[3]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[3]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[4]_i_1 
        (.I0(douta[4]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[4]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[5]_i_1 
        (.I0(douta[5]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[5]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[6]_i_1 
        (.I0(douta[6]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[6]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[7]_i_1 
        (.I0(douta[7]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[7]));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[8]_i_1 
        (.I0(douta[8]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[8]));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_addr_pend_r[9]_i_1 
        (.I0(douta[9]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[9]));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[22]_i_1 
        (.I0(douta[22]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[22]));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[23]_i_1 
        (.I0(douta[23]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[23]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[26]_i_1 
        (.I0(douta[26]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[26]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[27]_i_1 
        (.I0(douta[27]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[27]));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[28]_i_1 
        (.I0(douta[28]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[28]));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[29]_i_1 
        (.I0(douta[29]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[29]));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[30]_i_1 
        (.I0(douta[30]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[30]));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \apb_data_pend_r[31]_i_2 
        (.I0(douta[31]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[31]));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT2 #(
     .INIT(4'h2)) 
     apb_poll_pend_r_i_2
        (.I0(douta[25]),
         .I1(\apb_data_pend_r_reg[22] ),
         .O(D[25]));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT2 #(
     .INIT(4'h2)) 
     apb_wr_rd_pend_r_i_1
@@ -40286,7 +40286,7 @@ module hbm_0_xpm_memory_spram
         .I3(init_seq_complete_r_i_8_n_0),
         .I4(init_seq_complete_r_i_9_n_0),
         .O(init_seq_complete_r_i_5_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     init_seq_complete_r_i_6
@@ -40295,7 +40295,7 @@ module hbm_0_xpm_memory_spram
         .I2(douta[4]),
         .I3(douta[5]),
         .O(init_seq_complete_r_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     init_seq_complete_r_i_7
@@ -40304,7 +40304,7 @@ module hbm_0_xpm_memory_spram
         .I2(douta[3]),
         .I3(douta[6]),
         .O(init_seq_complete_r_i_7_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     init_seq_complete_r_i_8
@@ -40313,7 +40313,7 @@ module hbm_0_xpm_memory_spram
         .I2(douta[2]),
         .I3(douta[24]),
         .O(init_seq_complete_r_i_8_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     init_seq_complete_r_i_9
@@ -40564,8 +40564,6 @@ module hbm_0_xsdb2apb
   wire \data_from_apb[0]_i_3_n_0 ;
   wire \data_from_apb[0]_i_4_n_0 ;
   wire \data_from_apb[0]_i_5_n_0 ;
-  wire \data_from_apb[0]_i_6_n_0 ;
-  wire \data_from_apb[0]_i_7_n_0 ;
   wire \data_from_apb[10]_i_1_n_0 ;
   wire \data_from_apb[11]_i_1_n_0 ;
   wire \data_from_apb[12]_i_1_n_0 ;
@@ -41430,7 +41428,7 @@ module hbm_0_xsdb2apb
         .I4(a_req_i_7_n_0),
         .I5(\state_reg_n_0_[7] ),
         .O(a_req_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'h1)) 
     a_req_i_7
@@ -41488,74 +41486,55 @@ module hbm_0_xsdb2apb
         .D(cattrip_sticky_i_1_n_0),
         .Q(cattrip_sticky),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'hEEAEEEAEEEAEAAAA)) 
+  LUT5 #(
+    .INIT(32'hFFFF0040)) 
     \data_from_apb[0]_i_1 
-       (.I0(\data_from_apb[0]_i_2_n_0 ),
-        .I1(\data_from_apb[15]_i_3_n_0 ),
-        .I2(s_daddr_o[8]),
-        .I3(data_from_apb0[0]),
-        .I4(\data_from_apb[0]_i_3_n_0 ),
-        .I5(\data_from_apb[0]_i_4_n_0 ),
+       (.I0(\state_reg_n_0_[5] ),
+        .I1(APB_0_PRDATA[0]),
+        .I2(Q[1]),
+        .I3(Q[0]),
+        .I4(\data_from_apb[0]_i_2_n_0 ),
         .O(\data_from_apb[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
-  LUT4 #(
-    .INIT(16'h0040)) 
+  LUT6 #(
+    .INIT(64'hFF00AEAE00000000)) 
     \data_from_apb[0]_i_2 
-       (.I0(Q[0]),
-        .I1(Q[1]),
-        .I2(APB_0_PRDATA[0]),
-        .I3(\state_reg_n_0_[5] ),
+       (.I0(\data_from_apb[0]_i_3_n_0 ),
+        .I1(\data_from_apb[1]_i_5_n_0 ),
+        .I2(\data_from_apb[0]_i_4_n_0 ),
+        .I3(data_from_apb0[0]),
+        .I4(s_daddr_o[8]),
+        .I5(\data_from_apb[15]_i_3_n_0 ),
         .O(\data_from_apb[0]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h000000000000000D)) 
+    .INIT(64'h0000000038080000)) 
     \data_from_apb[0]_i_3 
-       (.I0(\data_from_apb[0]_i_5_n_0 ),
-        .I1(\data_from_apb[0]_i_6_n_0 ),
-        .I2(s_daddr_o[7]),
-        .I3(s_daddr_o[6]),
-        .I4(s_daddr_o[5]),
-        .I5(s_daddr_o[2]),
-        .O(\data_from_apb[0]_i_3_n_0 ));
-  LUT5 #(
-    .INIT(32'hABAABBBB)) 
-    \data_from_apb[0]_i_4 
-       (.I0(s_daddr_o[8]),
-        .I1(\data_from_apb[0]_i_7_n_0 ),
-        .I2(s_daddr_o[1]),
-        .I3(cattrip_sticky),
-        .I4(s_daddr_o[0]),
-        .O(\data_from_apb[0]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hBFAAFAFABFAAFFFA)) 
-    \data_from_apb[0]_i_5 
-       (.I0(s_daddr_o[3]),
-        .I1(hbm_temp_r[0]),
-        .I2(s_daddr_o[0]),
-        .I3(s_daddr_o[4]),
-        .I4(s_daddr_o[1]),
-        .I5(upper_addr_bits[0]),
-        .O(\data_from_apb[0]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h3808000000000000)) 
-    \data_from_apb[0]_i_6 
        (.I0(error_flag),
         .I1(s_daddr_o[1]),
         .I2(s_daddr_o[0]),
         .I3(INIT_ERROR),
         .I4(s_daddr_o[3]),
-        .I5(s_daddr_o[4]),
-        .O(\data_from_apb[0]_i_6_n_0 ));
+        .I5(\data_from_apb[9]_i_4_n_0 ),
+        .O(\data_from_apb[0]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFEFFFFFFFFFF)) 
-    \data_from_apb[0]_i_7 
-       (.I0(s_daddr_o[5]),
-        .I1(s_daddr_o[6]),
-        .I2(s_daddr_o[7]),
-        .I3(s_daddr_o[4]),
-        .I4(s_daddr_o[3]),
-        .I5(s_daddr_o[2]),
-        .O(\data_from_apb[0]_i_7_n_0 ));
+    .INIT(64'h8AAA8A88AAAA8A88)) 
+    \data_from_apb[0]_i_4 
+       (.I0(\data_from_apb[0]_i_5_n_0 ),
+        .I1(s_daddr_o[2]),
+        .I2(s_daddr_o[1]),
+        .I3(s_daddr_o[0]),
+        .I4(s_daddr_o[4]),
+        .I5(hbm_temp_r[0]),
+        .O(\data_from_apb[0]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF5F11FFFF)) 
+    \data_from_apb[0]_i_5 
+       (.I0(s_daddr_o[2]),
+        .I1(upper_addr_bits[0]),
+        .I2(cattrip_sticky),
+        .I3(s_daddr_o[0]),
+        .I4(s_daddr_o[4]),
+        .I5(s_daddr_o[1]),
+        .O(\data_from_apb[0]_i_5_n_0 ));
   LUT6 #(
     .INIT(64'hFF04040404040404)) 
     \data_from_apb[10]_i_1 
@@ -41618,22 +41597,22 @@ module hbm_0_xsdb2apb
         .O(\data_from_apb[15]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT4 #(
-    .INIT(16'h0040)) 
+    .INIT(16'h0080)) 
     \data_from_apb[15]_i_3 
-       (.I0(s_daddr_o[9]),
-        .I1(s_daddr_o[15]),
-        .I2(s_daddr_o[16]),
+       (.I0(s_daddr_o[14]),
+        .I1(\state_reg_n_0_[5] ),
+        .I2(s_daddr_o[15]),
         .I3(\data_from_apb[15]_i_4_n_0 ),
         .O(\data_from_apb[15]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFF7FFFFFFFFFF)) 
+    .INIT(64'hFFFFFFFFFFFFDFFF)) 
     \data_from_apb[15]_i_4 
-       (.I0(\state_reg_n_0_[5] ),
-        .I1(s_daddr_o[12]),
-        .I2(s_daddr_o[11]),
+       (.I0(s_daddr_o[12]),
+        .I1(s_daddr_o[11]),
+        .I2(s_daddr_o[16]),
         .I3(s_daddr_o[13]),
         .I4(s_daddr_o[10]),
-        .I5(s_daddr_o[14]),
+        .I5(s_daddr_o[9]),
         .O(\data_from_apb[15]_i_4_n_0 ));
   LUT6 #(
     .INIT(64'hEAAAEEAEEAAAEAAA)) 
@@ -41655,26 +41634,26 @@ module hbm_0_xsdb2apb
         .I3(\state_reg_n_0_[5] ),
         .O(\data_from_apb[1]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'hF0FFF0F0FFFFF1FF)) 
+    .INIT(64'h55555555DFDFDFFF)) 
     \data_from_apb[1]_i_3 
-       (.I0(upper_addr_bits[1]),
-        .I1(s_daddr_o[2]),
-        .I2(\data_from_apb[1]_i_5_n_0 ),
-        .I3(s_daddr_o[4]),
-        .I4(s_daddr_o[1]),
+       (.I0(\data_from_apb[1]_i_5_n_0 ),
+        .I1(s_daddr_o[1]),
+        .I2(s_daddr_o[4]),
+        .I3(upper_addr_bits[1]),
+        .I4(s_daddr_o[2]),
         .I5(s_daddr_o[0]),
         .O(\data_from_apb[1]_i_3_n_0 ));
   LUT5 #(
-    .INIT(32'h4055FFFF)) 
+    .INIT(32'h4101FFFF)) 
     \data_from_apb[1]_i_4 
        (.I0(s_daddr_o[2]),
-        .I1(hbm_temp_r[1]),
-        .I2(s_daddr_o[1]),
-        .I3(s_daddr_o[4]),
+        .I1(s_daddr_o[1]),
+        .I2(s_daddr_o[4]),
+        .I3(hbm_temp_r[1]),
         .I4(s_daddr_o[0]),
         .O(\data_from_apb[1]_i_4_n_0 ));
   LUT4 #(
-    .INIT(16'hFFFE)) 
+    .INIT(16'h0001)) 
     \data_from_apb[1]_i_5 
        (.I0(s_daddr_o[3]),
         .I1(s_daddr_o[5]),
@@ -41700,14 +41679,14 @@ module hbm_0_xsdb2apb
         .I3(\state_reg_n_0_[5] ),
         .O(\data_from_apb[2]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h0A2202220A200220)) 
+    .INIT(64'h0000000000DD5550)) 
     \data_from_apb[2]_i_3 
-       (.I0(\data_from_apb[9]_i_4_n_0 ),
-        .I1(s_daddr_o[0]),
-        .I2(s_daddr_o[3]),
-        .I3(s_daddr_o[1]),
-        .I4(hbm_temp_r[2]),
-        .I5(upper_addr_bits[2]),
+       (.I0(s_daddr_o[0]),
+        .I1(hbm_temp_r[2]),
+        .I2(upper_addr_bits[2]),
+        .I3(s_daddr_o[3]),
+        .I4(s_daddr_o[1]),
+        .I5(\data_from_apb[9]_i_4_n_0 ),
         .O(\data_from_apb[2]_i_3_n_0 ));
   LUT6 #(
     .INIT(64'h0000000000510040)) 
@@ -41738,10 +41717,10 @@ module hbm_0_xsdb2apb
         .I3(\state_reg_n_0_[5] ),
         .O(\data_from_apb[3]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h4400004000000040)) 
+    .INIT(64'h1100001000000010)) 
     \data_from_apb[3]_i_3 
-       (.I0(s_daddr_o[3]),
-        .I1(\data_from_apb[9]_i_4_n_0 ),
+       (.I0(\data_from_apb[9]_i_4_n_0 ),
+        .I1(s_daddr_o[3]),
         .I2(upper_addr_bits[3]),
         .I3(s_daddr_o[1]),
         .I4(s_daddr_o[0]),
@@ -41766,10 +41745,10 @@ module hbm_0_xsdb2apb
         .I3(\state_reg_n_0_[5] ),
         .O(\data_from_apb[4]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h4400004000000040)) 
+    .INIT(64'h1100001000000010)) 
     \data_from_apb[4]_i_3 
-       (.I0(s_daddr_o[3]),
-        .I1(\data_from_apb[9]_i_4_n_0 ),
+       (.I0(\data_from_apb[9]_i_4_n_0 ),
+        .I1(s_daddr_o[3]),
         .I2(upper_addr_bits[4]),
         .I3(s_daddr_o[1]),
         .I4(s_daddr_o[0]),
@@ -41815,7 +41794,7 @@ module hbm_0_xsdb2apb
         .O(\data_from_apb[6]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT4 #(
-    .INIT(16'h2008)) 
+    .INIT(16'h1004)) 
     \data_from_apb[6]_i_3 
        (.I0(\data_from_apb[9]_i_4_n_0 ),
         .I1(s_daddr_o[3]),
@@ -41881,7 +41860,7 @@ module hbm_0_xsdb2apb
         .O(\data_from_apb[9]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT4 #(
-    .INIT(16'hFFDF)) 
+    .INIT(16'hFFEF)) 
     \data_from_apb[9]_i_3 
        (.I0(\data_from_apb[9]_i_4_n_0 ),
         .I1(s_daddr_o[3]),
@@ -41889,12 +41868,12 @@ module hbm_0_xsdb2apb
         .I3(s_daddr_o[8]),
         .O(\data_from_apb[9]_i_3_n_0 ));
   LUT5 #(
-    .INIT(32'h00000002)) 
+    .INIT(32'hFFFFFEFF)) 
     \data_from_apb[9]_i_4 
-       (.I0(s_daddr_o[4]),
-        .I1(s_daddr_o[7]),
-        .I2(s_daddr_o[6]),
-        .I3(s_daddr_o[5]),
+       (.I0(s_daddr_o[5]),
+        .I1(s_daddr_o[6]),
+        .I2(s_daddr_o[7]),
+        .I3(s_daddr_o[4]),
         .I4(s_daddr_o[2]),
         .O(\data_from_apb[9]_i_4_n_0 ));
   FDRE #(
@@ -43002,7 +42981,6 @@ module hbm_0_xsdb2apb
         .I3(s_daddr_o[13]),
         .I4(s_daddr_o[16]),
         .O(\state[2]_i_7_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \state[2]_i_8 
@@ -43141,7 +43119,7 @@ module hbm_0_xsdb2apb
         .I4(\state[8]_i_3_n_0 ),
         .I5(\state[8]_i_4_n_0 ),
         .O(state4_out[8]));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \state[8]_i_2 

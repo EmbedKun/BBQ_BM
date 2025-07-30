@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Mon Jul 28 21:39:53 2025
-# Process ID: 625658
+# Start of session at: Tue Jul 29 15:57:33 2025
+# Process ID: 1207074
 # Current directory: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1
 # Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/top.vds
@@ -17,9 +17,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcu280'
 INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 625800
+INFO: [Synth 8-7075] Helper process launched with PID 1207105
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3229.527 ; gain = 172.688 ; free physical = 17371 ; free virtual = 53050
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3236.555 ; gain = 174.719 ; free physical = 16820 ; free virtual = 52940
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:21]
 	Parameter NB_LEVELS bound to: 2 - type: integer 
@@ -31,11 +31,11 @@ INFO: [Synth 8-6157] synthesizing module 'top' [/home/gabber/FUDAN/workspace/SBM
 	Parameter HEAP_ENTRY_AWIDTH bound to: 17 - type: integer 
 	Parameter HEAP_PRIORITY_AWIDTH bound to: 10 - type: integer 
 	Parameter HEAP_PRIORITY_BUCKETS_AWIDTH bound to: 10 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/clk_wiz_0_stub.v:5]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:113]
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/ila_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (2#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/ila_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (2#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/ila_0_stub.v:6]
 WARNING: [Synth 8-689] width (3) of port connection 'probe1' does not match port width (2) of module 'ila_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:116]
 INFO: [Synth 8-6157] synthesizing module 'bbq' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:32]
 	Parameter HEAP_BITMAP_WIDTH bound to: 32 - type: integer 
@@ -60,50 +60,54 @@ INFO: [Synth 8-6157] synthesizing module 'bbq' [/home/gabber/FUDAN/workspace/SBM
 	Parameter LIST_T_WIDTH bound to: 34 - type: integer 
 	Parameter BITMAP_IDX_MASK bound to: 31 - type: integer 
 	Parameter HEAP_LOG_BITMAP_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'fifo_generator_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/fifo_generator_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_0' (3#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/fifo_generator_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (4#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_1' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_1' (5#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_2' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_2' (6#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_3' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_3' (7#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_3_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_4' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_4_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_4' (8#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_4_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_5' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_5_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_5' (9#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_5_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_6' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_6_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_6' (10#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/blk_mem_gen_6_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'fifo_generator_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_generator_0' (3#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/fifo_generator_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_0' (4#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_1' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_1' (5#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_2' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_2' (6#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/hbm_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hbm_0' (7#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/hbm_0_stub.v:6]
+WARNING: [Synth 8-689] width (17) of port connection 'AXI_00_RDATA' does not match port width (256) of module 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2704]
+WARNING: [Synth 8-7071] port 'apb_complete_0' of module 'hbm_0' is unconnected for instance 'hbm_heap_entries' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2671]
+WARNING: [Synth 8-7071] port 'DRAM_0_STAT_CATTRIP' of module 'hbm_0' is unconnected for instance 'hbm_heap_entries' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2671]
+WARNING: [Synth 8-7071] port 'DRAM_0_STAT_TEMP' of module 'hbm_0' is unconnected for instance 'hbm_heap_entries' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2671]
+WARNING: [Synth 8-7023] instance 'hbm_heap_entries' of module 'hbm_0' has 47 connections declared, but only 44 given [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2671]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2718]
+INFO: [Synth 8-6157] synthesizing module 'ila_1' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/ila_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ila_1' (8#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/ila_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_4' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_4' (9#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_5' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_5_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_5' (10#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_5_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'blk_mem_gen_6' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_6_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'blk_mem_gen_6' (11#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-1207074-gabber/realtime/blk_mem_gen_6_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'ffs' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv:25]
 	Parameter WIDTH_LOG bound to: 5 - type: integer 
 	Parameter WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ffs' (11#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv:25]
-INFO: [Synth 8-6155] done synthesizing module 'bbq' (12#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:32]
-INFO: [Synth 8-6157] synthesizing module 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/hbm_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hbm_0' (13#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/.Xil/Vivado-625658-gabber/realtime/hbm_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'apb_complete_0' of module 'hbm_0' is unconnected for instance 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:200]
-WARNING: [Synth 8-7071] port 'DRAM_0_STAT_CATTRIP' of module 'hbm_0' is unconnected for instance 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:200]
-WARNING: [Synth 8-7071] port 'DRAM_0_STAT_TEMP' of module 'hbm_0' is unconnected for instance 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:200]
-WARNING: [Synth 8-7023] instance 'hbm_0' of module 'hbm_0' has 47 connections declared, but only 44 given [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:200]
+INFO: [Synth 8-6155] done synthesizing module 'ffs' (12#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/ffs.sv:25]
+WARNING: [Synth 8-6026] Ignoring keep related attribute (keep/mark_debug/dont_touch) applied on memory [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:298]
+WARNING: [Synth 8-6026] Ignoring keep related attribute (keep/mark_debug/dont_touch) applied on memory [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:299]
+INFO: [Synth 8-6155] done synthesizing module 'bbq' (13#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:32]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'clk_wiz_inst'. This will prevent further optimization [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:39]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'hbm_0'. This will prevent further optimization [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:200]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'bbq_inst'. This will prevent further optimization [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:145]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'nolabel_line113'. This will prevent further optimization [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:113]
 INFO: [Synth 8-6155] done synthesizing module 'top' (14#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/imports/src/top.sv:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3328.434 ; gain = 271.594 ; free physical = 18081 ; free virtual = 53762
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3341.461 ; gain = 279.625 ; free physical = 17526 ; free virtual = 53649
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3346.277 ; gain = 289.438 ; free physical = 18095 ; free virtual = 53776
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3357.305 ; gain = 295.469 ; free physical = 17541 ; free virtual = 53664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3346.277 ; gain = 289.438 ; free physical = 18095 ; free virtual = 53776
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3357.305 ; gain = 295.469 ; free physical = 17541 ; free virtual = 53664
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 3354.215 ; gain = 0.000 ; free physical = 18087 ; free virtual = 53768
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 3372.242 ; gain = 0.000 ; free physical = 17529 ; free virtual = 53651
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -126,8 +130,8 @@ Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/source
 Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'clk_wiz_inst'
 Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'nolabel_line113'
 Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0/ila_0_in_context.xdc] for cell 'nolabel_line113'
-Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hbm_0/hbm_0_in_context.xdc] for cell 'hbm_0'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hbm_0/hbm_0_in_context.xdc] for cell 'hbm_0'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hbm_0/hbm_0_in_context.xdc] for cell 'bbq_inst/hbm_heap_entries'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hbm_0/hbm_0_in_context.xdc] for cell 'bbq_inst/hbm_heap_entries'
 Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_4/blk_mem_gen_4/blk_mem_gen_4_in_context.xdc] for cell 'bbq_inst/hbm_next_pointers'
 Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_4/blk_mem_gen_4/blk_mem_gen_4_in_context.xdc] for cell 'bbq_inst/hbm_next_pointers'
 Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_4/blk_mem_gen_4/blk_mem_gen_4_in_context.xdc] for cell 'bbq_inst/hbm_previous_pointers'
@@ -136,8 +140,8 @@ Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/source
 Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_5/blk_mem_gen_5/blk_mem_gen_5_in_context.xdc] for cell 'bbq_inst/hbm_priority_buckets'
 Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6/blk_mem_gen_6_in_context.xdc] for cell 'bbq_inst/hbm_counters_l2'
 Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6/blk_mem_gen_6_in_context.xdc] for cell 'bbq_inst/hbm_counters_l2'
-Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3/blk_mem_gen_4_in_context.xdc] for cell 'bbq_inst/hbm_heap_entries'
-Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3/blk_mem_gen_4_in_context.xdc] for cell 'bbq_inst/hbm_heap_entries'
+Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_1/ila_1_in_context.xdc] for cell 'bbq_inst/ila_1'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_1/ila_1/ila_1_in_context.xdc] for cell 'bbq_inst/ila_1'
 Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc]
 CRITICAL WARNING: [Constraints 18-1056] Clock 'sys_clk' completely overrides clock 'sys_clk_p'.
 New: create_clock -period 10.000 -name sys_clk [get_ports sys_clk_p], [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc:8]
@@ -150,14 +154,13 @@ Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth
 Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3548.715 ; gain = 0.000 ; free physical = 17944 ; free virtual = 53625
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3557.836 ; gain = 0.000 ; free physical = 17384 ; free virtual = 53507
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3548.715 ; gain = 0.000 ; free physical = 17944 ; free virtual = 53625
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3557.836 ; gain = 0.000 ; free physical = 17384 ; free virtual = 53507
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/counters_l2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/hbm_counters_l2' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/hbm_heap_entries' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/hbm_next_pointers' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/hbm_previous_pointers' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/hbm_priority_buckets' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
@@ -166,7 +169,7 @@ WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/previous_pointers' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'bbq_inst/priority_buckets' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3551.684 ; gain = 494.844 ; free physical = 18072 ; free virtual = 53753
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3557.836 ; gain = 496.000 ; free physical = 17513 ; free virtual = 53636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -174,7 +177,7 @@ Start Loading Part and Timing Information
 Loading part: xcu280-fsvh2892-2L-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3551.684 ; gain = 494.844 ; free physical = 18072 ; free virtual = 53753
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3557.836 ; gain = 496.000 ; free physical = 17513 ; free virtual = 53636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -192,21 +195,18 @@ Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/previous_pointers. (cons
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/counters_l2. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for clk_wiz_inst. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for nolabel_line113. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for hbm_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/hbm_heap_entries. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/hbm_next_pointers. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/hbm_previous_pointers. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/hbm_priority_buckets. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/hbm_counters_l2. (constraint file  auto generated constraint).
-Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/hbm_heap_entries. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for bbq_inst/ila_1. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3551.684 ; gain = 494.844 ; free physical = 18072 ; free virtual = 53753
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3557.836 ; gain = 496.000 ; free physical = 17513 ; free virtual = 53636
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'bbq'
-WARNING: [Synth 8-327] inferring latch for variable 'hbm_fl_data_reg' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:662]
-WARNING: [Synth 8-327] inferring latch for variable 'hbm_counter_l2_data_reg' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:669]
-WARNING: [Synth 8-327] inferring latch for variable 'hbm_counter_l2_wraddress_reg' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:670]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 3551.684 ; gain = 494.844 ; free physical = 18051 ; free virtual = 53734
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 3557.836 ; gain = 496.000 ; free physical = 17488 ; free virtual = 53613
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -214,10 +214,10 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input   64 Bit       Adders := 1     
-	   2 Input   17 Bit       Adders := 5     
+	   2 Input   17 Bit       Adders := 8     
 	   2 Input   10 Bit       Adders := 2     
 +---XORs : 
-	   2 Input     32 Bit         XORs := 10    
+	   2 Input     32 Bit         XORs := 20    
 	   3 Input     32 Bit         XORs := 1     
 	   2 Input      1 Bit         XORs := 1     
 +---XORs : 
@@ -225,28 +225,34 @@ Detailed RTL Component Info :
 +---Registers : 
 	               64 Bit    Registers := 2     
 	               34 Bit    Registers := 2     
+	               33 Bit    Registers := 1     
 	               32 Bit    Registers := 96    
 	               18 Bit    Registers := 82    
 	               17 Bit    Registers := 88    
 	               10 Bit    Registers := 26    
+	                6 Bit    Registers := 1     
 	                5 Bit    Registers := 26    
-	                3 Bit    Registers := 24    
-	                1 Bit    Registers := 196   
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 26    
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 199   
 +---Muxes : 
 	   2 Input   34 Bit        Muxes := 2     
-	   2 Input   32 Bit        Muxes := 215   
-	   3 Input   32 Bit        Muxes := 8     
-	   2 Input   18 Bit        Muxes := 110   
-	   2 Input   17 Bit        Muxes := 117   
-	   2 Input   10 Bit        Muxes := 26    
-	   2 Input    5 Bit        Muxes := 34    
-	   3 Input    5 Bit        Muxes := 4     
-	   2 Input    3 Bit        Muxes := 24    
-	   2 Input    2 Bit        Muxes := 7     
-	   3 Input    2 Bit        Muxes := 2     
-	   2 Input    1 Bit        Muxes := 213   
-	   4 Input    1 Bit        Muxes := 4     
-	   3 Input    1 Bit        Muxes := 12    
+	   2 Input   33 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 238   
+	   3 Input   32 Bit        Muxes := 12    
+	   2 Input   18 Bit        Muxes := 114   
+	   2 Input   17 Bit        Muxes := 135   
+	   2 Input   10 Bit        Muxes := 27    
+	   2 Input    5 Bit        Muxes := 42    
+	   3 Input    5 Bit        Muxes := 6     
+	   2 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 25    
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 220   
+	   4 Input    1 Bit        Muxes := 8     
+	   3 Input    1 Bit        Muxes := 14    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -262,26 +268,29 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin AXI_00_WVALID_reg with 1st driver pin 'bbq_inst/AXI_00_WVALID_reg/Q' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2693]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin AXI_00_WVALID_reg with 2nd driver pin 'VCC' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2693]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net AXI_00_WVALID_reg is connected to at least one constant driver which has been preserved, other driver is ignored [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/new/bbq.sv:2693]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 3596.668 ; gain = 539.828 ; free physical = 18002 ; free virtual = 53700
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 3635.508 ; gain = 573.672 ; free physical = 17436 ; free virtual = 53576
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:42 . Memory (MB): peak = 3821.145 ; gain = 764.305 ; free physical = 17521 ; free virtual = 53217
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 3827.555 ; gain = 765.719 ; free physical = 16957 ; free virtual = 53097
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:48 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17415 ; free virtual = 53111
+Finished Timing Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:00:51 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16851 ; free virtual = 52990
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:42 ; elapsed = 00:00:51 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17415 ; free virtual = 53111
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:55 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16847 ; free virtual = 52987
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -298,139 +307,139 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_valid_s1_inferred:in0 to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[31] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[30] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[29] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[28] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[27] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[26] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[25] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[24] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[23] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[22] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[21] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[20] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[19] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[18] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[17] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[16] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[15] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[14] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[13] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[12] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[11] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[10] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[9] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[8] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[7] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[6] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[5] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[4] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[3] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[2] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[1] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l2_bitmap_s6_inferred:in0[0] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[17] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[16] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[15] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[14] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[13] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[12] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[11] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[10] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[9] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[8] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[7] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[6] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[5] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[4] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[3] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[2] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[1] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_counter_s3_inferred:in0[0] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_rcd_s2_inferred:in0[1] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_rcd_s2_inferred:in0[0] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_bitmap_idx_s2_inferred:in0[4] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_bitmap_idx_s2_inferred:in0[3] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_bitmap_idx_s2_inferred:in0[2] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_bitmap_idx_s2_inferred:in0[1] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_l1_bitmap_idx_s2_inferred:in0[0] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rden_inferred:in0 to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wren_inferred:in0 to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[16] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[15] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[14] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[13] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[12] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[11] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[10] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[9] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[8] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[7] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[6] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[5] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[4] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[3] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[2] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[1] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_rdaddress_inferred:in0[0] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[16] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[15] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[14] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[13] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[12] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[11] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[10] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[9] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[8] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[7] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[6] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[5] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[4] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[3] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[2] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[1] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_he_wraddress_inferred:in0[0] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_np_rden_inferred:in0 to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_np_wren_inferred:in0 to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_np_rdaddress_inferred:in0[16] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_np_rdaddress_inferred:in0[15] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_np_rdaddress_inferred:in0[14] to constant 0
-WARNING: [Synth 8-3295] tying undriven pin bbq_inst/hbm_np_rdaddress_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_op_type_s[0]_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_op_type_s[0]_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_op_type_s[0]_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_is_enque_s[0]_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_he_data_s[0]_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin hbm_reg_priority_s[0]_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_ARBURST_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_ARBURST_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_AWID_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_AWID_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_AWID_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_AWID_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_AWID_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_AWID_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WLAST_inferred:in0 to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[4] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[3] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[2] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[1] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin AXI_00_WDATA_PARITY_inferred:in0[0] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[31] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[30] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[29] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[28] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[27] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[26] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[25] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[24] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[23] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[22] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[21] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[20] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[19] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[18] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[17] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[16] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[15] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[14] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[13] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[12] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[11] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[10] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[9] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[8] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[7] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[6] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[5] to constant 0
+WARNING: [Synth 8-3295] tying undriven pin APB_0_PWDATA_inferred:in0[4] to constant 0
 INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:44 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17413 ; free virtual = 53108
+Finished IO Insertion : Time (s): cpu = 00:00:48 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16847 ; free virtual = 52987
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:44 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17413 ; free virtual = 53108
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:48 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16847 ; free virtual = 52987
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17412 ; free virtual = 53108
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16846 ; free virtual = 52986
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17412 ; free virtual = 53108
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16846 ; free virtual = 52986
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17412 ; free virtual = 53108
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16847 ; free virtual = 52987
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17412 ; free virtual = 53108
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16847 ; free virtual = 52987
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -440,17 +449,17 @@ Report BlackBoxes:
 +------+-----------------+----------+
 |      |BlackBox name    |Instances |
 +------+-----------------+----------+
-|1     |clk_wiz_0        |         1|
-|2     |ila_0            |         1|
-|3     |hbm_0            |         1|
-|4     |fifo_generator_0 |         2|
-|5     |blk_mem_gen_0    |         3|
-|6     |blk_mem_gen_1    |         1|
-|7     |blk_mem_gen_2    |         1|
-|8     |blk_mem_gen_3    |         1|
-|9     |blk_mem_gen_4    |         2|
-|10    |blk_mem_gen_5    |         1|
-|11    |blk_mem_gen_6    |         1|
+|1     |fifo_generator_0 |         2|
+|2     |blk_mem_gen_0    |         3|
+|3     |blk_mem_gen_1    |         1|
+|4     |blk_mem_gen_2    |         1|
+|5     |hbm_0            |         1|
+|6     |ila_1            |         1|
+|7     |blk_mem_gen_4    |         2|
+|8     |blk_mem_gen_5    |         1|
+|9     |blk_mem_gen_6    |         1|
+|10    |clk_wiz_0        |         1|
+|11    |ila_0            |         1|
 +------+-----------------+----------+
 
 Report Cell Usage: 
@@ -459,57 +468,53 @@ Report Cell Usage:
 +------+------------------+------+
 |1     |blk_mem_gen       |     1|
 |2     |blk_mem_gen_0_    |     2|
-|4     |blk_mem_gen       |     4|
-|8     |blk_mem_gen_4_    |     1|
-|9     |blk_mem_gen       |     2|
-|11    |clk_wiz           |     1|
-|12    |fifo_generator    |     1|
-|13    |fifo_generator_0_ |     1|
-|14    |hbm               |     1|
-|15    |ila               |     1|
-|16    |BUFG              |     1|
-|17    |CARRY8            |    60|
-|18    |LUT1              |  2072|
-|19    |LUT2              |   444|
-|20    |LUT3              |  1045|
-|21    |LUT4              |   390|
-|22    |LUT5              |   716|
-|23    |LUT6              |  1729|
-|24    |MUXF7             |   396|
-|25    |MUXF8             |   144|
-|26    |FDRE              |  6899|
-|27    |FDSE              |     1|
-|28    |LD                |    45|
-|29    |IBUF              |     1|
-|30    |OBUF              |     1|
+|4     |blk_mem_gen       |     3|
+|7     |blk_mem_gen_4_    |     1|
+|8     |blk_mem_gen       |     2|
+|10    |clk_wiz           |     1|
+|11    |fifo_generator    |     1|
+|12    |fifo_generator_0_ |     1|
+|13    |hbm               |     1|
+|14    |ila               |     2|
+|16    |CARRY8            |    68|
+|17    |LUT1              |  1800|
+|18    |LUT2              |   504|
+|19    |LUT3              |  1271|
+|20    |LUT4              |   579|
+|21    |LUT5              |   969|
+|22    |LUT6              |  2016|
+|23    |MUXF7             |   394|
+|24    |MUXF8             |   132|
+|25    |FDRE              |  6953|
+|26    |FDSE              |     4|
+|27    |IBUF              |     1|
+|28    |OBUF              |     1|
 +------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.777 ; gain = 988.938 ; free physical = 17412 ; free virtual = 53108
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.047 ; gain = 992.211 ; free physical = 16847 ; free virtual = 52987
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1326 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:48 . Memory (MB): peak = 4045.777 ; gain = 783.531 ; free physical = 17454 ; free virtual = 53150
-Synthesis Optimization Complete : Time (s): cpu = 00:00:45 ; elapsed = 00:00:53 . Memory (MB): peak = 4045.785 ; gain = 988.938 ; free physical = 17454 ; free virtual = 53150
+Synthesis finished with 0 errors, 3 critical warnings and 658 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:00:52 . Memory (MB): peak = 4054.047 ; gain = 791.680 ; free physical = 16889 ; free virtual = 53029
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:00:57 . Memory (MB): peak = 4054.055 ; gain = 992.211 ; free physical = 16889 ; free virtual = 53029
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.06 . Memory (MB): peak = 4045.785 ; gain = 0.000 ; free physical = 17535 ; free virtual = 53231
-INFO: [Netlist 29-17] Analyzing 647 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 4054.055 ; gain = 0.000 ; free physical = 16977 ; free virtual = 53117
+INFO: [Netlist 29-17] Analyzing 595 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-101] Netlist 'top' is not ideal for floorplanning, since the cellview 'bbq' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 4045.785 ; gain = 0.000 ; free physical = 17450 ; free virtual = 53146
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 4086.062 ; gain = 0.000 ; free physical = 16892 ; free virtual = 53032
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 47 instances were transformed.
-  BUFG => BUFGCE: 1 instance 
+  A total of 1 instances were transformed.
   IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
-  LD => LDCE: 45 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-49 Infos, 120 Warnings, 1 Critical Warnings and 0 Errors encountered.
+49 Infos, 120 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:05 . Memory (MB): peak = 4045.785 ; gain = 1679.328 ; free physical = 17643 ; free virtual = 53339
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:09 . Memory (MB): peak = 4086.062 ; gain = 1719.609 ; free physical = 17087 ; free virtual = 53227
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint '/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 28 21:41:07 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 29 15:58:52 2025...

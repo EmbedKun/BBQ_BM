@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Mon Jul 28 21:43:08 2025
+| Date         : Tue Jul 29 16:00:54 2025
 | Host         : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
 | Design       : top
@@ -35,7 +35,7 @@ Table of Contents
 -----------------
 REQP-1852#1 Warning
 BUFGCE_cascade_from_clock_buf  
-Cascaded clock buffers exist in the design with constant CE pin. This may result in large clock skew and timing violations. Cell BUFGCE hbm_0/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 I pin is driven by another clock buffer clk_wiz_inst/inst/clkout2_buf.
+Cascaded clock buffers exist in the design with constant CE pin. This may result in large clock skew and timing violations. Cell BUFGCE bbq_inst/hbm_heap_entries/inst/ONE_STACK.u_HBM_REF_CLK_BUFG_0 I pin is driven by another clock buffer clk_wiz_inst/inst/clkout2_buf.
 Related violations: <none>
 
 

@@ -16,7 +16,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcu280'
 INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 171204
+INFO: [Synth 8-7075] Helper process launched with PID 1091165
 WARNING: [Synth 8-2507] parameter declaration becomes local in xsdb2apb with formal parameter declaration list [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/xsdb2apb.v:60]
 WARNING: [Synth 8-2507] parameter declaration becomes local in xsdb2apb with formal parameter declaration list [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/xsdb2apb.v:61]
 WARNING: [Synth 8-2507] parameter declaration becomes local in xsdb2apb with formal parameter declaration list [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/xsdb2apb.v:62]
@@ -30,12 +30,12 @@ WARNING: [Synth 8-2507] parameter declaration becomes local in xsdb2apb with for
 WARNING: [Synth 8-2507] parameter declaration becomes local in xsdb2apb with formal parameter declaration list [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/xsdb2apb.v:73]
 WARNING: [Synth 8-2507] parameter declaration becomes local in xsdb2apb with formal parameter declaration list [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/xsdb2apb.v:75]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3209.555 ; gain = 173.719 ; free physical = 20003 ; free virtual = 54921
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3209.559 ; gain = 173.719 ; free physical = 16993 ; free virtual = 53094
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'hbm_0' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/synth/hbm_0.v:63]
 INFO: [Synth 8-6157] synthesizing module 'hbm_v1_0_9' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hdl/rtl/hbm_v1_0_9.sv:67]
 	Parameter HBM_STACK bound to: 1 - type: integer 
-	Parameter SWITCH_ENABLE_00 bound to: TRUE - type: string 
+	Parameter SWITCH_ENABLE_00 bound to: FALSE - type: string 
 	Parameter SWITCH_ENABLE_01 bound to: FALSE - type: string 
 	Parameter INIT_BYPASS bound to: FALSE - type: string 
 	Parameter INIT_SEQ_TIMEOUT bound to: 10000000 - type: integer 
@@ -43,7 +43,7 @@ INFO: [Synth 8-6157] synthesizing module 'hbm_v1_0_9' [/home/gabber/FUDAN/worksp
 	Parameter AXI_RST_DEASSERT_WIDTH bound to: 2 - type: integer 
 	Parameter TEMP_WAIT_PERIOD_0 bound to: 100000 - type: integer 
 	Parameter TEMP_WAIT_PERIOD_1 bound to: 100000 - type: integer 
-	Parameter SWITCH_EN_0 bound to: 16'b0000000000000001 
+	Parameter SWITCH_EN_0 bound to: 16'b0000000000000000 
 	Parameter SWITCH_EN_1 bound to: 16'b0000000000000000 
 	Parameter AXI_CLK_FREQ bound to: 16'b0000000111000010 
 	Parameter AXI_CLK1_FREQ bound to: 16'b0000000111000010 
@@ -215,7 +215,7 @@ INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2020.2/scr
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (2#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1083]
 INFO: [Synth 8-6157] synthesizing module 'hbm_top' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hdl/hbm_v1_0_vl_rfs.sv:81]
 	Parameter HBM_STACK bound to: 1 - type: integer 
-	Parameter SWITCH_ENABLE_00 bound to: TRUE - type: string 
+	Parameter SWITCH_ENABLE_00 bound to: FALSE - type: string 
 	Parameter SWITCH_ENABLE_01 bound to: FALSE - type: string 
 	Parameter INIT_BYPASS bound to: FALSE - type: string 
 	Parameter INIT_SEQ_TIMEOUT bound to: 10000000 - type: integer 
@@ -223,7 +223,7 @@ INFO: [Synth 8-6157] synthesizing module 'hbm_top' [/home/gabber/FUDAN/workspace
 	Parameter AXI_RST_DEASSERT_WIDTH bound to: 2 - type: integer 
 	Parameter TEMP_WAIT_PERIOD_0 bound to: 100000 - type: integer 
 	Parameter TEMP_WAIT_PERIOD_1 bound to: 100000 - type: integer 
-	Parameter SWITCH_EN_0 bound to: 16'b0000000000000001 
+	Parameter SWITCH_EN_0 bound to: 16'b0000000000000000 
 	Parameter SWITCH_EN_1 bound to: 16'b0000000000000000 
 	Parameter AXI_CLK_FREQ bound to: 16'b0000000111000010 
 	Parameter AXI_CLK1_FREQ bound to: 16'b0000000111000010 
@@ -510,7 +510,7 @@ INFO: [Synth 8-6157] synthesizing module 'xsdb_top' [/home/gabber/FUDAN/workspac
 	Parameter HBM_STACK_NUM bound to: 16'b0000000000000000 
 	Parameter HBM_CLOCK_FREQ bound to: 16'b0000001110000100 
 	Parameter INT_VERSION bound to: 16'b0000000000000011 
-	Parameter SWITCH_EN bound to: 16'b0000000000000001 
+	Parameter SWITCH_EN bound to: 16'b0000000000000000 
 	Parameter AXI_SW_CLK bound to: 16'b0000000000000000 
 	Parameter PLL_REF_CLK bound to: 16'b0000000001100100 
 INFO: [Synth 8-6157] synthesizing module 'hbm_v1_0_9_chipscope_xsdb_slave' [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/xsdb/hbm_v1_0_chipscope_xsdb_slave.sv:29]
@@ -539,7 +539,7 @@ INFO: [Synth 8-6157] synthesizing module 'xsdb2apb' [/home/gabber/FUDAN/workspac
 	Parameter INT_VERSION bound to: 16'b0000000000000011 
 	Parameter APB_ADDR_WIDTH bound to: 22 - type: integer 
 	Parameter APB_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter SWITCH_EN bound to: 16'b0000000000000001 
+	Parameter SWITCH_EN bound to: 16'b0000000000000000 
 	Parameter AXI_SW_CLK bound to: 16'b0000000000000000 
 	Parameter PLL_REF_CLK bound to: 16'b0000000001100100 
 	Parameter S_IDLE bound to: 16'b0000000000000001 
@@ -685,7 +685,7 @@ INFO: [Synth 8-6157] synthesizing module 'HBM_ONE_STACK_INTF' [/tools/Xilinx/Viv
 	Parameter READ_PERCENT_15 bound to: 40 - type: integer 
 	Parameter SIM_DEVICE bound to: ULTRASCALE_PLUS - type: string 
 	Parameter STACK_LOCATION bound to: 0 - type: integer 
-	Parameter SWITCH_ENABLE bound to: TRUE - type: string 
+	Parameter SWITCH_ENABLE bound to: FALSE - type: string 
 	Parameter WRITE_PERCENT_00 bound to: 40 - type: integer 
 	Parameter WRITE_PERCENT_01 bound to: 40 - type: integer 
 	Parameter WRITE_PERCENT_02 bound to: 40 - type: integer 
@@ -707,18 +707,18 @@ INFO: [Synth 8-6155] done synthesizing module 'hbm_top' (13#1) [/home/gabber/FUD
 INFO: [Synth 8-6155] done synthesizing module 'hbm_v1_0_9' (14#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/hdl/rtl/hbm_v1_0_9.sv:67]
 INFO: [Synth 8-6155] done synthesizing module 'hbm_0' (15#1) [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.gen/sources_1/ip/hbm_0/synth/hbm_0.v:63]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3285.055 ; gain = 249.219 ; free physical = 20746 ; free virtual = 55665
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 3285.090 ; gain = 249.250 ; free physical = 17749 ; free virtual = 53851
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3299.898 ; gain = 264.062 ; free physical = 20744 ; free virtual = 55663
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3299.934 ; gain = 264.094 ; free physical = 17747 ; free virtual = 53849
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3299.898 ; gain = 264.062 ; free physical = 20744 ; free virtual = 55663
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 3299.934 ; gain = 264.094 ; free physical = 17747 ; free virtual = 53849
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.10 . Memory (MB): peak = 3309.805 ; gain = 0.000 ; free physical = 20733 ; free virtual = 55651
+Netlist sorting complete. Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.10 . Memory (MB): peak = 3316.840 ; gain = 0.000 ; free physical = 17735 ; free virtual = 53838
 INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -733,16 +733,16 @@ Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/hbm_0
 Finished Parsing XDC File [/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/hbm_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3511.273 ; gain = 0.000 ; free physical = 20589 ; free virtual = 55508
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3511.371 ; gain = 0.000 ; free physical = 17595 ; free virtual = 53697
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   BUFG => BUFGCE: 1 instance 
   HBM_ONE_STACK_INTF => HBM_ONE_STACK_INTF (HBM_REF_CLK, HBM_SNGLBLI_INTF_APB, HBM_SNGLBLI_INTF_AXI(x16)): 1 instance 
   IBUF => IBUF (IBUFCTRL, INBUF): 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3511.273 ; gain = 0.000 ; free physical = 20588 ; free virtual = 55507
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3511.371 ; gain = 0.000 ; free physical = 17595 ; free virtual = 53697
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3511.273 ; gain = 475.438 ; free physical = 20721 ; free virtual = 55640
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3511.371 ; gain = 475.531 ; free physical = 17727 ; free virtual = 53829
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -750,14 +750,14 @@ Start Loading Part and Timing Information
 Loading part: xcu280-fsvh2892-2L-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3511.273 ; gain = 475.438 ; free physical = 20721 ; free virtual = 55640
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3511.371 ; gain = 475.531 ; free physical = 17727 ; free virtual = 53829
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/hbm_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 3511.273 ; gain = 475.438 ; free physical = 20721 ; free virtual = 55640
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 3511.371 ; gain = 475.531 ; free physical = 17727 ; free virtual = 53829
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'hbm_apb_mst'
 INFO: [Synth 8-802] inferred FSM for state register 'main_fsm_curr_state_reg' in module 'hbm_temp_rd'
@@ -797,7 +797,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'apb_fsm_curr_state_reg'
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'main_fsm_curr_state_reg' in module 'hbm_temp_rd'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3511.273 ; gain = 475.438 ; free physical = 20714 ; free virtual = 55634
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 3511.371 ; gain = 475.531 ; free physical = 17720 ; free virtual = 53823
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -873,7 +873,7 @@ Start Cross Boundary and Area Optimization
 INFO: [Synth 8-6904] The RAM "inst/\ONE_STACK.u_hbm_top /\ONE_STACK_HBM.u_xsdb_top_0 /xsdb2adb_u0/scratchpad_reg" of size (depth=8 x width=16) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
 INFO: [Synth 8-6904] The RAM "inst/ONE_STACK.u_hbm_top/ONE_STACK_HBM.u_xsdb_top_0/xsdb2adb_u0/scratchpad_reg" of size (depth=8 x width=16) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 3511.273 ; gain = 475.438 ; free physical = 20684 ; free virtual = 55612
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3511.371 ; gain = 475.531 ; free physical = 17694 ; free virtual = 53806
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -903,13 +903,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 3776.797 ; gain = 740.961 ; free physical = 20189 ; free virtual = 55116
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:32 . Memory (MB): peak = 3776.957 ; gain = 741.117 ; free physical = 17198 ; free virtual = 53309
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 3805.805 ; gain = 769.969 ; free physical = 20160 ; free virtual = 55088
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:33 . Memory (MB): peak = 3805.965 ; gain = 770.125 ; free physical = 17170 ; free virtual = 53281
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -939,7 +939,7 @@ Start Technology Mapping
 INFO: [Synth 8-7052] The timing for the instance inst/ONE_STACK.u_hbm_top/ONE_STACK_HBM.xpm_memory_spram_inst_0/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance inst/ONE_STACK.u_hbm_top/ONE_STACK_HBM.xpm_memory_spram_inst_0/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3837.836 ; gain = 802.000 ; free physical = 20144 ; free virtual = 55074
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:43 . Memory (MB): peak = 3837.996 ; gain = 802.156 ; free physical = 17160 ; free virtual = 53271
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -974,37 +974,37 @@ INFO: [Synth 8-3295] tying undriven pin ONE_STACK.u_hbm_top/sl_oport1_inferred:i
 INFO: [Synth 8-3295] tying undriven pin ONE_STACK.u_hbm_top/sl_oport1_inferred:in0[1] to constant 0
 INFO: [Synth 8-3295] tying undriven pin ONE_STACK.u_hbm_top/sl_oport1_inferred:in0[0] to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.805 ; gain = 804.969 ; free physical = 20145 ; free virtual = 55073
+Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.965 ; gain = 805.125 ; free physical = 17160 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.805 ; gain = 804.969 ; free physical = 20145 ; free virtual = 55073
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.965 ; gain = 805.125 ; free physical = 17160 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.805 ; gain = 804.969 ; free physical = 20145 ; free virtual = 55073
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.965 ; gain = 805.125 ; free physical = 17160 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.805 ; gain = 804.969 ; free physical = 20145 ; free virtual = 55073
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.965 ; gain = 805.125 ; free physical = 17160 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.805 ; gain = 804.969 ; free physical = 20145 ; free virtual = 55073
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.965 ; gain = 805.125 ; free physical = 17160 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.805 ; gain = 804.969 ; free physical = 20145 ; free virtual = 55073
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.965 ; gain = 805.125 ; free physical = 17160 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1026,9 +1026,9 @@ Report Cell Usage:
 |4     |LUT1               |    21|
 |5     |LUT2               |   144|
 |6     |LUT3               |   105|
-|7     |LUT4               |   129|
+|7     |LUT4               |   128|
 |8     |LUT5               |   273|
-|9     |LUT6               |   274|
+|9     |LUT6               |   273|
 |10    |RAM16X1S           |    16|
 |11    |RAMB36E2           |     2|
 |13    |FDCE               |   434|
@@ -1037,18 +1037,18 @@ Report Cell Usage:
 |16    |IBUF               |     1|
 +------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.805 ; gain = 804.969 ; free physical = 20145 ; free virtual = 55073
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.965 ; gain = 805.125 ; free physical = 17160 ; free virtual = 53272
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:41 . Memory (MB): peak = 3840.805 ; gain = 593.594 ; free physical = 20183 ; free virtual = 55111
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:46 . Memory (MB): peak = 3840.812 ; gain = 804.969 ; free physical = 20183 ; free virtual = 55111
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 3840.965 ; gain = 593.688 ; free physical = 17198 ; free virtual = 53310
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:47 . Memory (MB): peak = 3840.973 ; gain = 805.125 ; free physical = 17198 ; free virtual = 53310
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3840.812 ; gain = 0.000 ; free physical = 20264 ; free virtual = 55192
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3840.973 ; gain = 0.000 ; free physical = 17272 ; free virtual = 53383
 INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3953.398 ; gain = 0.000 ; free physical = 20153 ; free virtual = 55081
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3953.559 ; gain = 0.000 ; free physical = 17162 ; free virtual = 53274
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 19 instances were transformed.
   BUFG => BUFGCE: 1 instance 
@@ -1059,11 +1059,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 81 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:56 . Memory (MB): peak = 3953.398 ; gain = 1586.945 ; free physical = 20292 ; free virtual = 55220
+synth_design: Time (s): cpu = 00:00:51 ; elapsed = 00:00:58 . Memory (MB): peak = 3953.559 ; gain = 1587.102 ; free physical = 17301 ; free virtual = 53412
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/hbm_0_synth_1/hbm_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hbm_0, cache-ID = b84c449be1f22f8b
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hbm_0, cache-ID = fc0c70a0aa4e521e
 INFO: [Coretcl 2-1174] Renamed 11 cell refs.
 INFO: [Common 17-1381] The checkpoint '/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.runs/hbm_0_synth_1/hbm_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file hbm_0_utilization_synth.rpt -pb hbm_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jul 27 20:33:20 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Jul 29 15:13:23 2025...

@@ -150,7 +150,7 @@ OPTRACE "add files" START { }
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_4/blk_mem_gen_4.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_5/blk_mem_gen_5.xci
   read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_6/blk_mem_gen_6.xci
-  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_3/blk_mem_gen_3.xci
+  read_ip -quiet /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/sources_1/ip/ila_1/ila_1.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc /home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.srcs/constrs_1/new/top_constrs.xdc
 OPTRACE "read constraints: implementation" END { }

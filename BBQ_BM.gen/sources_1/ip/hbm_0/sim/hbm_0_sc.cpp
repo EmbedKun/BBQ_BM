@@ -100,7 +100,7 @@ hbm_0_sc::hbm_0_sc(const sc_core::sc_module_name& nm) : sc_core::sc_module(nm), 
     model_param_props.addLong("AXI_RST_DEASSERT_WIDTH", "2");
     model_param_props.addLong("TEMP_WAIT_PERIOD_0", "100000");
     model_param_props.addLong("TEMP_WAIT_PERIOD_1", "100000");
-    model_param_props.addLong("SWITCH_EN_0", "1");
+    model_param_props.addLong("SWITCH_EN_0", "0");
     model_param_props.addLong("SWITCH_EN_1", "0");
     model_param_props.addLong("HBM_REF_CLK_FREQ_0", "100");
     model_param_props.addLong("HBM_REF_CLK_FREQ_1", "100");
@@ -177,7 +177,7 @@ hbm_0_sc::hbm_0_sc(const sc_core::sc_module_name& nm) : sc_core::sc_module(nm), 
     model_param_props.addLong("PAGEHIT_PERCENT_01", "75");
     model_param_props.addFloat("AXI_CLK_FREQ", "450");
     model_param_props.addFloat("AXI_CLK1_FREQ", "450");
-    model_param_props.addString("SWITCH_ENABLE_00", "TRUE");
+    model_param_props.addString("SWITCH_ENABLE_00", "FALSE");
     model_param_props.addString("SWITCH_ENABLE_01", "FALSE");
     model_param_props.addString("INIT_BYPASS", "FALSE");
     model_param_props.addString("CLK_SEL_00", "TRUE");
