@@ -3,18 +3,18 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/home/gabber/FUDAN/workspace/SBM_0728/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+      <db_ref path="/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
          <top_modules>
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1025fs"></ZoomEndTime>
-      <Cursor1Time time="96fs"></Cursor1Time>
+      <ZoomEndTime time="873fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="222"></NameColumnWidth>
+      <NameColumnWidth column_width="194"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="8" />
@@ -28,24 +28,11 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="bbq_inst/AXI_00_ARREADY">
+   <wvobject type="array" fp_name="bbq_inst/AXI_00_ARADDR_1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">bbq_inst/AXI_00_ARREADY</obj_property>
-      <obj_property name="ObjectShortName">AXI_00_ARREADY</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="bbq_inst/AXI_00_ARVALID">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">bbq_inst/AXI_00_ARVALID</obj_property>
-      <obj_property name="ObjectShortName">AXI_00_ARVALID</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="bbq_inst/AXI_00_AWREADY">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">bbq_inst/AXI_00_AWREADY</obj_property>
-      <obj_property name="ObjectShortName">AXI_00_AWREADY</obj_property>
+      <obj_property name="ElementShortName">bbq_inst/AXI_00_ARADDR_1[32:0]</obj_property>
+      <obj_property name="ObjectShortName">AXI_00_ARADDR_1[32:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -56,10 +43,31 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="bbq_inst/AXI_00_BVALID">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">bbq_inst/AXI_00_BVALID</obj_property>
+      <obj_property name="ObjectShortName">AXI_00_BVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="bbq_inst/AXI_00_RVALID">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">bbq_inst/AXI_00_RVALID</obj_property>
       <obj_property name="ObjectShortName">AXI_00_RVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="bbq_inst/AXI_00_WVALID">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">bbq_inst/AXI_00_WVALID</obj_property>
+      <obj_property name="ObjectShortName">AXI_00_WVALID</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="bbq_inst/axi_clk">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">bbq_inst/axi_clk</obj_property>
+      <obj_property name="ObjectShortName">axi_clk</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -68,13 +76,6 @@
       <obj_property name="ElementShortName">bbq_inst/hbm_he_q[16:0]</obj_property>
       <obj_property name="ObjectShortName">hbm_he_q[16:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="bbq_inst/hbm_he_wren">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">bbq_inst/hbm_he_wren</obj_property>
-      <obj_property name="ObjectShortName">hbm_he_wren</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

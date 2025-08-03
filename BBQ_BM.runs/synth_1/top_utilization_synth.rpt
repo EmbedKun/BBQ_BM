@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Tue Jul 29 15:58:52 2025
+| Date         : Sun Aug  3 23:19:54 2025
 | Host         : gabber running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
 | Design       : top
@@ -35,15 +35,15 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| CLB LUTs*               | 7137 |     0 |   1303680 |  0.55 |
-|   LUT as Logic          | 7137 |     0 |   1303680 |  0.55 |
+| CLB LUTs*               | 7109 |     0 |   1303680 |  0.55 |
+|   LUT as Logic          | 7109 |     0 |   1303680 |  0.55 |
 |   LUT as Memory         |    0 |     0 |    600960 |  0.00 |
-| CLB Registers           | 6957 |     0 |   2607360 |  0.27 |
-|   Register as Flip Flop | 6957 |     0 |   2607360 |  0.27 |
+| CLB Registers           | 7290 |     0 |   2607360 |  0.28 |
+|   Register as Flip Flop | 7290 |     0 |   2607360 |  0.28 |
 |   Register as Latch     |    0 |     0 |   2607360 |  0.00 |
 | CARRY8                  |   68 |     0 |    162960 |  0.04 |
-| F7 Muxes                |  394 |     0 |    651840 |  0.06 |
-| F8 Muxes                |  132 |     0 |    325920 |  0.04 |
+| F7 Muxes                |  400 |     0 |    651840 |  0.06 |
+| F8 Muxes                |  154 |     0 |    325920 |  0.05 |
 | F9 Muxes                |    0 |     0 |    162960 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -63,8 +63,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 4     |          Yes |         Set |            - |
-| 6953  |          Yes |       Reset |            - |
+| 2     |          Yes |         Set |            - |
+| 7288  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -162,17 +162,17 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 6953 |            Register |
-| LUT6     | 2016 |                 CLB |
-| LUT1     | 1800 |                 CLB |
-| LUT3     | 1271 |                 CLB |
-| LUT5     |  969 |                 CLB |
+| FDRE     | 7288 |            Register |
+| LUT6     | 2002 |                 CLB |
+| LUT1     | 1471 |                 CLB |
+| LUT3     | 1289 |                 CLB |
+| LUT5     | 1014 |                 CLB |
+| LUT2     |  755 |                 CLB |
 | LUT4     |  579 |                 CLB |
-| LUT2     |  504 |                 CLB |
-| MUXF7    |  394 |                 CLB |
-| MUXF8    |  132 |                 CLB |
+| MUXF7    |  400 |                 CLB |
+| MUXF8    |  154 |                 CLB |
 | CARRY8   |   68 |                 CLB |
-| FDSE     |    4 |            Register |
+| FDSE     |    2 |            Register |
 | OBUF     |    1 |                 I/O |
 | INBUF    |    1 |                 I/O |
 | IBUFCTRL |    1 |              Others |

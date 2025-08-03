@@ -147,7 +147,7 @@ bbq_inst (
     .axi_clk(axi_clk),    
     .apb_clk(apb_clk),
     .hbm_ref(hbm_ref),
-    .locked(locked),
+    .locked (locked),
     .rst(arst),
     .ready(heap_ready),
     .in_valid(heap_in_valid),

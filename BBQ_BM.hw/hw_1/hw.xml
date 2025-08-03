@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.        -->
 
 <hwsession version="1" minor="2">
-  <device name="xcu280_u55c_0" gui_info="dashboard1=hw_ila_1[xcu280_u55c_0/hw_ila_1/Settings=ILA_SETTINGS_1;xcu280_u55c_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xcu280_u55c_0/hw_ila_1/Status=ILA_STATUS_1;xcu280_u55c_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xcu280_u55c_0/hw_ila_1/Waveform=ILA_WAVE_1;],dashboard2=dashboard_1[xcu280_u55c_0/HBM_1=HBM_PLOT_1;],dashboard3=hw_ila_2[xcu280_u55c_0/hw_ila_2/Status=ILA_STATUS_1;xcu280_u55c_0/hw_ila_2/Waveform=ILA_WAVE_1;xcu280_u55c_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;xcu280_u55c_0/hw_ila_2/Settings=ILA_SETTINGS_1;xcu280_u55c_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;]"/>
+  <device name="xcu280_u55c_0" gui_info="dashboard1=dashboard_1[xcu280_u55c_0/hw_ila_1/Settings=ILA_SETTINGS_1;xcu280_u55c_0/hw_ila_1/Capture Setup=ILA_CAPTURE_1;xcu280_u55c_0/hw_ila_1/Status=ILA_STATUS_1;xcu280_u55c_0/hw_ila_1/Trigger Setup=ILA_TRIGGER_1;xcu280_u55c_0/hw_ila_1/Waveform=ILA_WAVE_1;],dashboard2=hw_ila_2[xcu280_u55c_0/hw_ila_2/Status=ILA_STATUS_1;xcu280_u55c_0/hw_ila_2/Waveform=ILA_WAVE_1;xcu280_u55c_0/hw_ila_2/Capture Setup=ILA_CAPTURE_1;xcu280_u55c_0/hw_ila_2/Settings=ILA_SETTINGS_1;xcu280_u55c_0/hw_ila_2/Trigger Setup=ILA_TRIGGER_1;],dashboard3=dashboard_2[xcu280_u55c_0/HBM_1=HBM_PLOT_1;]"/>
   <ObjectList object_type="hw_device" gui_info="">
     <Object name="xcu280_u55c_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value="$_project_name_.runs/impl_1/top.ltx"/>
@@ -71,7 +71,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe0[32:0]"/>
+        <Option Id="MAP" value="probe5[32:0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -112,6 +112,59 @@
         <net name="bbq_inst/AXI_00_ARADDR[2]"/>
         <net name="bbq_inst/AXI_00_ARADDR[1]"/>
         <net name="bbq_inst/AXI_00_ARADDR[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq33&apos;hX_XXXX_XXXX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq33&apos;hX_XXXX_XXXX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe0[32:0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq33&apos;hX_XXXX_XXXX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="bbq_inst/AXI_00_ARADDR_1[32]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[31]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[30]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[29]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[28]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[27]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[26]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[25]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[24]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[23]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[22]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[21]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[20]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[19]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[18]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[17]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[16]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[15]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[14]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[13]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[12]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[11]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[10]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[9]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[8]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[7]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[6]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[5]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[4]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[3]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[2]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[1]"/>
+        <net name="bbq_inst/AXI_00_ARADDR_1[0]"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -208,7 +261,28 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe8[0]"/>
+        <Option Id="MAP" value="probe3[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="bbq_inst/AXI_00_BVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe4[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -219,7 +293,7 @@
         <net name="bbq_inst/AXI_00_RVALID"/>
       </nets>
     </probe>
-    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="CAPTURE_COMPARE_VALUE" value="eq17&apos;hX_XXXX"/>
         <Option Id="COMPARE_VALUE.0" value="eq17&apos;hX_XXXX"/>
@@ -254,6 +328,48 @@
         <net name="bbq_inst/AXI_00_WDATA[2]"/>
         <net name="bbq_inst/AXI_00_WDATA[1]"/>
         <net name="bbq_inst/AXI_00_WDATA[0]"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe1[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="bbq_inst/AXI_00_WVALID"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="CAPTURE_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="COMPARE_VALUE.0" value="eq1&apos;bX"/>
+        <Option Id="DISPLAY_AS_ENUM" value="1"/>
+        <Option Id="DISPLAY_HINT" value=""/>
+        <Option Id="DISPLAY_RADIX" value="HEX"/>
+        <Option Id="DISPLAY_VISIBILITY" value=""/>
+        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="LINK_TO_WAVEFORM" value="1"/>
+        <Option Id="MAP" value="probe7[0]"/>
+        <Option Id="NAME.CUSTOM" value=""/>
+        <Option Id="NAME.SELECT" value="Long"/>
+        <Option Id="SOURCE" value="netlist"/>
+        <Option Id="TRIGGER_COMPARE_VALUE" value="eq1&apos;bX"/>
+        <Option Id="WAVEFORM_STYLE" value="Digital"/>
+      </probeOptions>
+      <nets>
+        <net name="bbq_inst/axi_clk"/>
       </nets>
     </probe>
     <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
@@ -412,7 +528,7 @@
         <Option Id="DISPLAY_VISIBILITY" value=""/>
         <Option Id="HW_ILA" value="hw_ila_1"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
-        <Option Id="MAP" value="probe7[16:0]"/>
+        <Option Id="MAP" value="probe6[16:0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
         <Option Id="NAME.SELECT" value="Long"/>
         <Option Id="SOURCE" value="netlist"/>
@@ -663,7 +779,7 @@
         <Option Id="DISPLAY_HINT" value=""/>
         <Option Id="DISPLAY_RADIX" value="HEX"/>
         <Option Id="DISPLAY_VISIBILITY" value=""/>
-        <Option Id="HW_ILA" value="hw_ila_1"/>
+        <Option Id="HW_ILA" value="hw_ila_2"/>
         <Option Id="LINK_TO_WAVEFORM" value="1"/>
         <Option Id="MAP" value="probe0[0]"/>
         <Option Id="NAME.CUSTOM" value=""/>
