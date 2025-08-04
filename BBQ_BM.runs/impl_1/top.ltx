@@ -424,7 +424,7 @@
                     },
                     {
                         "type": "ILA_V3",
-                        "name": "nolabel_line113",
+                        "name": "nolabel_line120",
                         "spec": "labtools_ila_v6",
                         "ipName": "ila",
                         "core_location": {
@@ -432,7 +432,7 @@
                             "slave_index": 2,
                             "bscan_switch_index": 0
                         },
-                        "uuid": "008D40089D1853759C98887EB17F96F1",
+                        "uuid": "23173E0B3ABF56B98916F265641DEF54",
                         "pins": [
                             {
                                 "name": "probe0",
@@ -603,7 +603,33 @@
                                 "nets": [
                                     {
                                         "name": "locked",
-                                        "isBus": false
+                                        "isBus": false,
+                                        "parentNetId": 85
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "parent_nets": [
+                    {
+                        "id": 85,
+                        "name": "clk_wiz_inst/inst/locked",
+                        "state_reg": [
+                            {
+                                "name": "bbq_inst/hbm_heap_entries/inst/ONE_STACK.u_hbm_top/ONE_STACK_HBM.u_hbm_temp_rd_0/apb_fsm_curr_state_reg[1]",
+                                "states": [
+                                    {
+                                        "name": "C_APB_IDLE",
+                                        "val": "001"
+                                    },
+                                    {
+                                        "name": "C_APB_ACCESS",
+                                        "val": "100"
+                                    },
+                                    {
+                                        "name": "C_APB_SETUP",
+                                        "val": "010"
                                     }
                                 ]
                             }

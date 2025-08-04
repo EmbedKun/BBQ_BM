@@ -98,7 +98,14 @@ always @(posedge bbq_clk) begin
             heap_in_valid <= 1;
             heap_in_data <= counter[HEAP_ENTRY_DWIDTH-1:0];
             heap_in_priority <= counter[HEAP_PRIORITY_AWIDTH-1:0];
-            heap_in_op_type <= (counter[0] == 0) ? HEAP_OP_ENQUE : HEAP_OP_DEQUE_MAX;
+            heap_in_op_type <= (counter[2:0] == 3'b000) ? HEAP_OP_ENQUE: 
+                               (counter[2:0] == 3'b001) ? HEAP_OP_DEQUE_MIN:
+                               (counter[2:0] == 3'b010) ? HEAP_OP_DEQUE_MAX:
+                               (counter[2:0] == 3'b011) ? HEAP_OP_SWAP_IN:
+                               (counter[2:0] == 3'b100) ? HEAP_OP_ENQUE:
+                               (counter[2:0] == 3'b101) ? HEAP_OP_ENQUE:
+                               (counter[2:0] == 3'b110) ? HEAP_OP_ENQUE:
+                               HEAP_OP_SWAP_OUT;
         end
     end
 end

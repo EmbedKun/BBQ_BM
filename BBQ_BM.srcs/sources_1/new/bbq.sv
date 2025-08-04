@@ -133,6 +133,7 @@ typedef enum logic [1:0] {
     HBM_READ_CARRY_UP
 } hbm_read_carry_direction_t;
 
+heap_op_t in_op_type2;
 // SRAM_Heap state
 (* keep = "true" *)bitmap_t l1_bitmap; // L1 bitmap
 (* keep = "true" *)bitmap_t l2_bitmaps[NUM_BITMAPS_L2-1:0]; // L2 bitmaps
@@ -295,6 +296,8 @@ typedef enum logic [1:0] {
 (* keep = "true" *)bitmap_t                                reg_l2_bitmap_s[NUM_PIPELINE_STAGES:0];
 (* keep = "true" *)logic                                   reg_is_deque_min_s[NUM_PIPELINE_STAGES:0];
 (* keep = "true" *)logic                                   reg_is_deque_max_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   reg_is_swapin_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   reg_is_swapout_s[NUM_PIPELINE_STAGES:0];
 
 // Stage 1 metadata
 (* keep = "true" *)logic                                   valid_s1;
@@ -459,6 +462,10 @@ typedef enum logic [1:0] {
 (* keep = "true" *)bitmap_t                                hbm_reg_l2_bitmap_s[NUM_PIPELINE_STAGES:0];
 (* keep = "true" *)logic                                   hbm_reg_is_deque_min_s[NUM_PIPELINE_STAGES:0];
 (* keep = "true" *)logic                                   hbm_reg_is_deque_max_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   hbm_reg_is_swapin_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   hbm_reg_is_swapout_s[NUM_PIPELINE_STAGES:0];
+(* keep = "true" *)logic                                   hbm_reg_is_drop_s[NUM_PIPELINE_STAGES:0];
+
 
 // Stage 1 metadata
 (* keep = "true" *)logic                                   hbm_valid_s1;
@@ -618,10 +625,10 @@ assign pb_data = int_pb_data;
 
 // Output assignments
 assign ready = !rst & (state== FSM_STATE_READY);
-assign out_valid = hbm_reg_valid_s[NUM_PIPELINE_STAGES-1];  //TODO
-assign out_op_type = hbm_reg_op_type_s[NUM_PIPELINE_STAGES-1];  //TODO
-assign out_he_data = hbm_reg_he_data_s[NUM_PIPELINE_STAGES-1];  //TODO
-assign out_he_priority = hbm_reg_priority_s[NUM_PIPELINE_STAGES-1];     //TODO
+assign out_valid = reg_valid_s[NUM_PIPELINE_STAGES-1];  //TODO
+assign out_op_type = reg_op_type_s[NUM_PIPELINE_STAGES-1];  //TODO
+assign out_he_data = reg_he_data_s[NUM_PIPELINE_STAGES-1];  //TODO
+assign out_he_priority = reg_priority_s[NUM_PIPELINE_STAGES-1];     //TODO
 
 /**
  * State-dependent signals (data, wraddress, and wren) for the
@@ -679,6 +686,7 @@ always_comb begin
         end
         // Finished initializing the queue (including priority buckets,
         // free list, and the LX bitmaps). Proceed to the ready state.
+        // Init Buffer Arch
         if (hbm_counter_l2_init_done_r & hbm_fl_init_done_r & fl_init_done_r & counter_l2_init_done_r) begin
             state_next = FSM_STATE_READY;
         end
@@ -692,8 +700,8 @@ always_comb begin
             (reg_op_color_s[9] == OP_COLOR_BLUE) ?
             reg_pb_q_s9.head : reg_pb_q_s9.tail);
 
-        // Perform deque
-        if (!reg_is_enque_s[9]) begin
+        // Perform deque,swapout
+        if (!reg_is_enque_s[9]&&!reg_is_swapin_s[9]) begin
             // Update the free list
             fl_wrreq = reg_valid_s[9];
         end
@@ -715,8 +723,8 @@ always_comb begin
             (hbm_reg_op_color_s[9] == HBM_OP_COLOR_BLUE) ?
             hbm_reg_pb_q_s9.head : hbm_reg_pb_q_s9.tail);
 
-        // Perform deque
-        if (!hbm_reg_is_enque_s[9]) begin
+        // Perform swapin
+        if (reg_is_swapin_s[9]) begin
             // Update the free list
             hbm_fl_wrreq = hbm_reg_valid_s[9];
         end
@@ -782,7 +790,7 @@ always_comb begin
     pb_wren = reg_valid_s[9];
 
     // Perform enque
-    if (reg_is_enque_s[9]) begin
+    if (reg_is_enque_s[9]&&!reg_is_swapin_s[9]) begin
         if (reg_valid_s[9]) begin
             he_wren = 1; // Update the heap entry
             np_wren = 1; // Update the next pointer
@@ -799,8 +807,8 @@ always_comb begin
         // Update the data
         he_data_s10 = reg_he_data_s[9];
     end
-    // Perform deque
-    else begin
+    // Perform deque,drop
+    else if((reg_is_deque_min_s[9]||reg_is_deque_max_s[9])&&!reg_is_swapout_s[9])begin
         if (reg_op_color_s[9] == OP_COLOR_BLUE) begin
             // BLUE-colored dequeue (from HEAD)
             int_pb_data.head = reg_np_q_s9;
@@ -814,6 +822,43 @@ always_comb begin
         he_data_s10 = (
             reg_pb_data_conflict_s9 ?
             reg_he_data_s[10] : reg_he_q_s9);
+        //Other Actions in HBM Stage10
+    end
+    // Perform swap in
+    else if(reg_is_swapin_s[9])begin
+        if (reg_valid_s[9]) begin
+            he_wren = 1; // Update the heap entry
+            np_wren = 1; // Update the next pointer
+
+            // Update the entry's previous pointer. The
+            // pointer address is only valid if the PB
+            // was not previously empty, so write must
+            // be predicated on no change of state.
+            if (!reg_pb_state_changes_s9) begin
+                pp_wren = 1;
+            end
+        end
+
+        // Update the data
+        // HBM DATA TO SRAM
+//        he_data_s10 = hbm_reg_he_data_s[9];
+        
+    end
+    // Perform swap out
+    else if(reg_is_swapout_s[9])begin
+        if (reg_op_color_s[9] == OP_COLOR_BLUE) begin
+            // BLUE-colored dequeue (from HEAD)
+            int_pb_data.head = reg_np_q_s9;
+        end
+        else begin
+            // RED-colored dequeue (from TAIL)
+            int_pb_data.tail = reg_pp_q_s9;
+        end
+
+        // Update the data
+//        he_data_s10 = (
+//            reg_pb_data_conflict_s9 ?
+//            reg_he_data_s[10] : reg_he_q_s9);
     end
     /**
      * Stage 9: Read delay for HE and pointers.
@@ -871,7 +916,7 @@ always_comb begin
         int_pb_q.head : int_pb_q.tail);
 
     if (reg_valid_s[7]) begin
-        if (!reg_is_enque_s[7]) begin
+        if (!reg_is_enque_s[7]) begin//swapin swapout drop or dequeue
             he_rden = 1; // Dequeing, read HE and PP/NP
             if (reg_op_color_s[7] == OP_COLOR_BLUE) begin
                 np_rden = 1; // BLUE-colored dequeue (from HEAD)
@@ -898,20 +943,23 @@ always_comb begin
      */
     l2_counter_s6[WATERLEVEL_IDX-1:0] = (
         reg_is_enque_s[5] ? (reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:0] + 1) :
-                            (reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:0] - 1));
+        (reg_is_swapin_s[5] ? (reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:0] + 1):
+        (reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:0] - 1)));
 
-    l2_counter_s6[WATERLEVEL_IDX] = (reg_is_enque_s[5] ?
+    l2_counter_s6[WATERLEVEL_IDX] = ((reg_is_enque_s[5]|reg_is_swapin_s[5])?
         (reg_l2_counter_rc_s5[WATERLEVEL_IDX] | reg_l2_counter_rc_s5[0]) :
         ((|reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:2]) | (&reg_l2_counter_rc_s5[1:0])));
 
-    l2_counter_non_zero_s6 = (reg_is_enque_s[5] |
+    l2_counter_non_zero_s6 = (reg_is_enque_s[5] | reg_is_swapin_s[5] |
                               reg_l2_counter_rc_s5[WATERLEVEL_IDX]);
     // Write L2 bitmap
-    if (reg_is_enque_s[5]) begin
+    if (reg_is_enque_s[5]&&!reg_is_swapin_s[5]) begin //enque or swapin
         l2_bitmap_s6 = (reg_l2_bitmap_s[5] |
                         reg_l2_bitmap_idx_onehot_s5);
-    end
-    else begin
+    end else if(reg_is_swapin_s[5])begin
+        l2_bitmap_s6 = (reg_l2_bitmap_s[5] |
+                        hbm_reg_l2_bitmap_idx_onehot_s5);//swap in from hbm
+    end else begin
         l2_bitmap_s6 = (
             l2_counter_non_zero_s6 ? reg_l2_bitmap_s[5] :
             (reg_l2_bitmap_s[5] & ~reg_l2_bitmap_idx_onehot_s5));
@@ -1196,7 +1244,7 @@ always_comb begin
      */
     if (reg_valid_s[0]) begin
         valid_s1 = (
-            (reg_is_enque_s[0] && !fl_empty) ||
+            ((reg_is_enque_s[0]||reg_is_swapin_s[0])&& !fl_empty) ||
             (!reg_is_enque_s[0] && (old_occupancy_s1[0] |
                                     old_occupancy_s1[WATERLEVEL_IDX])));
     end
@@ -1260,8 +1308,8 @@ always_comb begin
      */
     hbm_pb_wren = hbm_reg_valid_s[9];
 
-    // Perform enque
-    if (hbm_reg_is_enque_s[9]) begin
+    // Perform enque HBM
+    if (reg_is_swapout_s[9]) begin
         if (hbm_reg_valid_s[9]) begin
             hbm_he_wren = 1; // Update the heap entry
             hbm_np_wren = 1; // Update the next pointer
@@ -1276,7 +1324,7 @@ always_comb begin
         end
 
         // Update the data
-        hbm_he_data_s10 = hbm_reg_he_data_s[9];
+        hbm_he_data_s10 = reg_he_data_s[9];//SRAM DATA TO HBM
     end
     // Perform deque
     else begin
@@ -1376,19 +1424,19 @@ always_comb begin
      * and read the corresponding PB (head and tail).
      */
     hbm_l2_counter_s6[WATERLEVEL_IDX-1:0] = (
-        hbm_reg_is_enque_s[5] ? (hbm_reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:0] + 1) :
+        (hbm_reg_is_enque_s[5]||reg_is_swapout_s[5]) ? (hbm_reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:0] + 1) :
                             (hbm_reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:0] - 1));
 
-    hbm_l2_counter_s6[WATERLEVEL_IDX] = (hbm_reg_is_enque_s[5] ?
+    hbm_l2_counter_s6[WATERLEVEL_IDX] = ((hbm_reg_is_enque_s[5]||reg_is_swapout_s[5]) ?
         (hbm_reg_l2_counter_rc_s5[WATERLEVEL_IDX] | hbm_reg_l2_counter_rc_s5[0]) :
         ((|hbm_reg_l2_counter_rc_s5[WATERLEVEL_IDX-1:2]) | (&hbm_reg_l2_counter_rc_s5[1:0])));
 
-    hbm_l2_counter_non_zero_s6 = (hbm_reg_is_enque_s[5] |
+    hbm_l2_counter_non_zero_s6 = ((hbm_reg_is_enque_s[5]||reg_is_swapout_s[5]) |
                               hbm_reg_l2_counter_rc_s5[WATERLEVEL_IDX]);
     // Write L2 bitmap
-    if (hbm_reg_is_enque_s[5]) begin
+    if ((hbm_reg_is_enque_s[5]||reg_is_swapout_s[5])) begin
         hbm_l2_bitmap_s6 = (hbm_reg_l2_bitmap_s[5] |
-                        hbm_reg_l2_bitmap_idx_onehot_s5);
+                        reg_l2_bitmap_idx_onehot_s5);//SRAM BITMAP MASK HBM BITMAP
     end
     else begin
         hbm_l2_bitmap_s6 = (
@@ -1558,19 +1606,19 @@ always_comb begin
      * and read the corresponding L2 bitmap.
      */
     hbm_l1_counter_s3[WATERLEVEL_IDX-1:0] = (
-        hbm_reg_is_enque_s[2] ? (hbm_reg_l1_counter_s2[WATERLEVEL_IDX-1:0] + 1) :
+        (hbm_reg_is_enque_s[2]|reg_is_swapout_s[2]) ? (hbm_reg_l1_counter_s2[WATERLEVEL_IDX-1:0] + 1) :
                             (hbm_reg_l1_counter_s2[WATERLEVEL_IDX-1:0] - 1));
 
-    hbm_l1_counter_s3[WATERLEVEL_IDX] = (hbm_reg_is_enque_s[2] ?
+    hbm_l1_counter_s3[WATERLEVEL_IDX] = ((hbm_reg_is_enque_s[2]|reg_is_swapout_s[2]) ?
         (hbm_reg_l1_counter_s2[WATERLEVEL_IDX] | hbm_reg_l1_counter_s2[0]) :
         ((|hbm_reg_l1_counter_s2[WATERLEVEL_IDX-1:2]) | (&hbm_reg_l1_counter_s2[1:0])));
 
-    hbm_l1_counter_non_zero_s3 = (hbm_reg_is_enque_s[2] |
+    hbm_l1_counter_non_zero_s3 = ((hbm_reg_is_enque_s[2]|reg_is_swapout_s[2]) |
                               hbm_reg_l1_counter_s2[WATERLEVEL_IDX]);
     // Write L1 bitmap
-    if (hbm_reg_is_enque_s[2]) begin
+    if ((hbm_reg_is_enque_s[2]|reg_is_swapout_s[2])) begin
         hbm_l1_bitmap_s3 = (hbm_l1_bitmap |
-                        hbm_reg_l1_bitmap_idx_onehot_s2);
+                        reg_l1_bitmap_idx_onehot_s2);//SRAM BITMAP MASK HBM BITMAP
     end
     else begin
         hbm_l1_bitmap_s3 = (
@@ -1766,6 +1814,8 @@ always @(posedge clk) begin
         reg_priority_s[11] <= reg_priority_s[10];
         reg_is_deque_max_s[11] <= reg_is_deque_max_s[10];
         reg_is_deque_min_s[11] <= reg_is_deque_min_s[10];
+        reg_is_swapin_s[11] <= reg_is_swapin_s[10];
+        reg_is_swapout_s[11] <= reg_is_swapout_s[10];
 
         reg_pb_data_s11 <= reg_pb_data_s10;
         reg_l2_addr_s[11] <= reg_l2_addr_s[10];
@@ -1783,6 +1833,8 @@ always @(posedge clk) begin
         reg_priority_s[10] <= reg_priority_s[9];
         reg_is_deque_max_s[10] <= reg_is_deque_max_s[9];
         reg_is_deque_min_s[10] <= reg_is_deque_min_s[9];
+        reg_is_swapin_s[10] <= reg_is_swapin_s[9];
+        reg_is_swapout_s[10] <= reg_is_swapout_s[9];
 
         reg_he_data_s10 <= he_data;
         reg_np_data_s10 <= np_data;
@@ -1802,6 +1854,8 @@ always @(posedge clk) begin
         reg_priority_s[9] <= reg_priority_s[8];
         reg_is_deque_max_s[9] <= reg_is_deque_max_s[8];
         reg_is_deque_min_s[9] <= reg_is_deque_min_s[8];
+        reg_is_swapin_s[9] <= reg_is_swapin_s[8];
+        reg_is_swapout_s[9] <= reg_is_swapout_s[8];
 
         reg_l2_addr_s[9] <= reg_l2_addr_s[8];
         reg_op_color_s[9] <= reg_op_color_s[8];
@@ -1841,6 +1895,8 @@ always @(posedge clk) begin
         reg_priority_s[8] <= reg_priority_s[7];
         reg_is_deque_max_s[8] <= reg_is_deque_max_s[7];
         reg_is_deque_min_s[8] <= reg_is_deque_min_s[7];
+        reg_is_swapin_s[8] <= reg_is_swapin_s[7];
+        reg_is_swapout_s[8] <= reg_is_swapout_s[7];
 
         reg_pb_q_s8 <= int_pb_q;
         reg_l2_addr_s[8] <= reg_l2_addr_s[7];
@@ -1865,6 +1921,8 @@ always @(posedge clk) begin
         reg_priority_s[7] <= reg_priority_s[6];
         reg_is_deque_max_s[7] <= reg_is_deque_max_s[6];
         reg_is_deque_min_s[7] <= reg_is_deque_min_s[6];
+        reg_is_swapin_s[7] <= reg_is_swapin_s[6];
+        reg_is_swapout_s[7] <= reg_is_swapout_s[6];
 
         reg_op_color_s[7] <= op_color_s7;
         reg_l2_addr_s[7] <= reg_l2_addr_s[6];
@@ -1905,6 +1963,8 @@ always @(posedge clk) begin
         reg_priority_s[6] <= priority_s6;
         reg_is_deque_max_s[6] <= reg_is_deque_max_s[5];
         reg_is_deque_min_s[6] <= reg_is_deque_min_s[5];
+        reg_is_swapin_s[6] <= reg_is_swapin_s[5];
+        reg_is_swapout_s[6] <= reg_is_swapout_s[5];
 
         reg_l2_bitmap_s[6] <= l2_bitmap_s6;
         reg_l2_addr_s[6] <= reg_l2_addr_s[5];
@@ -1934,6 +1994,8 @@ always @(posedge clk) begin
         reg_priority_s[5] <= reg_priority_s[4];
         reg_is_deque_max_s[5] <= reg_is_deque_max_s[4];
         reg_is_deque_min_s[5] <= reg_is_deque_min_s[4];
+        reg_is_swapin_s[5] <= reg_is_swapin_s[4];
+        reg_is_swapout_s[5] <= reg_is_swapout_s[4];
 
         reg_l2_addr_s[5] <= reg_l2_addr_s[4];
         reg_l2_addr_conflict_s6_s5 <= reg_l2_addr_conflict_s5_s4;
@@ -1974,6 +2036,8 @@ always @(posedge clk) begin
         reg_priority_s[4] <= reg_priority_s[3];
         reg_is_deque_max_s[4] <= reg_is_deque_max_s[3];
         reg_is_deque_min_s[4] <= reg_is_deque_min_s[3];
+        reg_is_swapin_s[4] <= reg_is_swapin_s[3];
+        reg_is_swapout_s[4] <= reg_is_swapout_s[3];
 
         reg_l2_addr_s[4] <= reg_l2_addr_s[3];
         reg_l2_addr_conflict_s5_s4 <= reg_l2_addr_conflict_s4_s3;
@@ -2021,6 +2085,8 @@ always @(posedge clk) begin
         reg_priority_s[3] <= reg_priority_s[2];
         reg_is_deque_max_s[3] <= reg_is_deque_max_s[2];
         reg_is_deque_min_s[3] <= reg_is_deque_min_s[2];
+        reg_is_swapin_s[3] <= reg_is_swapin_s[2];
+        reg_is_swapout_s[3] <= reg_is_swapout_s[2];
 
         reg_l2_addr_s[3] <= reg_l1_bitmap_idx_s2;
 
@@ -2052,6 +2118,8 @@ always @(posedge clk) begin
         reg_priority_s[2] <= reg_priority_s[1];
         reg_is_deque_max_s[2] <= reg_is_deque_max_s[1];
         reg_is_deque_min_s[2] <= reg_is_deque_min_s[1];
+        reg_is_swapin_s[2] <= reg_is_swapin_s[1];
+        reg_is_swapout_s[2] <= reg_is_swapout_s[1];
 
         reg_l1_bitmap_empty_s2 <= 0;
 
@@ -2084,6 +2152,8 @@ always @(posedge clk) begin
         reg_priority_s[1] <= reg_priority_s[0];
         reg_is_deque_max_s[1] <= reg_is_deque_max_s[0];
         reg_is_deque_min_s[1] <= reg_is_deque_min_s[0];
+        reg_is_swapin_s[1] <= reg_is_swapin_s[0];
+        reg_is_swapout_s[1] <= reg_is_swapout_s[0];
 
         reg_old_occupancy_s1 <= old_occupancy_s1;
         reg_new_occupancy_s1 <= new_occupancy_s1;
@@ -2102,9 +2172,10 @@ always @(posedge clk) begin
         reg_is_enque_s[0] <= (in_op_type == HEAP_OP_ENQUE);
         reg_is_deque_max_s[0] <= (in_op_type == HEAP_OP_DEQUE_MAX);
         reg_is_deque_min_s[0] <= (in_op_type == HEAP_OP_DEQUE_MIN);
+        reg_is_swapin_s[0] <= (in_op_type == HEAP_OP_SWAP_IN);
+        reg_is_swapout_s[0] <= (in_op_type == HEAP_OP_SWAP_OUT);
 
         // Register init signals
-//        counter <= (counter==17'b11111111111111111)?17'b11111111111111111:(counter +1);
         fl_init_done_r <= fl_init_done;
         counter_l2_init_done_r <= counter_l2_init_done;
         
@@ -2152,6 +2223,8 @@ always @(posedge clk) begin
         hbm_reg_priority_s[11] <= hbm_reg_priority_s[10];
         hbm_reg_is_deque_max_s[11] <= hbm_reg_is_deque_max_s[10];
         hbm_reg_is_deque_min_s[11] <= hbm_reg_is_deque_min_s[10];
+        hbm_reg_is_swapout_s[11] <= hbm_reg_is_swapout_s[10];
+        hbm_reg_is_swapin_s[11] <= hbm_reg_is_swapin_s[10];
 
         hbm_reg_pb_data_s11 <= hbm_reg_pb_data_s10;
         hbm_reg_l2_addr_s[11] <= hbm_reg_l2_addr_s[10];
@@ -2169,6 +2242,8 @@ always @(posedge clk) begin
         hbm_reg_priority_s[10] <= hbm_reg_priority_s[9];
         hbm_reg_is_deque_max_s[10] <= hbm_reg_is_deque_max_s[9];
         hbm_reg_is_deque_min_s[10] <= hbm_reg_is_deque_min_s[9];
+        hbm_reg_is_swapout_s[10] <= hbm_reg_is_swapout_s[9];
+        hbm_reg_is_swapin_s[10] <= hbm_reg_is_swapin_s[9];
 
         hbm_reg_he_data_s10 <= hbm_he_data;
         hbm_reg_np_data_s10 <= hbm_np_data;
@@ -2188,6 +2263,8 @@ always @(posedge clk) begin
         hbm_reg_priority_s[9] <= hbm_reg_priority_s[8];
         hbm_reg_is_deque_max_s[9] <= hbm_reg_is_deque_max_s[8];
         hbm_reg_is_deque_min_s[9] <= hbm_reg_is_deque_min_s[8];
+        hbm_reg_is_swapout_s[9] <= hbm_reg_is_swapout_s[8];
+        hbm_reg_is_swapin_s[9] <= hbm_reg_is_swapin_s[8];
 
         hbm_reg_l2_addr_s[9] <= hbm_reg_l2_addr_s[8];
         hbm_reg_op_color_s[9] <= hbm_reg_op_color_s[8];
@@ -2227,6 +2304,8 @@ always @(posedge clk) begin
         hbm_reg_priority_s[8] <= hbm_reg_priority_s[7];
         hbm_reg_is_deque_max_s[8] <= hbm_reg_is_deque_max_s[7];
         hbm_reg_is_deque_min_s[8] <= hbm_reg_is_deque_min_s[7];
+        hbm_reg_is_swapout_s[8] <= hbm_reg_is_swapout_s[7];
+        hbm_reg_is_swapin_s[8] <= hbm_reg_is_swapin_s[7];
 
         hbm_reg_pb_q_s8 <= hbm_int_pb_q;
         hbm_reg_l2_addr_s[8] <= hbm_reg_l2_addr_s[7];
@@ -2251,7 +2330,9 @@ always @(posedge clk) begin
         hbm_reg_priority_s[7] <= hbm_reg_priority_s[6];
         hbm_reg_is_deque_max_s[7] <= hbm_reg_is_deque_max_s[6];
         hbm_reg_is_deque_min_s[7] <= hbm_reg_is_deque_min_s[6];
-
+        hbm_reg_is_swapout_s[7] <= hbm_reg_is_swapout_s[6];
+        hbm_reg_is_swapin_s[7] <= hbm_reg_is_swapin_s[6];
+        
         hbm_reg_op_color_s[7] <= hbm_op_color_s7;
         hbm_reg_l2_addr_s[7] <= hbm_reg_l2_addr_s[6];
         hbm_reg_l2_bitmap_s[7] <= hbm_reg_l2_bitmap_s[6];
@@ -2291,6 +2372,8 @@ always @(posedge clk) begin
         hbm_reg_priority_s[6] <= hbm_priority_s6;
         hbm_reg_is_deque_max_s[6] <= hbm_reg_is_deque_max_s[5];
         hbm_reg_is_deque_min_s[6] <= hbm_reg_is_deque_min_s[5];
+        hbm_reg_is_swapout_s[6] <= hbm_reg_is_swapout_s[5];
+        hbm_reg_is_swapin_s[6] <= hbm_reg_is_swapin_s[5];
 
         hbm_reg_l2_bitmap_s[6] <= hbm_l2_bitmap_s6;
         hbm_reg_l2_addr_s[6] <= hbm_reg_l2_addr_s[5];
@@ -2320,6 +2403,8 @@ always @(posedge clk) begin
         hbm_reg_priority_s[5] <= hbm_reg_priority_s[4];
         hbm_reg_is_deque_max_s[5] <= hbm_reg_is_deque_max_s[4];
         hbm_reg_is_deque_min_s[5] <= hbm_reg_is_deque_min_s[4];
+        hbm_reg_is_swapout_s[5] <= hbm_reg_is_swapout_s[4];
+        hbm_reg_is_swapin_s[5] <= hbm_reg_is_swapin_s[4];
 
         hbm_reg_l2_addr_s[5] <= hbm_reg_l2_addr_s[4];
         hbm_reg_l2_addr_conflict_s6_s5 <= hbm_reg_l2_addr_conflict_s5_s4;
@@ -2360,7 +2445,9 @@ always @(posedge clk) begin
         hbm_reg_priority_s[4] <= hbm_reg_priority_s[3];
         hbm_reg_is_deque_max_s[4] <= hbm_reg_is_deque_max_s[3];
         hbm_reg_is_deque_min_s[4] <= hbm_reg_is_deque_min_s[3];
-
+        hbm_reg_is_swapout_s[4] <= hbm_reg_is_swapout_s[3];
+        hbm_reg_is_swapin_s[4] <= hbm_reg_is_swapin_s[3];
+        
         hbm_reg_l2_addr_s[4] <= hbm_reg_l2_addr_s[3];
         hbm_reg_l2_addr_conflict_s5_s4 <= hbm_reg_l2_addr_conflict_s4_s3;
         hbm_reg_l2_addr_conflict_s6_s4 <= hbm_reg_l2_addr_conflict_s5_s3;
@@ -2407,7 +2494,9 @@ always @(posedge clk) begin
         hbm_reg_priority_s[3] <= hbm_reg_priority_s[2];
         hbm_reg_is_deque_max_s[3] <= hbm_reg_is_deque_max_s[2];
         hbm_reg_is_deque_min_s[3] <= hbm_reg_is_deque_min_s[2];
-
+        hbm_reg_is_swapout_s[3] <= hbm_reg_is_swapout_s[2];
+        hbm_reg_is_swapin_s[3] <= hbm_reg_is_swapin_s[2];
+        
         hbm_reg_l2_addr_s[3] <= hbm_reg_l1_bitmap_idx_s2;
 
         hbm_reg_l1_counter_s3 <= hbm_l1_counter_s3;
@@ -2438,7 +2527,9 @@ always @(posedge clk) begin
         hbm_reg_priority_s[2] <= hbm_reg_priority_s[1];
         hbm_reg_is_deque_max_s[2] <= hbm_reg_is_deque_max_s[1];
         hbm_reg_is_deque_min_s[2] <= hbm_reg_is_deque_min_s[1];
-
+        hbm_reg_is_swapout_s[2] <= hbm_reg_is_swapout_s[1];
+        hbm_reg_is_swapin_s[2] <= hbm_reg_is_swapin_s[1];
+        
         hbm_reg_l1_bitmap_empty_s2 <= 0;
 
         case (hbm_rcd_s2)
@@ -2470,7 +2561,9 @@ always @(posedge clk) begin
         hbm_reg_priority_s[1] <= hbm_reg_priority_s[0];
         hbm_reg_is_deque_max_s[1] <= hbm_reg_is_deque_max_s[0];
         hbm_reg_is_deque_min_s[1] <= hbm_reg_is_deque_min_s[0];
-
+        hbm_reg_is_swapout_s[1] <= hbm_reg_is_swapout_s[0];
+        hbm_reg_is_swapin_s[1] <= hbm_reg_is_swapin_s[0];
+        
         hbm_reg_old_occupancy_s1 <= hbm_old_occupancy_s1;
         hbm_reg_new_occupancy_s1 <= hbm_new_occupancy_s1;
 
@@ -2484,11 +2577,13 @@ always @(posedge clk) begin
         hbm_reg_op_type_s[0] <= in_op_type;
         hbm_reg_he_data_s[0] <= in_he_data;
         hbm_reg_priority_s[0] <= in_he_priority;
-        hbm_reg_valid_s[0] <= (ready & in_valid);
-        hbm_reg_is_enque_s[0] <= (in_op_type == HEAP_OP_ENQUE);
+        hbm_reg_valid_s[0] <= (ready & in_valid &(in_op_type==HEAP_OP_SWAP_OUT|in_op_type==HEAP_OP_SWAP_IN));
+        hbm_reg_is_enque_s[0] <= (in_op_type == HEAP_OP_SWAP_OUT);
         hbm_reg_is_deque_max_s[0] <= (in_op_type == HEAP_OP_DEQUE_MAX);
-        hbm_reg_is_deque_min_s[0] <= (in_op_type == HEAP_OP_DEQUE_MIN);
-
+        hbm_reg_is_deque_min_s[0] <= (in_op_type == HEAP_OP_SWAP_IN);
+        hbm_reg_is_swapin_s[0] <= (in_op_type == HEAP_OP_SWAP_IN);
+        hbm_reg_is_swapout_s[0] <= (in_op_type == HEAP_OP_SWAP_OUT);
+        
         // Register init signals
         hbm_fl_init_done_r <= hbm_fl_init_done;
         hbm_counter_l2_init_done_r <= hbm_counter_l2_init_done;
@@ -2903,6 +2998,7 @@ always @(posedge clk)begin
             AXI_00_WDATA<=0;
             AXI_00_WSTRB<=0;
             AXI_00_WLAST<=0;
+            AXI_00_ARADDR<=0;
     end else begin
         if(!AXI_00_ARVALID)begin
             AXI_00_ARVALID <=1;
@@ -2910,6 +3006,7 @@ always @(posedge clk)begin
             AXI_00_ARSIZE<=5;
             AXI_00_ARBURST<=2'b01;
             AXI_00_ARLEN<=0;
+            AXI_00_ARADDR[26:5]<=hbm_he_rdaddress[HEAP_ENTRY_AWIDTH-1:0];
         end
 
         case(w_state)
@@ -2945,9 +3042,9 @@ always @(posedge clk)begin
     end
 end
 
-assign AXI_00_ARADDR = {hbm_he_rdaddress[HEAP_ENTRY_AWIDTH-1:0],5'b0};
 // always ack r
 assign AXI_00_RREADY = locked;
+
 
 ila_1 ila_1(
     .clk(axi_clk),

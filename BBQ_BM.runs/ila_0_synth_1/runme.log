@@ -16,11 +16,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcu280'
 INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 504855
+INFO: [Synth 8-7075] Helper process launched with PID 4160917
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:26 . Memory (MB): peak = 3247.492 ; gain = 182.719 ; free physical = 104045 ; free virtual = 119006
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:13 . Memory (MB): peak = 3218.559 ; gain = 182.719 ; free physical = 15784 ; free virtual = 54502
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:84]
+INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:84]
 INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1524]
 INFO: [Synth 8-6155] done synthesizing module 'CFGLUT5' (8#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1524]
 INFO: [Synth 8-6157] synthesizing module 'CARRY4' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:1487]
@@ -33,50 +33,50 @@ INFO: [Synth 8-6157] synthesizing module 'SRLC16E' [/tools/Xilinx/Vivado/2020.2/
 INFO: [Synth 8-6155] done synthesizing module 'SRLC16E' (23#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:78123]
 INFO: [Synth 8-6157] synthesizing module 'FDRE' [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:13724]
 INFO: [Synth 8-6155] done synthesizing module 'FDRE' (28#1) [/tools/Xilinx/Vivado/2020.2/scripts/rt/data/unisim_comp.v:13724]
-WARNING: [Synth 8-7071] port 'clk_nobuf' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
-WARNING: [Synth 8-7071] port 'clkdiv_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
-WARNING: [Synth 8-7071] port 'trig_in' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
-WARNING: [Synth 8-7071] port 'trig_in_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
-WARNING: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
-WARNING: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
-WARNING: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_11_ila' has 1033 connections declared, but only 1027 given [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
-INFO: [Synth 8-6155] done synthesizing module 'ila_0' (46#1) [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:84]
+WARNING: [Synth 8-7071] port 'clk_nobuf' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
+WARNING: [Synth 8-7071] port 'clkdiv_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
+WARNING: [Synth 8-7071] port 'trig_in' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
+WARNING: [Synth 8-7071] port 'trig_in_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
+WARNING: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
+WARNING: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_11_ila' is unconnected for instance 'inst' [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
+WARNING: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_11_ila' has 1033 connections declared, but only 1027 given [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:3217]
+INFO: [Synth 8-6155] done synthesizing module 'ila_0' (46#1) [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/synth/ila_0.v:84]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 3616.617 ; gain = 551.844 ; free physical = 101960 ; free virtual = 116923
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:33 . Memory (MB): peak = 3587.684 ; gain = 551.844 ; free physical = 15703 ; free virtual = 54457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 3616.617 ; gain = 551.844 ; free physical = 101987 ; free virtual = 116950
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:34 . Memory (MB): peak = 3587.684 ; gain = 551.844 ; free physical = 15716 ; free virtual = 54477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:59 . Memory (MB): peak = 3616.617 ; gain = 551.844 ; free physical = 101987 ; free virtual = 116950
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:34 . Memory (MB): peak = 3587.684 ; gain = 551.844 ; free physical = 15716 ; free virtual = 54477
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3616.617 ; gain = 0.000 ; free physical = 102020 ; free virtual = 116983
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3587.684 ; gain = 0.000 ; free physical = 15696 ; free virtual = 54457
 INFO: [Netlist 29-17] Analyzing 93 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'inst'
-Finished Parsing XDC File [/home/pnic/mkxue/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'inst'
-Parsing XDC File [/home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'inst'
+Parsing XDC File [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3694.742 ; gain = 0.000 ; free physical = 102083 ; free virtual = 117049
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3665.809 ; gain = 0.000 ; free physical = 15558 ; free virtual = 54318
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 69 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 60 instances
   CFGLUT5 => SRLC32E: 9 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3694.742 ; gain = 0.000 ; free physical = 102091 ; free virtual = 117058
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3665.809 ; gain = 0.000 ; free physical = 15558 ; free virtual = 54318
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:01:08 . Memory (MB): peak = 3694.742 ; gain = 629.969 ; free physical = 102234 ; free virtual = 117201
+Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 3665.809 ; gain = 629.969 ; free physical = 15652 ; free virtual = 54413
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -84,14 +84,14 @@ Start Loading Part and Timing Information
 Loading part: xcu280-fsvh2892-2L-e
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:01:08 . Memory (MB): peak = 3694.742 ; gain = 629.969 ; free physical = 102235 ; free virtual = 117202
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 3665.809 ; gain = 629.969 ; free physical = 15652 ; free virtual = 54413
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/dont_touch.xdc, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:01:08 . Memory (MB): peak = 3694.742 ; gain = 629.969 ; free physical = 102233 ; free virtual = 117200
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 3665.809 ; gain = 629.969 ; free physical = 15652 ; free virtual = 54413
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_2_reg_p2s__parameterized0'
@@ -185,7 +185,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in m
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in module 'ltlib_v1_0_0_generic_memrd'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:01:10 . Memory (MB): peak = 3694.742 ; gain = 629.969 ; free physical = 102195 ; free virtual = 117163
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:42 . Memory (MB): peak = 3665.809 ; gain = 629.969 ; free physical = 15643 ; free virtual = 54405
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -206,25 +206,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:01:16 . Memory (MB): peak = 3694.742 ; gain = 629.969 ; free physical = 102210 ; free virtual = 117191
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:48 . Memory (MB): peak = 3665.809 ; gain = 629.969 ; free physical = 15619 ; free virtual = 54394
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:43 ; elapsed = 00:01:44 . Memory (MB): peak = 3819.250 ; gain = 754.477 ; free physical = 102246 ; free virtual = 117224
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:46 ; elapsed = 00:01:06 . Memory (MB): peak = 3790.324 ; gain = 754.484 ; free physical = 15104 ; free virtual = 53879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:01:46 . Memory (MB): peak = 3877.875 ; gain = 813.102 ; free physical = 104119 ; free virtual = 119097
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:01:08 . Memory (MB): peak = 3851.949 ; gain = 816.109 ; free physical = 15071 ; free virtual = 53846
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:01:46 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104129 ; free virtual = 119106
+Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:01:09 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53856
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -282,37 +282,37 @@ INFO: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
 INFO: [Synth 8-3295] tying undriven pin inst:trig_in to constant 0
 INFO: [Synth 8-3295] tying undriven pin inst:trig_out_ack to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:47 ; elapsed = 00:01:48 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104154 ; free virtual = 119132
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53857
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:47 ; elapsed = 00:01:48 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104154 ; free virtual = 119132
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53857
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:01:48 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104154 ; free virtual = 119132
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53857
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:01:48 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104154 ; free virtual = 119132
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53857
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:01:49 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104154 ; free virtual = 119132
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53857
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:01:49 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104154 ; free virtual = 119132
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53857
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -330,33 +330,33 @@ Report Cell Usage:
 +------+---------+------+
 |1     |CARRY4   |    24|
 |2     |CFGLUT5  |    69|
-|3     |LUT1     |    33|
-|4     |LUT2     |    61|
-|5     |LUT3     |   111|
-|6     |LUT4     |    95|
-|7     |LUT5     |    92|
-|8     |LUT6     |   426|
-|9     |MUXF7    |     2|
+|3     |LUT1     |    35|
+|4     |LUT2     |    46|
+|5     |LUT3     |   106|
+|6     |LUT4     |   130|
+|7     |LUT5     |    90|
+|8     |LUT6     |   399|
+|9     |MUXF7    |    10|
 |10    |RAMB36E2 |     1|
-|11    |SRL16E   |    35|
+|11    |SRL16E   |    36|
 |12    |SRLC16E  |     2|
 |13    |SRLC32E  |    17|
-|14    |FDRE     |  1365|
+|14    |FDRE     |  1370|
 |15    |FDSE     |    10|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:01:49 . Memory (MB): peak = 3893.891 ; gain = 829.117 ; free physical = 104154 ; free virtual = 119132
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.965 ; gain = 832.125 ; free physical = 15081 ; free virtual = 53857
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:42 ; elapsed = 00:01:42 . Memory (MB): peak = 3893.891 ; gain = 750.992 ; free physical = 104154 ; free virtual = 119132
-Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:01:49 . Memory (MB): peak = 3893.898 ; gain = 829.117 ; free physical = 104161 ; free virtual = 119139
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:45 ; elapsed = 00:01:05 . Memory (MB): peak = 3867.965 ; gain = 754.000 ; free physical = 15119 ; free virtual = 53894
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 3867.973 ; gain = 832.125 ; free physical = 15119 ; free virtual = 53894
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3893.898 ; gain = 0.000 ; free physical = 104251 ; free virtual = 119229
-INFO: [Netlist 29-17] Analyzing 95 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3867.973 ; gain = 0.000 ; free physical = 15213 ; free virtual = 53988
+INFO: [Netlist 29-17] Analyzing 103 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3972.258 ; gain = 0.000 ; free physical = 104222 ; free virtual = 119200
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3940.363 ; gain = 0.000 ; free physical = 15122 ; free virtual = 53897
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 83 instances were transformed.
   (CARRY4) => CARRY8: 14 instances
@@ -366,11 +366,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 87 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:02:04 . Memory (MB): peak = 3972.258 ; gain = 1577.867 ; free physical = 104240 ; free virtual = 119218
-INFO: [Common 17-1381] The checkpoint '/home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/ila_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:20 . Memory (MB): peak = 3940.363 ; gain = 1573.906 ; free physical = 15271 ; free virtual = 54047
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Common 17-1381] The checkpoint '/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/ila_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP ila_0, cache-ID = 7d7dda1149ee8028
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP ila_0, cache-ID = ded486e0062fed4f
 INFO: [Coretcl 2-1174] Renamed 126 cell refs.
-INFO: [Common 17-1381] The checkpoint '/home/pnic/mkxue/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/ila_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/ila_0_synth_1/ila_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ila_0_utilization_synth.rpt -pb ila_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 25 13:36:53 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  4 20:13:01 2025...
