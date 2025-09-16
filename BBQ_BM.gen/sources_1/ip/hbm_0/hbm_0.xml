@@ -102221,11 +102221,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:dc79725c</spirit:value>
+            <spirit:value>9:6bbbc824</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -102240,11 +102240,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:20 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d8e656d8</spirit:value>
+            <spirit:value>9:f0bcb4a5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -102260,11 +102260,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d8e656d8</spirit:value>
+            <spirit:value>9:f0bcb4a5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -102275,7 +102275,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d8e656d8</spirit:value>
+            <spirit:value>9:f0bcb4a5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -102291,11 +102291,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d8e656d8</spirit:value>
+            <spirit:value>9:f0bcb4a5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -102311,11 +102311,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:08 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:460cf345</spirit:value>
+            <spirit:value>9:0186b762</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -102331,11 +102331,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4749f8e1</spirit:value>
+            <spirit:value>9:627388ff</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -102359,11 +102359,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:460cf345</spirit:value>
+            <spirit:value>9:0186b762</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -102379,11 +102379,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:4749f8e1</spirit:value>
+            <spirit:value>9:627388ff</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>sim_type</spirit:name>
@@ -102401,11 +102401,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sun Aug 03 15:01:21 UTC 2025</spirit:value>
+            <spirit:value>Mon Sep 08 10:43:09 UTC 2025</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:d8e656d8</spirit:value>
+            <spirit:value>9:f0bcb4a5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -153739,7 +153739,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>HBM_REF_CLK_FREQ_0</spirit:name>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.HBM_REF_CLK_FREQ_0">100</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.HBM_REF_CLK_FREQ_0">200</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>HBM_REF_CLK_FREQ_1</spirit:name>
@@ -155724,15 +155724,15 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_REF_CLK_0</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_REF_CLK_0" spirit:choiceRef="choice_list_d944d518" spirit:order="20">100</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_REF_CLK_0" spirit:choiceRef="choice_list_d944d518" spirit:order="20">200</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_REF_CLK_PS_0</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_REF_CLK_PS_0" spirit:order="21">5000.00</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_REF_CLK_PS_0" spirit:order="21">2500.00</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_REF_CLK_XDC_0</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_REF_CLK_XDC_0" spirit:order="22">10.00</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_REF_CLK_XDC_0" spirit:order="22">5.00</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_REF_CLK_PS_1</spirit:name>
@@ -155748,7 +155748,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_FBDIV_0</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_FBDIV_0" spirit:order="26">36</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_FBDIV_0" spirit:order="26">18</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_CP_0</spirit:name>
@@ -155756,7 +155756,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_RES_0</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_RES_0" spirit:order="28">10</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_RES_0" spirit:order="28">9</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_LFHF_0</spirit:name>
@@ -155764,11 +155764,11 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_LOCK_REF_DLY_0</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_LOCK_REF_DLY_0" spirit:order="30">31</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_LOCK_REF_DLY_0" spirit:order="30">20</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_LOCK_FB_DLY_0</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_LOCK_FB_DLY_0" spirit:order="31">31</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_LOCK_FB_DLY_0" spirit:order="31">20</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_LOCK_CNT_0</spirit:name>
@@ -155776,7 +155776,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_HEX_CP_RES_0</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_HEX_CP_RES_0" spirit:order="33" spirit:bitStringLength="32">0x0000A600</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_HEX_CP_RES_0" spirit:order="33" spirit:bitStringLength="32">0x00009600</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_HEX_CP_0</spirit:name>
@@ -155784,7 +155784,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_HEX_LOCK_FB_REF_DLY_0</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_HEX_LOCK_FB_REF_DLY_0" spirit:order="35" spirit:bitStringLength="32">0x00001f1f</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_HEX_LOCK_FB_REF_DLY_0" spirit:order="35" spirit:bitStringLength="32">0x00001414</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_HEX_LOCK_CNT_0</spirit:name>
@@ -155792,7 +155792,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_HEX_FBDIV_CLKOUTDIV_0</spirit:name>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_HEX_FBDIV_CLKOUTDIV_0" spirit:order="37" spirit:bitStringLength="32">0x00000902</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_HBM_HEX_FBDIV_CLKOUTDIV_0" spirit:order="37" spirit:bitStringLength="32">0x00000482</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_HBM_CP_1</spirit:name>
@@ -162229,19 +162229,19 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_AXI_INPUT_CLK_FREQ</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_FREQ" spirit:choiceRef="choice_list_4e874127" spirit:order="1308">100</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_FREQ" spirit:choiceRef="choice_list_4e874127" spirit:order="1308">200</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_AXI_INPUT_CLK_NS</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_NS" spirit:order="1309">10.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_NS" spirit:order="1309">5.000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_AXI_INPUT_CLK_PS</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_PS" spirit:order="1310">10000</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_PS" spirit:order="1310">5000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>USER_AXI_INPUT_CLK_XDC</spirit:name>
-      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_XDC" spirit:order="1311">10.000</spirit:value>
+      <spirit:value spirit:format="float" spirit:resolve="user" spirit:id="PARAM_VALUE.USER_AXI_INPUT_CLK_XDC" spirit:order="1311">5.000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>HBM_MMCM_FBOUT_MULT0</spirit:name>
@@ -162267,7 +162267,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>HBM_MMCM_DIVCLK_DIV0</spirit:name>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.HBM_MMCM_DIVCLK_DIV0" spirit:order="1314">1</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.HBM_MMCM_DIVCLK_DIV0" spirit:order="1314">2</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>
@@ -164720,8 +164720,24 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SAXI_31_8HI.RUSER_WIDTH" xilinx:valueSource="constant"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SAXI_31_8HI.SUPPORTS_NARROW_BURST" xilinx:valueSource="auto"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.SAXI_31_8HI.WUSER_WIDTH" xilinx:valueSource="constant"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.HBM_MMCM_FBOUT_MULT0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_AXI_INPUT_CLK_FREQ" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_AXI_INPUT_CLK_NS" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_AXI_INPUT_CLK_PS" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_AXI_INPUT_CLK_XDC" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_CLK_SEL_LIST0" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_DEBUG_EN" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_CP_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_FBDIV_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_HEX_CP_RES_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_HEX_FBDIV_CLKOUTDIV_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_HEX_LOCK_FB_REF_DLY_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_LOCK_FB_DLY_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_LOCK_REF_DLY_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_REF_CLK_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_REF_CLK_PS_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_REF_CLK_XDC_0" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_HBM_RES_0" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_MC_ENABLE_01" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_MC_ENABLE_02" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.USER_MC_ENABLE_03" xilinx:valueSource="user"/>

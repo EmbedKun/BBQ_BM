@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sun Jul 27 20:33:17 2025
+-- Date        : Mon Sep  8 13:51:00 2025
 -- Host        : gabber running 64-bit Ubuntu 22.04.5 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top hbm_0 -prefix
 --               hbm_0_ hbm_0_sim_netlist.vhdl
@@ -15179,7 +15179,7 @@ GND: unisim.vcomponents.GND
       INITP_0E => X"0000000000000000000000000000000000000000000000000000000000000000",
       INITP_0F => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_00 => X"0F3C00B40B2C008C2420008403CF00CC03CF00C803CF00C403CF00C0004300F0",
-      INIT_01 => X"A0A1001083E8000C1F1F0008A6000004A9020000000700A8200200E8420700FC",
+      INIT_01 => X"A0A1001083E8000C1414000896000004A4820000000700A8200200E8420700FC",
       INIT_02 => X"EC5F0030EBD8002CD04200287C4D0024F37C002006E7001C00220018001F0014",
       INIT_03 => X"00040168028F000020D600802FF00000AFF000004428003CAACD0038EDFB0034",
       INIT_04 => X"4638015C000001500700010001B700DC0C0000301F0F00D84837001807890008",
@@ -15721,8 +15721,6 @@ architecture STRUCTURE of hbm_0_xsdb2apb is
   signal \data_from_apb[0]_i_3_n_0\ : STD_LOGIC;
   signal \data_from_apb[0]_i_4_n_0\ : STD_LOGIC;
   signal \data_from_apb[0]_i_5_n_0\ : STD_LOGIC;
-  signal \data_from_apb[0]_i_6_n_0\ : STD_LOGIC;
-  signal \data_from_apb[0]_i_7_n_0\ : STD_LOGIC;
   signal \data_from_apb[10]_i_1_n_0\ : STD_LOGIC;
   signal \data_from_apb[11]_i_1_n_0\ : STD_LOGIC;
   signal \data_from_apb[12]_i_1_n_0\ : STD_LOGIC;
@@ -15735,7 +15733,6 @@ architecture STRUCTURE of hbm_0_xsdb2apb is
   signal \data_from_apb[1]_i_2_n_0\ : STD_LOGIC;
   signal \data_from_apb[1]_i_3_n_0\ : STD_LOGIC;
   signal \data_from_apb[1]_i_4_n_0\ : STD_LOGIC;
-  signal \data_from_apb[1]_i_5_n_0\ : STD_LOGIC;
   signal \data_from_apb[2]_i_1_n_0\ : STD_LOGIC;
   signal \data_from_apb[2]_i_2_n_0\ : STD_LOGIC;
   signal \data_from_apb[2]_i_3_n_0\ : STD_LOGIC;
@@ -15753,6 +15750,7 @@ architecture STRUCTURE of hbm_0_xsdb2apb is
   signal \data_from_apb[6]_i_3_n_0\ : STD_LOGIC;
   signal \data_from_apb[7]_i_1_n_0\ : STD_LOGIC;
   signal \data_from_apb[7]_i_2_n_0\ : STD_LOGIC;
+  signal \data_from_apb[7]_i_3_n_0\ : STD_LOGIC;
   signal \data_from_apb[8]_i_1_n_0\ : STD_LOGIC;
   signal \data_from_apb[8]_i_2_n_0\ : STD_LOGIC;
   signal \data_from_apb[9]_i_1_n_0\ : STD_LOGIC;
@@ -15907,31 +15905,31 @@ architecture STRUCTURE of hbm_0_xsdb2apb is
   attribute SOFT_HLUTNM of a_penable_i_3 : label is "soft_lutpair96";
   attribute SOFT_HLUTNM of a_penable_i_4 : label is "soft_lutpair99";
   attribute SOFT_HLUTNM of a_penable_i_5 : label is "soft_lutpair99";
-  attribute SOFT_HLUTNM of a_psel_i_4 : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of a_pwrite_i_2 : label is "soft_lutpair107";
+  attribute SOFT_HLUTNM of a_psel_i_4 : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of a_pwrite_i_2 : label is "soft_lutpair108";
   attribute SOFT_HLUTNM of a_pwrite_i_3 : label is "soft_lutpair96";
-  attribute SOFT_HLUTNM of a_req_i_2 : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of a_req_i_2 : label is "soft_lutpair114";
   attribute SOFT_HLUTNM of a_req_i_3 : label is "soft_lutpair95";
   attribute SOFT_HLUTNM of a_req_i_4 : label is "soft_lutpair93";
   attribute SOFT_HLUTNM of a_req_i_5 : label is "soft_lutpair93";
   attribute SOFT_HLUTNM of a_req_i_7 : label is "soft_lutpair123";
-  attribute SOFT_HLUTNM of cattrip_sticky_i_2 : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of cattrip_sticky_i_3 : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \data_from_apb[0]_i_2\ : label is "soft_lutpair120";
-  attribute SOFT_HLUTNM of \data_from_apb[15]_i_3\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of cattrip_sticky_i_2 : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of cattrip_sticky_i_3 : label is "soft_lutpair109";
+  attribute SOFT_HLUTNM of \data_from_apb[15]_i_3\ : label is "soft_lutpair116";
   attribute SOFT_HLUTNM of \data_from_apb[1]_i_2\ : label is "soft_lutpair120";
-  attribute SOFT_HLUTNM of \data_from_apb[2]_i_2\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \data_from_apb[2]_i_2\ : label is "soft_lutpair120";
   attribute SOFT_HLUTNM of \data_from_apb[3]_i_2\ : label is "soft_lutpair119";
-  attribute SOFT_HLUTNM of \data_from_apb[4]_i_2\ : label is "soft_lutpair118";
-  attribute SOFT_HLUTNM of \data_from_apb[6]_i_3\ : label is "soft_lutpair116";
+  attribute SOFT_HLUTNM of \data_from_apb[4]_i_2\ : label is "soft_lutpair119";
+  attribute SOFT_HLUTNM of \data_from_apb[6]_i_2\ : label is "soft_lutpair118";
   attribute SOFT_HLUTNM of \data_from_apb[7]_i_2\ : label is "soft_lutpair118";
+  attribute SOFT_HLUTNM of \data_from_apb[7]_i_3\ : label is "soft_lutpair103";
   attribute SOFT_HLUTNM of \data_from_apb[8]_i_2\ : label is "soft_lutpair117";
   attribute SOFT_HLUTNM of \data_from_apb[9]_i_2\ : label is "soft_lutpair117";
-  attribute SOFT_HLUTNM of \data_from_apb[9]_i_3\ : label is "soft_lutpair116";
-  attribute SOFT_HLUTNM of error_flag_i_2 : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \data_from_apb[9]_i_3\ : label is "soft_lutpair103";
+  attribute SOFT_HLUTNM of error_flag_i_2 : label is "soft_lutpair106";
   attribute SOFT_HLUTNM of rmw_i_10 : label is "soft_lutpair122";
   attribute SOFT_HLUTNM of rmw_i_2 : label is "soft_lutpair90";
-  attribute SOFT_HLUTNM of rmw_i_4 : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of rmw_i_4 : label is "soft_lutpair112";
   attribute RTL_RAM_BITS : integer;
   attribute RTL_RAM_BITS of scratchpad_reg_0_7_0_0 : label is 128;
   attribute RTL_RAM_NAME : string;
@@ -16086,41 +16084,41 @@ architecture STRUCTURE of hbm_0_xsdb2apb is
   attribute ram_slice_begin of scratchpad_reg_0_7_9_9 : label is 9;
   attribute ram_slice_end of scratchpad_reg_0_7_9_9 : label is 9;
   attribute SOFT_HLUTNM of \state[0]_i_11\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \state[0]_i_5\ : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of \state[0]_i_5\ : label is "soft_lutpair114";
   attribute SOFT_HLUTNM of \state[0]_i_7\ : label is "soft_lutpair100";
-  attribute SOFT_HLUTNM of \state[0]_i_8\ : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of \state[0]_i_8\ : label is "soft_lutpair112";
   attribute SOFT_HLUTNM of \state[11]_i_1\ : label is "soft_lutpair97";
-  attribute SOFT_HLUTNM of \state[11]_i_2\ : label is "soft_lutpair108";
-  attribute SOFT_HLUTNM of \state[11]_i_3\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \state[12]_i_3\ : label is "soft_lutpair109";
-  attribute SOFT_HLUTNM of \state[15]_i_4\ : label is "soft_lutpair112";
-  attribute SOFT_HLUTNM of \state[15]_i_6\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \state[11]_i_2\ : label is "soft_lutpair109";
+  attribute SOFT_HLUTNM of \state[11]_i_3\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \state[12]_i_3\ : label is "soft_lutpair110";
+  attribute SOFT_HLUTNM of \state[15]_i_4\ : label is "soft_lutpair113";
+  attribute SOFT_HLUTNM of \state[15]_i_6\ : label is "soft_lutpair105";
   attribute SOFT_HLUTNM of \state[2]_i_3\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \state[2]_i_6\ : label is "soft_lutpair106";
+  attribute SOFT_HLUTNM of \state[2]_i_6\ : label is "soft_lutpair107";
   attribute SOFT_HLUTNM of \state[2]_i_7\ : label is "soft_lutpair98";
-  attribute SOFT_HLUTNM of \state[2]_i_8\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of \state[2]_i_8\ : label is "soft_lutpair116";
   attribute SOFT_HLUTNM of \state[2]_i_9\ : label is "soft_lutpair98";
   attribute SOFT_HLUTNM of \state[3]_i_4\ : label is "soft_lutpair94";
   attribute SOFT_HLUTNM of \state[3]_i_6\ : label is "soft_lutpair92";
   attribute SOFT_HLUTNM of \state[5]_i_2\ : label is "soft_lutpair101";
-  attribute SOFT_HLUTNM of \state[6]_i_3\ : label is "soft_lutpair107";
+  attribute SOFT_HLUTNM of \state[6]_i_3\ : label is "soft_lutpair108";
   attribute SOFT_HLUTNM of \state[7]_i_1\ : label is "soft_lutpair97";
   attribute SOFT_HLUTNM of \state[8]_i_2\ : label is "soft_lutpair123";
-  attribute SOFT_HLUTNM of \state[8]_i_3\ : label is "soft_lutpair112";
+  attribute SOFT_HLUTNM of \state[8]_i_3\ : label is "soft_lutpair113";
   attribute SOFT_HLUTNM of \state[9]_i_2\ : label is "soft_lutpair90";
   attribute SOFT_HLUTNM of \timeout_counter[0]_i_1\ : label is "soft_lutpair94";
-  attribute SOFT_HLUTNM of \timeout_counter[2]_i_1\ : label is "soft_lutpair114";
+  attribute SOFT_HLUTNM of \timeout_counter[2]_i_1\ : label is "soft_lutpair115";
   attribute SOFT_HLUTNM of \timeout_counter[3]_i_1\ : label is "soft_lutpair91";
   attribute SOFT_HLUTNM of \timeout_counter[4]_i_1\ : label is "soft_lutpair91";
-  attribute SOFT_HLUTNM of \timeout_counter[6]_i_1\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \timeout_counter[6]_i_1\ : label is "soft_lutpair105";
   attribute SOFT_HLUTNM of \timeout_counter[7]_i_10\ : label is "soft_lutpair102";
   attribute SOFT_HLUTNM of \timeout_counter[7]_i_3\ : label is "soft_lutpair92";
   attribute SOFT_HLUTNM of \timeout_counter[7]_i_5\ : label is "soft_lutpair102";
-  attribute SOFT_HLUTNM of \timeout_counter[7]_i_7\ : label is "soft_lutpair114";
-  attribute SOFT_HLUTNM of \timeout_counter[7]_i_9\ : label is "soft_lutpair110";
-  attribute SOFT_HLUTNM of \upper_addr_bits[4]_i_4\ : label is "soft_lutpair103";
-  attribute SOFT_HLUTNM of \write_upper_addr[15]_i_2\ : label is "soft_lutpair106";
-  attribute SOFT_HLUTNM of write_upper_valid_i_2 : label is "soft_lutpair105";
+  attribute SOFT_HLUTNM of \timeout_counter[7]_i_7\ : label is "soft_lutpair115";
+  attribute SOFT_HLUTNM of \timeout_counter[7]_i_9\ : label is "soft_lutpair111";
+  attribute SOFT_HLUTNM of \upper_addr_bits[4]_i_4\ : label is "soft_lutpair104";
+  attribute SOFT_HLUTNM of \write_upper_addr[15]_i_2\ : label is "soft_lutpair107";
+  attribute SOFT_HLUTNM of write_upper_valid_i_2 : label is "soft_lutpair106";
   attribute SOFT_HLUTNM of write_upper_valid_i_3 : label is "soft_lutpair122";
   attribute SOFT_HLUTNM of x_rdy_i_2 : label is "soft_lutpair121";
 begin
@@ -17089,93 +17087,68 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
       Q => cattrip_sticky,
       R => '0'
     );
-\data_from_apb[0]_i_1\: unisim.vcomponents.LUT6
+\data_from_apb[0]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"EEAEEEAEEEAEAAAA"
+      INIT => X"FFFF0040"
     )
         port map (
-      I0 => \data_from_apb[0]_i_2_n_0\,
-      I1 => \data_from_apb[15]_i_3_n_0\,
-      I2 => s_daddr_o(8),
-      I3 => data_from_apb0(0),
-      I4 => \data_from_apb[0]_i_3_n_0\,
-      I5 => \data_from_apb[0]_i_4_n_0\,
+      I0 => \state_reg_n_0_[5]\,
+      I1 => APB_0_PRDATA(0),
+      I2 => Q(1),
+      I3 => Q(0),
+      I4 => \data_from_apb[0]_i_2_n_0\,
       O => \data_from_apb[0]_i_1_n_0\
     );
-\data_from_apb[0]_i_2\: unisim.vcomponents.LUT4
+\data_from_apb[0]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0040"
+      INIT => X"FF00AEAE00000000"
     )
         port map (
-      I0 => Q(0),
-      I1 => Q(1),
-      I2 => APB_0_PRDATA(0),
-      I3 => \state_reg_n_0_[5]\,
+      I0 => \data_from_apb[0]_i_3_n_0\,
+      I1 => \data_from_apb[1]_i_4_n_0\,
+      I2 => \data_from_apb[0]_i_4_n_0\,
+      I3 => data_from_apb0(0),
+      I4 => s_daddr_o(8),
+      I5 => \data_from_apb[15]_i_3_n_0\,
       O => \data_from_apb[0]_i_2_n_0\
     );
 \data_from_apb[0]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"000000000000000D"
+      INIT => X"0000000060204000"
+    )
+        port map (
+      I0 => s_daddr_o(1),
+      I1 => s_daddr_o(0),
+      I2 => s_daddr_o(3),
+      I3 => INIT_ERROR,
+      I4 => error_flag,
+      I5 => \data_from_apb[9]_i_4_n_0\,
+      O => \data_from_apb[0]_i_3_n_0\
+    );
+\data_from_apb[0]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EEEE2E2200EEEE00"
     )
         port map (
       I0 => \data_from_apb[0]_i_5_n_0\,
-      I1 => \data_from_apb[0]_i_6_n_0\,
-      I2 => s_daddr_o(7),
-      I3 => s_daddr_o(6),
-      I4 => s_daddr_o(5),
-      I5 => s_daddr_o(2),
-      O => \data_from_apb[0]_i_3_n_0\
-    );
-\data_from_apb[0]_i_4\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"ABAABBBB"
-    )
-        port map (
-      I0 => s_daddr_o(8),
-      I1 => \data_from_apb[0]_i_7_n_0\,
-      I2 => s_daddr_o(1),
-      I3 => cattrip_sticky,
-      I4 => s_daddr_o(0),
+      I1 => s_daddr_o(1),
+      I2 => hbm_temp_r(0),
+      I3 => s_daddr_o(4),
+      I4 => s_daddr_o(2),
+      I5 => s_daddr_o(0),
       O => \data_from_apb[0]_i_4_n_0\
     );
-\data_from_apb[0]_i_5\: unisim.vcomponents.LUT6
+\data_from_apb[0]_i_5\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"BFAAFAFABFAAFFFA"
+      INIT => X"7F707F7F"
     )
         port map (
-      I0 => s_daddr_o(3),
-      I1 => hbm_temp_r(0),
-      I2 => s_daddr_o(0),
-      I3 => s_daddr_o(4),
-      I4 => s_daddr_o(1),
-      I5 => upper_addr_bits(0),
+      I0 => cattrip_sticky,
+      I1 => s_daddr_o(4),
+      I2 => s_daddr_o(2),
+      I3 => s_daddr_o(0),
+      I4 => upper_addr_bits(0),
       O => \data_from_apb[0]_i_5_n_0\
-    );
-\data_from_apb[0]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"3808000000000000"
-    )
-        port map (
-      I0 => error_flag,
-      I1 => s_daddr_o(1),
-      I2 => s_daddr_o(0),
-      I3 => INIT_ERROR,
-      I4 => s_daddr_o(3),
-      I5 => s_daddr_o(4),
-      O => \data_from_apb[0]_i_6_n_0\
-    );
-\data_from_apb[0]_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFEFFFFFFFFFF"
-    )
-        port map (
-      I0 => s_daddr_o(5),
-      I1 => s_daddr_o(6),
-      I2 => s_daddr_o(7),
-      I3 => s_daddr_o(4),
-      I4 => s_daddr_o(3),
-      I5 => s_daddr_o(2),
-      O => \data_from_apb[0]_i_7_n_0\
     );
 \data_from_apb[10]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -17257,26 +17230,26 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[15]_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0040"
+      INIT => X"0020"
     )
         port map (
-      I0 => s_daddr_o(9),
-      I1 => s_daddr_o(15),
-      I2 => s_daddr_o(16),
+      I0 => s_daddr_o(16),
+      I1 => s_daddr_o(11),
+      I2 => s_daddr_o(14),
       I3 => \data_from_apb[15]_i_4_n_0\,
       O => \data_from_apb[15]_i_3_n_0\
     );
 \data_from_apb[15]_i_4\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FFFFF7FFFFFFFFFF"
+      INIT => X"FDFFFFFFFFFFFFFF"
     )
         port map (
-      I0 => \state_reg_n_0_[5]\,
-      I1 => s_daddr_o(12),
-      I2 => s_daddr_o(11),
-      I3 => s_daddr_o(13),
-      I4 => s_daddr_o(10),
-      I5 => s_daddr_o(14),
+      I0 => s_daddr_o(15),
+      I1 => s_daddr_o(9),
+      I2 => s_daddr_o(10),
+      I3 => \state_reg_n_0_[5]\,
+      I4 => s_daddr_o(13),
+      I5 => s_daddr_o(12),
       O => \data_from_apb[15]_i_4_n_0\
     );
 \data_from_apb[1]_i_1\: unisim.vcomponents.LUT6
@@ -17305,39 +17278,27 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[1]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"F0FFF0F0FFFFF1FF"
+      INIT => X"FFF37CF3FFF37CFF"
     )
         port map (
-      I0 => upper_addr_bits(1),
-      I1 => s_daddr_o(2),
-      I2 => \data_from_apb[1]_i_5_n_0\,
-      I3 => s_daddr_o(4),
-      I4 => s_daddr_o(1),
-      I5 => s_daddr_o(0),
+      I0 => hbm_temp_r(1),
+      I1 => s_daddr_o(4),
+      I2 => s_daddr_o(1),
+      I3 => s_daddr_o(0),
+      I4 => s_daddr_o(2),
+      I5 => upper_addr_bits(1),
       O => \data_from_apb[1]_i_3_n_0\
     );
-\data_from_apb[1]_i_4\: unisim.vcomponents.LUT5
+\data_from_apb[1]_i_4\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"4055FFFF"
-    )
-        port map (
-      I0 => s_daddr_o(2),
-      I1 => hbm_temp_r(1),
-      I2 => s_daddr_o(1),
-      I3 => s_daddr_o(4),
-      I4 => s_daddr_o(0),
-      O => \data_from_apb[1]_i_4_n_0\
-    );
-\data_from_apb[1]_i_5\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"FFFE"
+      INIT => X"0001"
     )
         port map (
       I0 => s_daddr_o(3),
-      I1 => s_daddr_o(5),
+      I1 => s_daddr_o(7),
       I2 => s_daddr_o(6),
-      I3 => s_daddr_o(7),
-      O => \data_from_apb[1]_i_5_n_0\
+      I3 => s_daddr_o(5),
+      O => \data_from_apb[1]_i_4_n_0\
     );
 \data_from_apb[2]_i_1\: unisim.vcomponents.LUT5
     generic map(
@@ -17364,15 +17325,15 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[2]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0A2202220A200220"
+      INIT => X"1011101000110010"
     )
         port map (
       I0 => \data_from_apb[9]_i_4_n_0\,
-      I1 => s_daddr_o(0),
-      I2 => s_daddr_o(3),
-      I3 => s_daddr_o(1),
-      I4 => hbm_temp_r(2),
-      I5 => upper_addr_bits(2),
+      I1 => s_daddr_o(3),
+      I2 => s_daddr_o(1),
+      I3 => s_daddr_o(0),
+      I4 => upper_addr_bits(2),
+      I5 => hbm_temp_r(2),
       O => \data_from_apb[2]_i_3_n_0\
     );
 \data_from_apb[31]_i_1\: unisim.vcomponents.LUT6
@@ -17413,14 +17374,14 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[3]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4400004000000040"
+      INIT => X"0101414001010100"
     )
         port map (
-      I0 => s_daddr_o(3),
-      I1 => \data_from_apb[9]_i_4_n_0\,
-      I2 => upper_addr_bits(3),
-      I3 => s_daddr_o(1),
-      I4 => s_daddr_o(0),
+      I0 => \data_from_apb[9]_i_4_n_0\,
+      I1 => s_daddr_o(1),
+      I2 => s_daddr_o(0),
+      I3 => upper_addr_bits(3),
+      I4 => s_daddr_o(3),
       I5 => hbm_temp_r(3),
       O => \data_from_apb[3]_i_3_n_0\
     );
@@ -17449,11 +17410,11 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[4]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"4400004000000040"
+      INIT => X"1100001000000010"
     )
         port map (
-      I0 => s_daddr_o(3),
-      I1 => \data_from_apb[9]_i_4_n_0\,
+      I0 => \data_from_apb[9]_i_4_n_0\,
+      I1 => s_daddr_o(3),
       I2 => upper_addr_bits(4),
       I3 => s_daddr_o(1),
       I4 => s_daddr_o(0),
@@ -17474,64 +17435,63 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[5]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF00A8A800000000"
+      INIT => X"AAAA080008000800"
     )
         port map (
-      I0 => \data_from_apb[6]_i_3_n_0\,
+      I0 => \data_from_apb[15]_i_3_n_0\,
       I1 => hbm_temp_r(5),
-      I2 => s_daddr_o(3),
-      I3 => data_from_apb0(5),
+      I2 => \data_from_apb[9]_i_3_n_0\,
+      I3 => s_daddr_o(0),
       I4 => s_daddr_o(8),
-      I5 => \data_from_apb[15]_i_3_n_0\,
+      I5 => data_from_apb0(5),
       O => \data_from_apb[5]_i_2_n_0\
     );
 \data_from_apb[6]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"FFFF0040"
+      INIT => X"EEAEAAAA"
     )
         port map (
-      I0 => \state_reg_n_0_[5]\,
-      I1 => APB_0_PRDATA(6),
-      I2 => Q(1),
-      I3 => Q(0),
-      I4 => \data_from_apb[6]_i_2_n_0\,
+      I0 => \data_from_apb[6]_i_2_n_0\,
+      I1 => \data_from_apb[15]_i_3_n_0\,
+      I2 => s_daddr_o(8),
+      I3 => data_from_apb0(6),
+      I4 => \data_from_apb[6]_i_3_n_0\,
       O => \data_from_apb[6]_i_1_n_0\
     );
-\data_from_apb[6]_i_2\: unisim.vcomponents.LUT6
+\data_from_apb[6]_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FF00A8A800000000"
+      INIT => X"0040"
     )
         port map (
-      I0 => \data_from_apb[6]_i_3_n_0\,
-      I1 => hbm_temp_r(6),
-      I2 => s_daddr_o(3),
-      I3 => data_from_apb0(6),
-      I4 => s_daddr_o(8),
-      I5 => \data_from_apb[15]_i_3_n_0\,
+      I0 => Q(0),
+      I1 => Q(1),
+      I2 => APB_0_PRDATA(6),
+      I3 => \state_reg_n_0_[5]\,
       O => \data_from_apb[6]_i_2_n_0\
     );
-\data_from_apb[6]_i_3\: unisim.vcomponents.LUT4
+\data_from_apb[6]_i_3\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"2008"
+      INIT => X"AAAAAAAAABABEAAA"
     )
         port map (
-      I0 => \data_from_apb[9]_i_4_n_0\,
-      I1 => s_daddr_o(3),
-      I2 => s_daddr_o(1),
-      I3 => s_daddr_o(0),
+      I0 => s_daddr_o(8),
+      I1 => s_daddr_o(1),
+      I2 => s_daddr_o(0),
+      I3 => hbm_temp_r(6),
+      I4 => s_daddr_o(3),
+      I5 => \data_from_apb[9]_i_4_n_0\,
       O => \data_from_apb[6]_i_3_n_0\
     );
-\data_from_apb[7]_i_1\: unisim.vcomponents.LUT6
+\data_from_apb[7]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"EAAAAAAAFBBBAAAA"
+      INIT => X"EEAEAAAA"
     )
         port map (
       I0 => \data_from_apb[7]_i_2_n_0\,
-      I1 => \data_from_apb[9]_i_3_n_0\,
-      I2 => data_from_apb0(7),
-      I3 => s_daddr_o(8),
-      I4 => \data_from_apb[15]_i_3_n_0\,
-      I5 => s_daddr_o(0),
+      I1 => \data_from_apb[15]_i_3_n_0\,
+      I2 => s_daddr_o(8),
+      I3 => data_from_apb0(7),
+      I4 => \data_from_apb[7]_i_3_n_0\,
       O => \data_from_apb[7]_i_1_n_0\
     );
 \data_from_apb[7]_i_2\: unisim.vcomponents.LUT4
@@ -17544,6 +17504,18 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
       I2 => APB_0_PRDATA(7),
       I3 => \state_reg_n_0_[5]\,
       O => \data_from_apb[7]_i_2_n_0\
+    );
+\data_from_apb[7]_i_3\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"AAAAABBA"
+    )
+        port map (
+      I0 => s_daddr_o(8),
+      I1 => \data_from_apb[9]_i_4_n_0\,
+      I2 => s_daddr_o(3),
+      I3 => s_daddr_o(1),
+      I4 => s_daddr_o(0),
+      O => \data_from_apb[7]_i_3_n_0\
     );
 \data_from_apb[8]_i_1\: unisim.vcomponents.LUT6
     generic map(
@@ -17571,15 +17543,15 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[9]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"EAEEAAAEAAAEAAAE"
+      INIT => X"EAAAAAAAFBBBAAAA"
     )
         port map (
       I0 => \data_from_apb[9]_i_2_n_0\,
-      I1 => \data_from_apb[15]_i_3_n_0\,
-      I2 => \data_from_apb[9]_i_3_n_0\,
-      I3 => s_daddr_o(0),
-      I4 => data_from_apb0(9),
-      I5 => s_daddr_o(8),
+      I1 => \data_from_apb[9]_i_3_n_0\,
+      I2 => data_from_apb0(9),
+      I3 => s_daddr_o(8),
+      I4 => \data_from_apb[15]_i_3_n_0\,
+      I5 => s_daddr_o(0),
       O => \data_from_apb[9]_i_1_n_0\
     );
 \data_from_apb[9]_i_2\: unisim.vcomponents.LUT4
@@ -17595,7 +17567,7 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[9]_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFDF"
+      INIT => X"FFEF"
     )
         port map (
       I0 => \data_from_apb[9]_i_4_n_0\,
@@ -17606,14 +17578,14 @@ cattrip_sticky_reg: unisim.vcomponents.FDRE
     );
 \data_from_apb[9]_i_4\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"00000002"
+      INIT => X"FFFFFFFD"
     )
         port map (
       I0 => s_daddr_o(4),
-      I1 => s_daddr_o(7),
-      I2 => s_daddr_o(6),
-      I3 => s_daddr_o(5),
-      I4 => s_daddr_o(2),
+      I1 => s_daddr_o(2),
+      I2 => s_daddr_o(5),
+      I3 => s_daddr_o(6),
+      I4 => s_daddr_o(7),
       O => \data_from_apb[9]_i_4_n_0\
     );
 \data_from_apb_reg[0]\: unisim.vcomponents.FDRE
@@ -27197,7 +27169,7 @@ entity hbm_0_hbm_v1_0_9 is
   attribute HBM_CLK_FREQ_1 : string;
   attribute HBM_CLK_FREQ_1 of hbm_0_hbm_v1_0_9 : entity is "16'b0000001110000100";
   attribute HBM_REF_CLK_FREQ_0 : string;
-  attribute HBM_REF_CLK_FREQ_0 of hbm_0_hbm_v1_0_9 : entity is "16'b0000000001100100";
+  attribute HBM_REF_CLK_FREQ_0 of hbm_0_hbm_v1_0_9 : entity is "16'b0000000011001000";
   attribute HBM_REF_CLK_FREQ_1 : string;
   attribute HBM_REF_CLK_FREQ_1 of hbm_0_hbm_v1_0_9 : entity is "16'b0000000001100100";
   attribute HBM_STACK : integer;
@@ -44877,7 +44849,7 @@ architecture STRUCTURE of hbm_0 is
   attribute HBM_CLK_FREQ_1 : string;
   attribute HBM_CLK_FREQ_1 of inst : label is "16'b0000001110000100";
   attribute HBM_REF_CLK_FREQ_0 : string;
-  attribute HBM_REF_CLK_FREQ_0 of inst : label is "16'b0000000001100100";
+  attribute HBM_REF_CLK_FREQ_0 of inst : label is "16'b0000000011001000";
   attribute HBM_REF_CLK_FREQ_1 : string;
   attribute HBM_REF_CLK_FREQ_1 of inst : label is "16'b0000000001100100";
   attribute HBM_STACK : integer;

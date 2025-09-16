@@ -56,9 +56,9 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// _bbq_clk__100.00000______0.000______50.0______115.831_____87.180
-// _hbm_ref__100.00000______0.000______50.0______115.831_____87.180
-// _axi_clk__100.00000______0.000______50.0______115.831_____87.180
+// _bbq_clk__200.00000______0.000______50.0______102.086_____87.180
+// _hbm_ref__300.00000______0.000______50.0_______94.862_____87.180
+// _axi_clk__200.00000______0.000______50.0______102.086_____87.180
 // _apb_clk__100.00000______0.000______50.0______115.831_____87.180
 //
 //----------------------------------------------------------------------------
@@ -138,15 +138,15 @@ wire clk_in2_clk_wiz_0;
     .CLKFBOUT_MULT_F      (12.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (12.000),
+    .CLKOUT0_DIVIDE_F     (6.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKOUT1_DIVIDE       (12),
+    .CLKOUT1_DIVIDE       (4),
     .CLKOUT1_PHASE        (0.000),
     .CLKOUT1_DUTY_CYCLE   (0.500),
     .CLKOUT1_USE_FINE_PS  ("FALSE"),
-    .CLKOUT2_DIVIDE       (12),
+    .CLKOUT2_DIVIDE       (6),
     .CLKOUT2_PHASE        (0.000),
     .CLKOUT2_DUTY_CYCLE   (0.500),
     .CLKOUT2_USE_FINE_PS  ("FALSE"),

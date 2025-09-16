@@ -1,0 +1,58 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Sep  9 11:50:57 2025
+# Process ID: 1358892
+# Current directory: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM
+# Command line: vivado BBQ_BM.xpr
+# Log file: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/vivado.log
+# Journal file: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project BBQ_BM.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 7405.293 ; gain = 96.309 ; free physical = 29256 ; free virtual = 57194
+INFO: [IP_Flow 19-3899] Cannot get the environment domain name variable for the component vendor name. Setting the vendor name to 'user.org'.
+update_compile_order -fileset sources_1
+close [ open /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/new/prev_bm.v w ]
+add_files /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/new/prev_bm.v
+close [ open /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/new/prev_top.sv w ]
+add_files /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/new/prev_top.sv
+update_compile_order -fileset sources_1
+set_property top Buffer_RW_Controller [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+[Tue Sep  9 15:14:34 2025] Launched synth_1...
+Run output will be captured here: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Tue Sep  9 16:10:25 2025] Launched synth_1...
+Run output will be captured here: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/synth_1/runme.log
+[Tue Sep  9 16:10:25 2025] Launched impl_1...
+Run output will be captured here: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Tue Sep  9 16:20:34 2025] Launched impl_1...
+Run output will be captured here: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/impl_1/runme.log
+set_property top top [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/ip/hbm_0/hbm_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_1/blk_mem_gen_1.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci' is already up-to-date
+[Tue Sep  9 16:22:00 2025] Launched synth_1...
+Run output will be captured here: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/synth_1/runme.log
+[Tue Sep  9 16:22:00 2025] Launched impl_1...
+Run output will be captured here: /home/gabber/FUDAN/workspace/0803_SBM/new/BBQ_BM/BBQ_BM.runs/impl_1/runme.log
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  9 20:29:16 2025...

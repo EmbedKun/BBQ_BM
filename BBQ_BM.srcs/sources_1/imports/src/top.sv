@@ -4,10 +4,11 @@ import heap_ops::*;
 
 `ifndef ELEMENT_BITS
 `define ELEMENT_BITS 17
-`endif  // ELEMENT_BITS
+`endif  
 
+// CELL_BITS = packet_size/16(parallel)*8=2KB/16*8=1Kbit=1024
 `ifndef CELL_BITS
-`define CELL_BITS 15
+`define CELL_BITS 1024
 `endif  // CELL_SIZE
 
 `ifndef BITMAP_WIDTH
@@ -17,6 +18,11 @@ import heap_ops::*;
 `ifndef NUM_LEVELS
 `define NUM_LEVELS 2
 `endif // NUM_LEVELS
+
+`ifndef CELL_PARALLEL
+`define CELL_PARALLEL 16
+`endif // Storage PARALLEL
+//assume that the BBQ ops on 16 parallel SRAM/HBM at the same time
 
 module top (
     input               sys_clk_p,
@@ -77,35 +83,46 @@ typedef logic [HEAP_PRIORITY_AWIDTH-1:0] heap_priority_t;
 // Heap signals
 (* keep = "true" *)logic heap_ready;
 (* keep = "true" *)logic heap_in_valid;
+reg [31:0] heap_in_cell_num;
 (* keep = "true" *)heap_op_t heap_in_op_type;
 (* keep = "true" *)heap_entry_data_t heap_in_data;
 (* keep = "true" *)heap_priority_t heap_in_priority;
-
+reg admission;
 always @(posedge bbq_clk) begin
     if (arst) begin
         counter <= 0;
         counter2 <= 0;
         init_done <= 0;
+        admission <= 0;
     end
     else begin
         heap_in_data <= 0;
         heap_in_valid <= 0;
-        heap_in_priority <= 0;
+        heap_in_priority <= 1024'hFFFFFFFFFFFFFFFF;
         heap_in_op_type <= HEAP_OP_ENQUE;
         init_done <= (init_done | heap_ready);
           if (init_done) begin
             counter <= counter + 1;
             heap_in_valid <= 1;
             heap_in_data <= counter[HEAP_ENTRY_DWIDTH-1:0];
-            heap_in_priority <= counter[HEAP_PRIORITY_AWIDTH-1:0];
+            admission <= 0;
+            //triger batch_swap_out //batch = 10pkts
+            heap_in_cell_num <= 'd1;   //2KB for 20 CELLS,CELL is 128B,PARALLEL is 16.
+            //LSRF for random rank
+            heap_in_priority <= {heap_in_priority[HEAP_PRIORITY_AWIDTH-2:0],heap_in_priority[120]^heap_in_priority[63]^heap_in_priority[60]^heap_in_priority[16]};
+            if(heap_in_priority>30000)begin
+                admission<=1;//
+                heap_in_op_type <= HEAP_OP_ENQUE;//ENQUE HBM
+            end else begin
             heap_in_op_type <= (counter[2:0] == 3'b000) ? HEAP_OP_ENQUE: 
-                               (counter[2:0] == 3'b001) ? HEAP_OP_DEQUE_MIN:
-                               (counter[2:0] == 3'b010) ? HEAP_OP_DEQUE_MAX:
+                               (counter[2:0] == 3'b001) ? HEAP_OP_DEQUE_MIN://PACKET_OUT
+                               (counter[2:0] == 3'b010) ? HEAP_OP_DEQUE_MAX://SWAP_OUT
                                (counter[2:0] == 3'b011) ? HEAP_OP_SWAP_IN:
                                (counter[2:0] == 3'b100) ? HEAP_OP_ENQUE:
                                (counter[2:0] == 3'b101) ? HEAP_OP_ENQUE:
                                (counter[2:0] == 3'b110) ? HEAP_OP_ENQUE:
                                HEAP_OP_SWAP_OUT;
+            end
         end
     end
 end
@@ -123,7 +140,8 @@ ila_0 (
     .probe1(heap_out_op_type),
     .probe2(heap_out_he_data),
     .probe3(heap_out_he_priority),
-    .probe4(locked)
+    .probe4(locked),
+    .probe5(hit_num)
 );
 
 (* keep = "true" *) logic [31:0] out_placeholder;
@@ -161,6 +179,8 @@ bbq_inst (
     .in_op_type(heap_in_op_type),
     .in_he_data(heap_in_data),
     .in_he_priority(heap_in_priority),
+    .in_he_cell_num(heap_in_cell_num),
+    .admission(admission),
     .out_valid(heap_out_valid),
     .out_op_type(heap_out_op_type),
     .out_he_data(heap_out_he_data),

@@ -214,7 +214,7 @@ output wire [6 : 0] DRAM_0_STAT_TEMP;
     .SWITCH_EN_1(0),
     .AXI_CLK_FREQ(450),
     .AXI_CLK1_FREQ(450),
-    .HBM_REF_CLK_FREQ_0(100),
+    .HBM_REF_CLK_FREQ_0(200),
     .HBM_REF_CLK_FREQ_1(100),
     .HBM_CLK_FREQ_0(900),
     .HBM_CLK_FREQ_1(900),

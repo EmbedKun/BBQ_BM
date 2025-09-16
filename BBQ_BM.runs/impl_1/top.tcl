@@ -123,8 +123,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
-  set_param xicom.use_bs_reader 1
-  set_param tcl.collectionResultDisplayLimit 0
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xcu280-fsvh2892-2L-e
   set_property board_part xilinx.com:au280:part0:1.1 [current_project]

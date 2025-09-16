@@ -47,12 +47,13 @@ module bbq #(
     input   logic                                       apb_clk,
     input   logic                                       hbm_ref,
     input   logic                                       locked,
-
+    input   logic                                       admission,
     // Operation input
     input   logic                                       in_valid,
     input   heap_op_t                                   in_op_type,
     input   logic [HEAP_ENTRY_DWIDTH-1:0]               in_he_data,
     input   logic [HEAP_PRIORITY_BUCKETS_AWIDTH-1:0]    in_he_priority,
+    input   logic [31:0]                                in_he_cell_num,
 
     // Operation output
     output  logic                                       out_valid,
@@ -159,6 +160,10 @@ heap_op_t in_op_type2;
 (* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] he_wraddress;
 (* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] he_rdaddress_r;
 (* keep = "true" *)logic [HEAP_ENTRY_AWIDTH-1:0] he_wraddress_r;
+
+reg [63:0]  hit_num;
+reg [511:0] cycle_counters;
+reg  [63:0] packet_out_counters;
 
 // Next pointers
 (* keep = "true" *)logic np_rden;
@@ -626,7 +631,7 @@ assign pb_data = int_pb_data;
 // Output assignments
 assign ready = !rst & (state== FSM_STATE_READY);
 assign out_valid = reg_valid_s[NUM_PIPELINE_STAGES-1];  //TODO
-assign out_op_type = reg_op_type_s[NUM_PIPELINE_STAGES-1];  //TODO
+assign out_op_type = admission ? hbm_reg_op_type_s[NUM_PIPELINE_STAGES-1]:reg_op_type_s[NUM_PIPELINE_STAGES-1];  //TODO
 assign out_he_data = reg_he_data_s[NUM_PIPELINE_STAGES-1];  //TODO
 assign out_he_priority = reg_priority_s[NUM_PIPELINE_STAGES-1];     //TODO
 
@@ -2980,8 +2985,10 @@ hbm_0  hbm_heap_entries (
     .APB_0_PREADY(),
     .APB_0_PSLVERR()
   );
-
+reg [15:0] counters_swap_out;
 reg [1:0] w_state;
+reg [1023:0] sram_to_hbm_batch;
+
 always @(posedge clk)begin
     if(rst)begin
             AXI_00_ARID <= 0;
@@ -2999,6 +3006,7 @@ always @(posedge clk)begin
             AXI_00_WSTRB<=0;
             AXI_00_WLAST<=0;
             AXI_00_ARADDR<=0;
+            counters_swap_out<=0;
     end else begin
         if(!AXI_00_ARVALID)begin
             AXI_00_ARVALID <=1;
@@ -3008,7 +3016,7 @@ always @(posedge clk)begin
             AXI_00_ARLEN<=0;
             AXI_00_ARADDR[26:5]<=hbm_he_rdaddress[HEAP_ENTRY_AWIDTH-1:0];
         end
-
+        
         case(w_state)
             2'b00:begin
                 if(hbm_he_wren)begin
@@ -3018,9 +3026,20 @@ always @(posedge clk)begin
                     AXI_00_AWBURST<=2'b01;
                     AXI_00_AWVALID<=1;
                     w_state<=2'b01;
+                    sram_to_hbm_batch[1023:0] <= {sram_to_hbm_batch[1007:0],hbm_he_data};
+                    AXI_00_WDATA<=hbm_he_data;
+                    
+                    if(out_valid&&out_op_type==HEAP_OP_DEQUE_MAX)//batch_sizebegin
+                        begin
+                            counters_swap_out <= counters_swap_out+1;
+                            if(counters_swap_out==10)begin //trigger swapout batch
+                                counters_swap_out <= 0;
+                                AXI_00_WDATA <= sram_to_hbm_batch;
+                                AXI_00_AWLEN<=10;
+                            end
+                    end
                     
                     AXI_00_WVALID<=1'b1;
-                    AXI_00_WDATA<=hbm_he_data;
                     AXI_00_WSTRB<=4'b1111;
                     AXI_00_WLAST <=1;
                     AXI_00_BREADY<=1;
@@ -3045,6 +3064,21 @@ end
 // always ack r
 assign AXI_00_RREADY = locked;
 
+wire [31:0]free_cell_pointer;
+wire [31:0] current_ptr;
+
+//Buffer_RW_Controller Buffer_RW_Controller(
+//    .clk(bbq_clk),
+//    .reset(rst),
+//    .write_enable(1),
+//    .read_enable(1),
+//    .packet_len_in(heap_in_cell_num),
+//    .cell_index_in(free_cell_pointer),
+//    .packet_data_out(),
+//    .packet_len_out(),
+//    .free_cell_pointer(free_cell_pointer),
+//    .current_ptr(current_ptr)
+//);
 
 ila_1 ila_1(
     .clk(axi_clk),

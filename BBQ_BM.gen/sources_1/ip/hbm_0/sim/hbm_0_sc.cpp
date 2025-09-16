@@ -102,7 +102,7 @@ hbm_0_sc::hbm_0_sc(const sc_core::sc_module_name& nm) : sc_core::sc_module(nm), 
     model_param_props.addLong("TEMP_WAIT_PERIOD_1", "100000");
     model_param_props.addLong("SWITCH_EN_0", "1");
     model_param_props.addLong("SWITCH_EN_1", "0");
-    model_param_props.addLong("HBM_REF_CLK_FREQ_0", "100");
+    model_param_props.addLong("HBM_REF_CLK_FREQ_0", "200");
     model_param_props.addLong("HBM_REF_CLK_FREQ_1", "100");
     model_param_props.addLong("HBM_CLK_FREQ_0", "900");
     model_param_props.addLong("HBM_CLK_FREQ_1", "900");
